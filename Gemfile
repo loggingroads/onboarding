@@ -18,6 +18,9 @@ gem 'sprockets-rails', '> 2.3.2'
 gem 'paperclip'
 gem 'enumerate_it'
 
+gem 'activerecord-sortable'
+gem 'jquery-ui-rails'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

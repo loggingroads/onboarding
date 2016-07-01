@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     resources :event_requests
     resources :tasks
     resources :events
-    resources :campaigns
+    resources :campaigns do
+      member do
+        post :move
+      end
+    end
     resources :users
   end
 

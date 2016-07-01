@@ -1,0 +1,12 @@
+<tr data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
+  <td><%= campaign.name %></td>
+  <td><%= campaign.htag %></td>
+  <td><%= campaign.description %></td>
+  <td><%= image_tag campaign.background_image.url(:thumb) %></td>
+  <td><%= campaign.url %></td>
+  <td><%= campaign.status_humanize %></td>
+  <td><%= campaign.start_date %></td>
+  <td><%= link_to 'Show', admin_campaign_path(campaign) %></td>
+  <td><%= link_to 'Edit', edit_admin_campaign_path(campaign) %></td>
+  <td><%= link_to 'Destroy', admin_campaign_path(campaign), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+</tr>

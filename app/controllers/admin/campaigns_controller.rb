@@ -4,7 +4,7 @@ class Admin::CampaignsController < AdminController
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.ordered_by_position_asc
   end
 
   # GET /campaigns/1
@@ -19,6 +19,11 @@ class Admin::CampaignsController < AdminController
 
   # GET /campaigns/1/edit
   def edit
+  end
+
+  def move
+    @campaign = Campaign.find(params[:id])
+    @campaign.move_to! params[:position]
   end
 
   # POST /campaigns
@@ -69,6 +74,6 @@ class Admin::CampaignsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:name, :htag, :description, :background_image, :url, :status, :order_sequence, :start_date, :user_id, :task_ids)
+      params.require(:campaign).permit(:name, :htag, :description, :background_image, :url, :status, :start_date, :user_id, :task_ids)
     end
 end
