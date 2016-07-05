@@ -2,8 +2,9 @@
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
-  <div class="l-header" id="exCollapsingNavbar2">
-    <div class="h-logo"><%= link_to Onboarding::Application.config.site_name, root_url, class: 'navbar-brand'%></div>
+  <div id="exCollapsingNavbar2">
+  <div class="l-header">
+    <div class="h-logo"><%= link_to Onboarding::Application.config.site_name, root_url, class: ''%></div>
     <% if user_signed_in? %>
         <ul class="nav navbar-nav main-menu">
           <li class="nav-item"><%= link_to 'Campaigns', admin_campaigns_path, {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
@@ -22,9 +23,10 @@
         <li><a href="#about" class="text text-menu -light -out">About</a></li>
       </ul>
       <ul class="login">
-        <li><%= link_to 'Login', "/admin", {class: 'nav-link text text-menu -light', :method => :delete} %></li>
+        <li><%= link_to 'Login', "/admin/", {class: 'nav-link text text-menu -light', :method => :delete} %></li>
       </ul>
     <% end %>
+  </div>
   </div>
 </nav>
 

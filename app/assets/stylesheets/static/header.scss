@@ -1,12 +1,37 @@
 @import'../settings/settings.scss';
 
 .l-header {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: flex-end;
+  height: 65px;
+
+  @media screen and (min-width: $screen-m) {
+    height: 90px;
+  }
 
   ul {
     margin: 0 !important;
+  }
+
+  .h-logo {
+    padding: 10px 20px;
+    background-color: $color-3;
+    height: 100%;
+
+    @media screen and (min-width: $screen-m) {
+      padding: 20px 40px;
+    }
+
+    a {
+      line-height: 12px;
+      color: $color-2;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
   }
 
   .main-menu {
