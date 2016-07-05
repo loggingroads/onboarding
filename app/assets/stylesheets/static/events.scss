@@ -1,0 +1,53 @@
+@import'../settings/settings.scss';
+
+.l-events {
+  background-color: $color-3;
+
+  .wrap-full {
+
+    @media screen and (min-width: $screen-m) {
+      padding-top: 160px;
+      padding-bottom: 110px;
+    }
+  }
+
+  .title-module-title {
+    margin-bottom: 20px;
+  }
+
+  .text-module-subtitle {
+    margin-bottom: -16px;
+  }
+
+  .text-p {
+    margin-bottom: 10px;
+  }
+
+  .event-date {
+    margin-bottom: 80px;
+
+    @media screen and (min-width: $screen-m) {
+      margin-bottom: 120px;
+    }
+  }
+
+  .events-content {
+    width: 50%;
+  }
+
+  .event-participate {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .bttn-secondary {
+    width: fit-content;
+    margin-bottom: 35px;
+  }
+
+  .text-menu {
+    text-transform: none;
+  }
+}

@@ -1,0 +1,24 @@
+/**
+ * MATH UTILS
+ **/
+
+@function pow($number, $exp) {
+  // Only works for $exp > 1
+  $res: 1;
+  @for $i from 1 through $exp {
+    $res: $res * $number;
+  }
+  @return $res;
+}
+
+@function pi() {
+  @return 3.14159265359;
+}
+
+@function tan($angle) {
+  // Expects a deg unit
+  // Uses the Taylor series
+  $angle: $angle / ($angle * 0 + 1);
+  $angle: $angle * pi() / 180;
+  @return $angle + pow($angle, 3) / 3 + 2 * pow($angle, 5) / 15;
+}

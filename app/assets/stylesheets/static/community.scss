@@ -1,0 +1,57 @@
+@import'../settings/settings.scss';
+
+.l-community {
+  .wrap-center {
+
+    @media screen and (min-width: $screen-m) {
+      padding-top: 50px;
+      padding-bottom: 60px;
+    }
+  }
+
+  .text-module-title {
+    margin-bottom: 20px;
+  }
+
+  .text-module-subtitle {
+    margin-bottom: -16px;
+  }
+
+  hr {
+    width: 80%;
+    max-width: rem(605);
+    border: none;
+    border-bottom: $color-3 solid 3px;
+    border-radius: 2px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .community-data {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    @media screen and (min-width: $screen-m) {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+
+    & > div {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media screen and (min-width: $screen-m) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .text-legend {
+    text-transform: uppercase;
+  }
+
+}

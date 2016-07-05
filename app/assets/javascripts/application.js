@@ -14,11 +14,18 @@
 //= require jquery_ujs
 //= require sortable
 //= require jquery-ui/sortable
-//= require turbolinks
+// require turbolinks
 //= require tether
 //= require bootstrap-sprockets
+//= require react
+//= require react_ujs
+//= require jquery.slick
 //= require_tree .
+//= require main
 
 $(document).ready(function(){
     $('*[data-role=activerecord_sortable]').activerecord_sortable();
 });
+
+
+

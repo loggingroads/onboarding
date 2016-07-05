@@ -1,0 +1,17 @@
+
+/* Fonts includer */
+@mixin font-face($font-family, $font-file, $weight, $style: "normal") {
+  @font-face {
+    font-family: $font-family;
+    src: url(asset-path($font-file + '.ttf')) format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include font-face("TradeGothicLTCom-Bold", 'TradeGothicLTCom-Bold', 700);
+@include font-face("TradeGothicLTCom", 'TradeGothicLTCom', 400);
+@include font-face("SourceSansPro-Bold", 'SourceSansPro-Bold', 700);
+@include font-face("SourceSansPro-Semibold", 'SourceSansPro-Semibold', 600);
+@include font-face("SourceSansPro-Regular", 'SourceSansPro-Regular', 400);
+@include font-face("SourceSansPro-Light", 'SourceSansPro-Light', 200);

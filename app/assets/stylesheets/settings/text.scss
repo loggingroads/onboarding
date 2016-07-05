@@ -1,0 +1,120 @@
+@import'./settings.scss';
+
+.text {
+  margin: 0;
+
+  &.-primary {
+    color: $font-color-1;
+  }
+
+  &.-light {
+    color: $font-color-2;
+  }
+
+  &.-darker {
+    color: $font-color-3;
+  }
+
+  &.-dark {
+    color: $font-color-4;
+  }
+}
+
+/* MODULE TITLE */
+.text-module-title {
+  font-family: $font-family-5;
+  font-size: 53px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 63px;
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    font-size: 73px;
+  }
+}
+
+.text-module-subtitle {
+  font-family: $font-family-6;
+  font-size: 28px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 37px;
+  }
+}
+
+.text-p-title {
+  font-family: $font-family-5;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 26px;
+  }
+}
+
+.text-claim {
+  font-family: $font-family-4;
+  font-size: 20px;
+  line-height: 25px;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+.text-p {
+  font-family: $font-family-4;
+  font-size: 20px;
+  line-height: 25px;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+.text-legend {
+  font-family: $font-family-3;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.text-menu {
+  font-family: $font-family-5;
+  font-size: 13px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-s) {
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 20px;
+  }
+}
+
+.text-button {
+  font-family: $font-family-2;
+  font-size: 15px;
+  line-height: 37px;
+  text-transform: uppercase;
+}
+
+.text-numeric-m {
+  font-family: $font-family-5;
+  line-height: 35px;
+  font-size: 25px;
+
+  @media screen and (min-width: $screen-s) {
+    font-size: 35px;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 41px;
+    line-height: 41px;
+  }
+}

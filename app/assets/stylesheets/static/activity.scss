@@ -1,0 +1,101 @@
+@import'../settings/settings.scss';
+
+.l-activity {
+  background-color: $color-3;
+
+  .wrap-full {
+
+    @media screen and (min-width: $screen-m) {
+     padding-top: 80px;
+     padding-bottom: 80px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+     padding-top: 130px;
+     padding-bottom: 130px;
+    }
+  }
+
+  .text-module-title {
+    margin-bottom: 70px;
+  }
+
+  .text-module-subtitle {
+    margin-bottom: -14px;
+  }
+
+  .activity-data {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    @media screen and (min-width: $screen-m) {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  .text-p-title {
+    margin-bottom: 30px;
+  }
+
+  .activity-table {
+    width: 480px;
+    margin-bottom: 75px;
+    border-collapse: collapse;
+
+    @media screen and (min-width: $screen-m) {
+      width: 290px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      width: 380px;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      width: 480px;
+    }
+
+    tr {
+      border-top: 1px solid $color-2;
+      height: 45px;
+
+      &:last-child {
+        border-bottom: 1px solid $color-2;
+      }
+    }
+  }
+
+  .rank {
+    width: 45px;
+  }
+
+  .road {
+    text-align: right;
+  }
+
+  .text-legend {
+    text-transform: uppercase;
+  }
+
+  .latest-activity {
+    .road {
+      padding-right: 50px;
+    }
+  }
+
+  .more-info {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .bttn-secondary {
+    margin-bottom: 30px;
+  }
+
+  .text-menu {
+    text-transform: none;
+  }
+}

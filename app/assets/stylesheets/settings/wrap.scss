@@ -1,0 +1,59 @@
+@import'./settings.scss';
+
+.wrap-center {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px 15px 30px;
+
+  @media screen and (min-width: $screen-s) {
+    padding: 45px 40px 40px;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    padding: 95px 138px 90px;
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    padding: 95px 205px 90px;
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    padding: 95px 290px 90px;
+  }
+}
+
+.wrap {
+  display: flex;
+  padding: 35px 15px 30px;
+
+  @media screen and (min-width: $screen-m) {
+    padding: 95px 75px 90px 45px;
+  }
+}
+
+.wrap-full {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 35px 15px 30px;
+
+  @media screen and (min-width: $screen-s) {
+    padding: 35px 40px 30px;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    padding: 95px 90px 90px;
+  }
+
+  @media screen and (min-width: $screen-l) {
+    padding: 95px 138px 90px;
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    padding: 95px 170px 90px;
+  }
+}

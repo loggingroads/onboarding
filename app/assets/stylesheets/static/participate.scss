@@ -1,0 +1,59 @@
+@import'../settings/settings.scss';
+
+.l-participate {
+  background-color: $color-1;
+
+  .text-module-title {
+    margin-bottom: 30px;
+    line-height: 58px;
+  }
+
+  .text-module-subtitle {
+    margin-bottom: -8px;
+  }
+
+  .text-p-title {
+    margin-bottom: 19px;
+  }
+
+  .participate-content {
+    display: flex;
+    flex-flow: column;
+
+    @media screen and (min-width: $screen-m) {
+      flex-flow: row;
+    }
+  }
+
+  .image-item {
+    width: 230px;
+    height: 110px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-l) {
+      width: 380px;
+      height: 210px;
+      margin-bottom: 27px;
+    }
+  }
+
+  .participate-item {
+    display: flex;
+    flex-flow: column;
+
+    &:first-child {
+      margin-right: 80px;
+      margin-bottom: 50px;
+
+      @media screen and (min-width: $screen-m) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .text-button {
+    text-transform: none;
+  }
+
+
+}
