@@ -5,7 +5,13 @@
   align-items: center;
   justify-content: flex-end;
 
+  ul {
+    margin: 0 !important;
+  }
+
   .main-menu {
+    display: flex;
+    justify-content: flex-end;
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -46,12 +52,20 @@
       }
 
       @media screen and (min-width: $screen-m) {
-        margin-right: 80px;
+        margin-right: 20px;
+      }
+
+      &.-out {
+        @media screen and (min-width: $screen-m) {
+          margin-right: 80px;
+        }
       }
     }
   }
 
   .login {
+    display: flex;
+    justify-content: center;
     width: 22%;
     height: 100%;
     padding-top: 20px;

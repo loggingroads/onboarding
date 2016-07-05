@@ -13,11 +13,15 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
+li {
+  list-style: none;
+}
+
 html {
   overflow-x: hidden;
 }
 
-a {
+a, li {
 	/* To avoid library default styles */
   text-decoration: none !important;
 }
