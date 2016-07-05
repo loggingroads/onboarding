@@ -1,0 +1,29 @@
+
+* {
+  box-sizing: border-box;
+}
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+	/* To avoid library default styles */
+  text-decoration: none !important;
+  color: black !important;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
