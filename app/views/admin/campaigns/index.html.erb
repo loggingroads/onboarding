@@ -45,8 +45,7 @@
       <li class="text text-desc -dark left-arrow">
         <%= link_to '<', admin_campaigns_path(page: @page > 1 ? @page-1 : @page) %>
       </li>
-      <% num = @total_num_pages > @max_num_pages ? @page + (@max_num_pages / 2.0).floor : @total_num_pages %>
-      <% for i in (@page - (@max_num_pages / 2.0).floor)..num %>
+      <% for i in @min..@max %>
         <li class="<%= @page == i ? 'is-active' : '' %> text text-desc -dark page" data-page="<%= i %>">
           <%= link_to i, admin_campaigns_path(page: i) %>
         </li>
@@ -55,7 +54,6 @@
         <%= link_to '>', admin_campaigns_path(page: @page < @total_num_pages ? @page+1 : @page) %>
       </li>
     </ul>
-
     <br>
     <!-- <%= link_to 'New Campaign', new_admin_campaign_path, class: 'bttn bttn-primary' %> -->
   </article>

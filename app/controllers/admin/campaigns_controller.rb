@@ -17,7 +17,13 @@ class Admin::CampaignsController < AdminController
       @page = params[:page] ? params[:page].to_i : 1
       @all_campaigns = Campaign.ordered_by_position_asc
       @total_num_pages = (@all_campaigns.length / CAMPAIGNS_PER_PAGE.to_f).ceil
+
       @campaigns = @all_campaigns.limit(CAMPAIGNS_PER_PAGE).offset((@page-1) * CAMPAIGNS_PER_PAGE)
+
+      @max = @total_num_pages > @max_num_pages ?
+        @page + (@max_num_pages / 2.0).floor - (@max_num_pages%2 == 0 && @page > (@max_num_pages/2).floor ? 1 : 0) :
+        @total_num_pages
+      @min = (@page - (@max_num_pages / 2.0).floor) > 0 ? (@page - (@max_num_pages / 2.0).floor) : 1
     end
 
   # GET /campaigns/1
