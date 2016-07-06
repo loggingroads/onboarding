@@ -1,13 +1,13 @@
-<tr data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
+<tr class="wrap-back text text-desc -dark" data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
   <td>
     <svg class="icon icon-Row-Dragger">
       <use xlink:href="#icon-Row-Dragger"></use>
     </svg>
   </td>
   <td><%= campaign.start_date %></td>
-  <td><%= campaign.name %></td>
+  <td class="campaign-name"><%= link_to campaign.name, admin_campaign_path(campaign) %></td>
   <td><%= campaign.htag %></td>
-  <td class="actions"><%= link_to 'Show', admin_campaign_path(campaign) %></td>
+  <!-- <td class="actions"><%= link_to 'Show', admin_campaign_path(campaign) %></td>
   <td class="actions"><%= link_to 'Edit', edit_admin_campaign_path(campaign) %></td>
-  <td class="actions"><%= link_to 'Destroy', admin_campaign_path(campaign), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+  <td class="actions"><%= link_to 'Destroy', admin_campaign_path(campaign), method: :delete, data: {confirm: 'Are you sure?'} %></td> -->
 </tr>
