@@ -43,21 +43,20 @@
 
     <ul class="p-pagination">
       <li class="text text-desc -dark left-arrow">
-        <%= link_to '<', admin_campaigns_path(page: @page+1 > 1 ? @page : @page+1) %>
+        <%= link_to '<', admin_campaigns_path(page: @page > 1 ? @page-1 : @page) %>
       </li>
-      <% num = @total_num_pages > @max_num_pages ? @total_num_pages * 2 : @total_num_pages %>
-      <% for i in 1..num %>
-        <li class="<%= @page+1 == i ? 'is-active' : '' %> text text-desc -dark page" data-page="<%= i %>">
+      <% num = @total_num_pages > @max_num_pages ? @page + (@max_num_pages / 2.0).floor : @total_num_pages %>
+      <% for i in (@page - (@max_num_pages / 2.0).floor)..num %>
+        <li class="<%= @page == i ? 'is-active' : '' %> text text-desc -dark page" data-page="<%= i %>">
           <%= link_to i, admin_campaigns_path(page: i) %>
         </li>
       <% end %>
       <li class="text text-desc -dark right-arrow">
-        <%= link_to '>', admin_campaigns_path(page: (@page+1)%@campaigns_per_page != 0 ? @page+2 : @page+1) %>
+        <%= link_to '>', admin_campaigns_path(page: @page < @total_num_pages ? @page+1 : @page) %>
       </li>
     </ul>
 
     <br>
-
     <!-- <%= link_to 'New Campaign', new_admin_campaign_path, class: 'bttn bttn-primary' %> -->
   </article>
 </section>
