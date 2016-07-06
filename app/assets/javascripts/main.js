@@ -44,40 +44,43 @@ const store = createStore(
  */
 const history = syncHistoryWithStore(hashHistory, store);
 
-$('#parallax').ready( function() {
-  ReactDOM.render(
-    <Provider store={store}>
-      <CommunityDataContainer data="total-roads" />
-    </Provider>,
-    document.getElementById('total-roads')
-  );
+if($('#parallax').length !== 0) {
+  $('#parallax').ready( function() {
+    ReactDOM.render(
+      <Provider store={store}>
+        <CommunityDataContainer data="total-roads" />
+      </Provider>,
+      document.getElementById('total-roads')
+    );
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <CommunityDataContainer data="total-tagged" />
-    </Provider>,
-    document.getElementById('total-tagged')
-  );
+    ReactDOM.render(
+      <Provider store={store}>
+        <CommunityDataContainer data="total-tagged" />
+      </Provider>,
+      document.getElementById('total-tagged')
+    );
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <CommunityDataContainer data="user-changes" />
-    </Provider>,
-    document.getElementById('user-changes')
-  );
+    ReactDOM.render(
+      <Provider store={store}>
+        <CommunityDataContainer data="user-changes" />
+      </Provider>,
+      document.getElementById('user-changes')
+    );
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <UsersActivityDataContainer data="ranking" />
-    </Provider>,
-    document.getElementById('ranking')
-  );
+    ReactDOM.render(
+      <Provider store={store}>
+        <UsersActivityDataContainer data="ranking" />
+      </Provider>,
+      document.getElementById('ranking')
+    );
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <UsersActivityDataContainer data="latest-activity" />
-    </Provider>,
-    document.getElementById('latest-activity')
-  );
-});
+    ReactDOM.render(
+      <Provider store={store}>
+        <UsersActivityDataContainer data="latest-activity" />
+      </Provider>,
+      document.getElementById('latest-activity')
+    );
+  });
+
+}
 

@@ -1,5 +1,19 @@
 //= require main
 
+if($('#parallax').length !== 0) {
+  $(document).ready(setSlider);
+  $(document).on('page:change', function () {
+    setSlider();
+  });
+
+
+  /* Sets dots to turn on when in section */
+  $(document).ready(setDotOn);
+  $(window).scroll(function() {
+    setDotOn();
+  });
+}
+
 function setSlider() {
   $('.slider-container').ready( function() {
     $('.slider-container').slick({
@@ -11,18 +25,8 @@ function setSlider() {
   });
 }
 
-$(document).ready(setSlider);
-$(document).on('page:change', function () {
-  setSlider();
-});
 
-
-/* Sets dots to turn one when in section */
-$(document).ready(setDotOn);
-$(window).scroll(function() {
-  setDotOn();
-});
-
+/* Set dots element */
 function setDotOn() {
   let positions = getSectionsPositions();
   const windowTop = $(window).scrollTop();
