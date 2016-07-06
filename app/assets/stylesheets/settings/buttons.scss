@@ -28,6 +28,11 @@
 .bttn-primary {
   background-color: $color-1;
   color: $font-color-2;
+
+  &:hover {
+   background-color: $color-1;
+   color: $color-3;
+  }
 }
 
 .bttn-secondary {
@@ -36,6 +41,10 @@
 
   @media screen and (min-width: $screen-m) {
     padding: 25px 53px;
+  }
+
+  &:hover {
+   opacity: .3;
   }
 }
 

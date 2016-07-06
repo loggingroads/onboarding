@@ -1,3 +1,4 @@
+@import'../settings/settings.scss';
 
 .container-fluid {
 	.navbar.bg-primary {
@@ -12,25 +13,13 @@
 		}
 	}
 
-	.btn-primary {
+	.bttn-primary {
+    padding: 15px 40px;
 		border: 1px solid #ff5d33;
-		border-radius: 0;
-		background-color: #ff5d33;
-		color: #fff !important;
-
-		&:hover {
-			border: 1px solid #ff5d33;
-			background-color: #ff5d33;
-			color: #151515 !important;
-		}
 	}
 
-	.btn-secondary {
-		border-radius: 0;
-
-		&:hover {
-			background-color: #fff !important;
-			color: #ff5d33 !important;
-		}
+	.bttn-secondary {
+    padding: 15px 40px;
+    border: 1px solid $color-3;
 	}
 }

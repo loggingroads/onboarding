@@ -1,3 +1,4 @@
+@import'../settings/settings.scss';
 
 .table {
 	border: 0;
@@ -24,9 +25,13 @@
 			border: 0 !important;
 		}
 
-		a:hover {
-			opacity: .5;
-		}
+    a {
+      color: $color-3;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
 	}
 
 	.actions {
