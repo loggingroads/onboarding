@@ -1,11 +1,24 @@
 class Admin::CampaignsController < AdminController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  CAMPAIGNS_PER_PAGE = 2
+  MAX_NUM_PAGES = 2
 
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.ordered_by_position_asc
+    # @campaigns = Campaign.ordered_by_position_asc
+    set_pages()
   end
+
+  private
+    def set_pages
+      @max_num_pages = MAX_NUM_PAGES
+      @campaigns_per_page = CAMPAIGNS_PER_PAGE
+      @page = params[:page] ? params[:page].to_i-1 : 0
+      all_campaigns = Campaign.ordered_by_position_asc
+      @total_num_pages = all_campaigns.length / CAMPAIGNS_PER_PAGE
+      @campaigns = all_campaigns.limit(CAMPAIGNS_PER_PAGE).offset(@page * CAMPAIGNS_PER_PAGE)
+    end
 
   # GET /campaigns/1
   # GET /campaigns/1.json

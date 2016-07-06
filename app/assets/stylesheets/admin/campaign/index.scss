@@ -83,6 +83,10 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+
+        & a {
+            color: $color-3;
+        }
       }
 
       .page {
@@ -90,10 +94,14 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
+        color: $color-3;
 
         &:hover {
           background-color: $color-1;
-          color: $color-2;
+
+          & a {
+            color: $color-2;
+          }
         }
       }
 
@@ -105,9 +113,12 @@
         margin-right: 0;
       }
 
-      is-active {
+      .is-active {
         background-color: $color-1;
-        color: $color-2;
+
+        & a {
+          color: $color-2;
+        }
       }
     }
 
