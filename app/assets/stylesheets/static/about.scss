@@ -1,0 +1,27 @@
+@import'../settings/settings.scss';
+
+.l-about {
+  .wrap-center {
+    @media screen and (min-width: $screen-m) {
+      padding-top: 125px;
+      padding-bottom: 125px;
+    }
+  }
+
+  .text-module-title {
+    margin-bottom: -12px;
+
+    @media screen and (min-width: $screen-m) {
+      margin-bottom: -14px;
+    }
+  }
+
+  .text-module-subtitle {
+    margin-bottom: 25px;
+  }
+
+  .text-claim {
+    margin-bottom: 60px;
+    opacity: 0.7;
+  }
+}

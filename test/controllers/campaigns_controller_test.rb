@@ -17,7 +17,7 @@ class CampaignsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create campaign" do
     assert_difference('Campaign.count') do
-      post campaigns_url, params: { campaign: { background_image: @campaign.background_image, description: @campaign.description, htag: @campaign.htag, name: @campaign.name, order_sequence: @campaign.order_sequence, status: @campaign.status, url: @campaign.url } }
+      post campaigns_url, params: { campaign: { background_image: @campaign.background_image, description: @campaign.description, htag: @campaign.htag, name: @campaign.name, status: @campaign.status, url: @campaign.url } }
     end
 
     assert_redirected_to campaign_path(Campaign.last)
@@ -34,7 +34,7 @@ class CampaignsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update campaign" do
-    patch campaign_url(@campaign), params: { campaign: { background_image: @campaign.background_image, description: @campaign.description, htag: @campaign.htag, name: @campaign.name, order_sequence: @campaign.order_sequence, status: @campaign.status, url: @campaign.url } }
+    patch campaign_url(@campaign), params: { campaign: { background_image: @campaign.background_image, description: @campaign.description, htag: @campaign.htag, name: @campaign.name, status: @campaign.status, url: @campaign.url } }
     assert_redirected_to campaign_path(@campaign)
   end
 

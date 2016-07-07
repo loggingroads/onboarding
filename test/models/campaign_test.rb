@@ -10,7 +10,6 @@
 #  background_image              :string
 #  url                           :string
 #  status                        :integer
-#  order_sequence                :string
 #  start_date                    :date
 #  created_at                    :datetime         not null
 #  updated_at                    :datetime         not null
@@ -18,6 +17,7 @@
 #  background_image_content_type :string
 #  background_image_file_size    :integer
 #  background_image_updated_at   :datetime
+#  position                      :integer          not null
 #
 
 require 'test_helper'

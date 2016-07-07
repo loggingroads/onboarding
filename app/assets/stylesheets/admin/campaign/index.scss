@@ -1,0 +1,128 @@
+@import'../../settings/settings.scss';
+
+.campaign-main {
+
+  .campaign-intro {
+    background-color: #41563c;
+    height: 500px;
+
+    .wrap-back {
+      padding-top: 27px;
+      padding-bottom: 27px;
+    }
+
+    .text-module-subtitle {
+      margin-bottom: 12px;
+    }
+
+    .tags-list {
+      display: flex;
+      margin-bottom: 15px;
+
+      .tag {
+        background-color: $color-1;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-right: 10px;
+      }
+    }
+
+    .text-desc {
+      width: 45%;
+    }
+  }
+
+  .campaigns {
+    padding-top: 40px;
+    padding-bottom: 70px;
+
+    .wrap-back {
+      padding-right: 110px;
+      padding-left: 110px;
+    }
+
+    .input-group {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+
+    .search {
+      width: 100%;
+      border-radius: 0;
+
+    }
+
+    .table {
+      margin-bottom: 50px;
+
+      th {
+        text-transform: capitalize;
+      }
+
+      td:first-child {
+        padding-left: 110px;
+        width: 10px;
+      }
+
+      td:last-child {
+        padding-right: 110px;
+      }
+
+      .campaign-name {
+        font-weight: 700;
+      }
+    }
+
+    .p-pagination {
+      display: flex;
+      justify-content: center;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        & a {
+            color: $color-3;
+        }
+      }
+
+      .page {
+        margin-right: 50px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: $color-3;
+
+        &:hover {
+          background-color: $color-1;
+
+          & a {
+            color: $color-2;
+          }
+        }
+      }
+
+      .left-arrow {
+        margin-right: 50px;
+      }
+
+      .right-arrow {
+        margin-right: 0;
+      }
+
+      .is-active {
+        background-color: $color-1;
+
+        & a {
+          color: $color-2;
+        }
+      }
+    }
+
+  }
+
+
+}
