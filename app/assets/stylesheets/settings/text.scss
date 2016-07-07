@@ -121,6 +121,14 @@
   }
 }
 
+.text-foot {
+  font-size: 15px;
+
+  @media screen and (min-width: $screen-m) {
+    font-size: 18px;
+  }
+}
+
 .text-button {
   font-family: $font-family-2;
   font-size: 15px;
