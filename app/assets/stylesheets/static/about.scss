@@ -9,7 +9,11 @@
   }
 
   .text-module-title {
-    margin-bottom: -16px;
+    margin-bottom: -12px;
+
+    @media screen and (min-width: $screen-m) {
+      margin-bottom: -14px;
+    }
   }
 
   .text-module-subtitle {

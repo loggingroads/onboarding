@@ -17,11 +17,19 @@
   }
 
   .text-module-title {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $screen-m) {
+     margin-bottom: 70px;
+    }
   }
 
   .text-module-subtitle {
-    margin-bottom: -14px;
+    margin-bottom: -10px;
+
+    @media screen and (min-width: $screen-m) {
+     margin-bottom: -13px;
+    }
   }
 
   .activity-data {
@@ -40,7 +48,7 @@
   }
 
   .activity-table {
-    width: 480px;
+    width: 100%;
     margin-bottom: 75px;
     border-collapse: collapse;
 

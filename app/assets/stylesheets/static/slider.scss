@@ -25,7 +25,11 @@
   }
 
   .text-module-subtitle {
-    margin-bottom: -16px;
+    margin-bottom: -13px;
+
+    @media screen and (min-width: $screen-m) {
+      margin-bottom: -16px;
+    }
   }
 
   .text-p-title {

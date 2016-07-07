@@ -14,7 +14,7 @@ class UsersActivityData extends React.Component {
 
     return (
       <div className="users-activity-element">
-        <h3 className="text text-p-title -primary">{title}</h3>
+        <h3 className="text text-p-title -light">{title}</h3>
         <table className="activity-table">
           <tbody>
           { users.map( (user, i) => {
