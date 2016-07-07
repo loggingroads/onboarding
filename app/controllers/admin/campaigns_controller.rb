@@ -1,7 +1,7 @@
 class Admin::CampaignsController < AdminController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
-  CAMPAIGNS_PER_PAGE = 1
-  MAX_NUM_PAGES = 1
+  CAMPAIGNS_PER_PAGE = 4
+  MAX_NUM_PAGES = 5
 
   # GET /campaigns
   # GET /campaigns.json
