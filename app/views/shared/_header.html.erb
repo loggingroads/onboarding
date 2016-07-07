@@ -4,7 +4,7 @@
   </button>
   <div id="exCollapsingNavbar2">
   <div class="l-header">
-    <div class="h-logo"><%= link_to Onboarding::Application.config.site_name, root_url, class: ''%></div>
+    <div class="h-logo"><%= link_to Onboarding::Application.config.site_name, root_url, class: 'text text-legend -light'%></div>
     <% if user_signed_in? %>
         <ul class="nav navbar-nav main-menu">
           <li class="nav-item"><%= link_to 'Campaigns', admin_campaigns_path, {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
