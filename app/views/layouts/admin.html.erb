@@ -4,8 +4,8 @@
   <title>Onboarding</title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -21,11 +21,14 @@
     </symbol>
     </defs>
   </svg>
+
   <%= render 'shared/header' %>
+
   <div class="container-fluid">
     <%= render 'shared/messages' %>
     <%= yield %>
   </div>
+
   <%= render 'shared/footer' %>
 </body>
 </html>
