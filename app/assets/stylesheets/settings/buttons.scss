@@ -1,6 +1,6 @@
 @import'./settings.scss';
 
-.btn {
+.bttn {
   padding: 17px 55px 14px 55px;
   display: inline-block;
   text-decoration: none;
@@ -25,20 +25,25 @@
 }
 
 /* The orange one */
-.btn-primary {
+.bttn-primary {
   background-color: $color-1;
   color: $font-color-2;
+
+  &:hover {
+   background-color: $color-1;
+   color: $color-3;
+  }
 }
 
-.btn-secondary {
+.bttn-secondary {
   background-color: $color-2;
   color: $font-color-3;
 
   @media screen and (min-width: $screen-m) {
     padding: 25px 53px;
   }
+
+  &:hover {
+   opacity: .3;
+  }
 }
-
-
-
-
