@@ -1,0 +1,44 @@
+@import'../../../../settings/settings.scss';
+
+.campaign-main {
+  .campaigns {
+    padding-top: 40px;
+    padding-bottom: 70px;
+
+    .wrap-back {
+      padding-right: 110px;
+      padding-left: 110px;
+    }
+
+    .input-group {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .search {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+
+  .table {
+    margin-bottom: 50px;
+
+    th {
+      text-transform: capitalize;
+    }
+
+    td:first-child {
+      padding-left: 110px;
+      width: 10px;
+    }
+
+    td:last-child {
+      padding-right: 110px;
+    }
+
+    .campaign-name {
+      font-weight: 700;
+    }
+  }
+}
