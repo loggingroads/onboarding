@@ -59,6 +59,11 @@
 }
 
 .wrap-back {
-  padding-left: 110px;
-  padding-right: 110px;
+  padding-left: 35px;
+  padding-right: 35px;
+
+  @media screen and (min-width: $screen-m) {
+    padding-left: 110px;
+    padding-right: 110px;
+  }
 }
