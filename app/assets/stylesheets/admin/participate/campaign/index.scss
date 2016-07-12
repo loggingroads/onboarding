@@ -1,14 +1,9 @@
-@import'../../../../settings/settings.scss';
+@import'../../../settings/settings.scss';
 
 .campaign-main {
   .campaigns {
     padding-top: 40px;
     padding-bottom: 70px;
-
-    .wrap-back {
-      padding-right: 110px;
-      padding-left: 110px;
-    }
 
     .input-group {
       width: 100%;
@@ -24,21 +19,31 @@
   .table {
     margin-bottom: 50px;
 
-    th {
+    .text-menu {
       text-transform: capitalize;
     }
 
     td:first-child {
-      padding-left: 110px;
+      padding-left: 35px;
+      padding-right: 0;
       width: 10px;
+
+      @media screen and (min-width: $screen-m) {
+        padding-left: 110px;
+        padding-right: 12px;
+      }
     }
 
     td:last-child {
-      padding-right: 110px;
+      padding-right: 35px;
+
+      @media screen and (min-width: $screen-m) {
+        padding-left: 110px;
+      }
     }
 
     .campaign-name {
-      font-weight: 700;
+      font-family: $font-family-1;
     }
   }
 }

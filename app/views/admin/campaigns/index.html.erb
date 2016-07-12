@@ -1,9 +1,9 @@
 <section class="campaign-main">
   <article class="campaign-intro">
     <nav class="routes wrap-back">
-      <ul class="text text-legend -light navigator">
-        <li><%= link_to 'Participate', {class: current_class('admin/campaigns') + ''} %></li>
-        <li><%= link_to 'Campaign', {class: current_class('admin/campaigns') + ''} %></li>
+      <ul class="text text-desc -light navigator">
+        <li class="route"><%= link_to 'Participate', 'admin/', { :class => current_class('admin/participate') + 'route-link'} %></li>
+        <li class="route"><%= link_to 'Campaign', 'admin/campaigns', {:class => current_class('admin/campaigns') + 'route-link'} %></li>
       </ul>
     </nav>
     <article class="wrap-back">
@@ -29,9 +29,9 @@
       <thead>
       <tr>
         <th></th>
-        <th>Start date</th>
-        <th>Campaign Name</th>
-        <th>Tags</th>
+        <th class="text text-menu -dark">Start date</th>
+        <th class="text text-menu -dark">Campaign Name</th>
+        <th class="text text-menu -dark">Tags</th>
       </tr>
       </thead>
 

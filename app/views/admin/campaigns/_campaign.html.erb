@@ -4,7 +4,7 @@
       <use xlink:href="#icon-Row-Dragger"></use>
     </svg>
   </td>
-  <td><%= campaign.start_date %></td>
-  <td class="campaign-name"><%= link_to campaign.name, admin_campaign_path(campaign) %></td>
-  <td><%= campaign.htag %></td>
+  <td class="text text-desc -dark"><%= campaign.start_date %></td>
+  <td class="campaign-name text text-desc -dark"><%= link_to campaign.name, admin_campaign_path(campaign) %></td>
+  <td class="text text-desc -dark"><%= campaign.htag %></td>
 </tr>
