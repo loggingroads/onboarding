@@ -3,7 +3,7 @@
 /**
  *  Template:
  *
- *    <nav class="routes wrap-back">
+ *    <nav class="routes wrap-full">
  *      <ul class="text text-legend -light navigator">
  *        <li class="route"><%= link_to '{ title }', '{ path }', { :class => current_class('{ path }') + 'route-link'} %></li>
  *        <li class="route"><%= link_to '{ title }', '{ path }', { :class => current_class('{ path }') + 'route-link'} %></li>
@@ -20,7 +20,7 @@
   background-color: $color-3;
   opacity: .5;
 
-  &.wrap-back {
+  &.wrap-full {
     padding-top: 10px;
     padding-bottom: 10px;
   }

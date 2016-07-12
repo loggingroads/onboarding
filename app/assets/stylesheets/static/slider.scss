@@ -18,6 +18,10 @@
     @media screen and (min-width: $screen-l) {
       padding-bottom: 180px;
     }
+
+    @media screen and (min-width: $screen-xl) {
+      padding-bottom: 90px;
+    }
   }
 
   .text-module-title {

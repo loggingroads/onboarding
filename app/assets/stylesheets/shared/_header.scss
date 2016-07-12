@@ -1,120 +1,100 @@
 @import'../settings/settings.scss';
 
 .l-header {
-  display: flex !important;
-  align-items: center;
-  justify-content: flex-end;
-  height: 65px;
+  width: 100%;
+  min-height: 80px;
+  background-color: $color-3;
+}
 
-  @media screen and (min-width: $screen-m) {
-    height: 90px;
-  }
+#exCollapsingNavbar2 {
+  width: 100%;
+  height: 80px;
+}
 
-  ul {
-    margin: 0 !important;
-  }
-
-  .h-logo {
-    padding: 10px 20px;
-    background-color: $color-3;
-    height: 100%;
-    width: 20%;
-
-    @media screen and (min-width: $screen-m) {
-      padding: 20px 40px;
-    }
-
-    a {
-      font-size: 12px;
-      line-height: 12px;
-      color: $color-2;
-
-      @media screen and (min-width: $screen-m) {
-        font-size: 15px;
-      }
-    }
-  }
-
-  li {
+  .header-content {
     display: flex;
     align-items: center;
-  }
-
-  .navbar-nav .nav-item + .nav-item {
-    margin-left: 0 !important;
-  }
-
-  .main-menu {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    justify-content: space-between;
     height: 100%;
-    width: 65%;
-    text-align: right;
-    background-color: $color-3;
 
-    @media screen and (min-width: $screen-m) {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      width: 70%;
+    ul {
+      margin: 0;
     }
 
-    /* Skew one side of the element */
-    &:before {
-      content: " ";
-      position: absolute;
-      display: block;
-      width: 100%;
+    .h-logo {
+      display: flex;
+      align-items: center;
+      width: 60px;
       height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      background: $color-3;
-
-      transform-origin: bottom left;
-      -ms-transform: skew(-20deg, 0deg);
-      -webkit-transform: skew(-20deg, 0deg);
-      transform: skew(-20deg, 0deg);
-    }
-
-    .text-menu {
-      margin-right: 10px;
-
-      @media screen and (min-width: $screen-s) {
-        margin-right: 15px;
-      }
 
       @media screen and (min-width: $screen-m) {
-        margin-right: 40px;
+        width: 125px;
       }
 
-      &.-out {
+      .logo {
+        width: 100%;
+        height: 30px;
+
         @media screen and (min-width: $screen-m) {
-          margin-right: 80px;
+          height: 55px;
+        }
+
+        a {
+          font-size: 12px;
+          line-height: 12px;
+          color: $color-2;
+
+          @media screen and (min-width: $screen-m) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav .nav-item + .nav-item {
+      margin-left: 0;
+    }
+
+    .main-menu {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      height: 100%;
+      text-align: right;
+
+      .nav-item {
+        margin-right: 10px;
+
+        @media screen and (min-width: $screen-s) {
+          margin-right: 15px;
+        }
+
+        @media screen and (min-width: $screen-m) {
+          margin-right: 40px;
+        }
+
+        &.nav-item:last-child {
+          margin-right: 0;
+        }
+
+        .active {
+          &.text-menu {
+            border-top: 8px solid $color-3;
+            border-bottom: 8px solid $color-2;
+          }
+        }
+
+        & .text-menu {
+          padding-bottom: 18px;
         }
       }
     }
   }
 
-  .login {
-    display: flex;
-    justify-content: center;
-    width: 21%;
-    height: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 15px;
-    text-align: center;
-    background-color: $color-3;
-    opacity: .8;
 
-    @media screen and (min-width: $screen-m) {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      padding-left: 10px;
-      width: 15%;
-    }
-  }
-}
