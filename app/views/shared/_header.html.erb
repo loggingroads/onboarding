@@ -1,8 +1,11 @@
-<nav class="l-header wrap-full">
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+<nav class="menu-toggle wrap-full">
+  <a href="<%= root_url %>" class="h-logo"><img src="" class="logo"></a>
+  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
-  <div id="exCollapsingNavbar2">
+</nav>
+<nav class="l-header wrap-full collapse" id="exCollapsingNavbar2">
+  <div class="header-container">
     <div class="header-content">
       <a href="<%= root_url %>" class="h-logo"><img src="" class="logo"></a>
       <ul class="nav navbar-nav main-menu">
@@ -14,3 +17,4 @@
     </div>
   </div>
 </nav>
+
