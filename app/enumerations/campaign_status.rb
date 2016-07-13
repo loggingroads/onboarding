@@ -1,7 +1,8 @@
 class CampaignStatus < EnumerateIt::Base
   associate_values(
-      archived: [1, 'Archived'],
-      draft: [2, 'Draft'],
-      something_else_entirely: [3, 'Something else entirely']
+      draft: [1, 'Draft'],
+      live: [2, 'Live'],
+      finished: [3, 'Finished'],
+      archived: [4, 'Archived']
   )
 end
