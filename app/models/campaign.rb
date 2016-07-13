@@ -22,6 +22,7 @@
 
 class Campaign < ApplicationRecord
   belongs_to :user
+  has_many :events
   has_and_belongs_to_many :tasks
   has_enumeration_for :status, with: CampaignStatus
   acts_as_sortable

@@ -62,13 +62,13 @@ class Admin::TasksController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @task = Task.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_task
+    @task = Task.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def task_params
-      params.require(:task).permit(:name, :task_manager_url, :task_type, :description, :image, :status, :location, :campaign_ids)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def task_params
+    params.require(:task).permit(:name, :task_manager_url, :task_type, :description, :image, :status, :location, {campaign_ids: []}, {event_ids: []})
+  end
 end

@@ -20,6 +20,7 @@
 
 class Task < ApplicationRecord
   has_and_belongs_to_many :campaigns
+  has_and_belongs_to_many :events
   has_enumeration_for :status, with: TaskStatus
   has_enumeration_for :task_type, with: TaskTypes
 

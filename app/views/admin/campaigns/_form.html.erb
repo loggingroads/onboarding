@@ -68,7 +68,7 @@
     </fieldset>
 
     <fieldset class="form-group row">
-      <%= f.label :task_ids, class: 'col-sm-2 form-control-label' %>
+      <%= f.label :tasks, class: 'col-sm-2 form-control-label' %>
       <div class="col-sm-10">
         <%= f.collection_select :task_ids, Task.all, :id, :name, {}, {:class => 'form-control', :multiple => true} %>
       </div>

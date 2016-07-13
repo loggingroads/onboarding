@@ -67,13 +67,13 @@ class Admin::CampaignsController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_campaign
-      @campaign = Campaign.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_campaign
+    @campaign = Campaign.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def campaign_params
-      params.require(:campaign).permit(:name, :htag, :description, :background_image, :url, :status, :start_date, :user_id, :task_ids)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def campaign_params
+    params.require(:campaign).permit(:name, :htag, :description, :background_image, :url, :status, :start_date, :user_id, {task_ids: []})
+  end
 end
