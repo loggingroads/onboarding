@@ -1,0 +1,36 @@
+@import'../settings/settings.scss';
+
+.container-fluid {
+  padding: 0 !important;
+  min-height: 80vh;
+
+  .text-module-subtitle {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  .navbar.bg-primary {
+    background-color: #151515 !important;
+
+    & a {
+      color: #fff !important;
+
+      &:hover {
+        color: #ff5d33 !important;
+      }
+    }
+  }
+
+  .bttn-primary {
+    padding: 15px 40px;
+    border: 1px solid #ff5d33;
+  }
+
+  .bttn-secondary {
+    padding: 15px 40px;
+    border: 1px solid $color-3;
+  }
+}
+
+

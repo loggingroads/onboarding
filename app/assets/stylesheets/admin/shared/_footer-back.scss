@@ -1,0 +1,30 @@
+@import'../../settings/settings.scss';
+
+.l-footer-back {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background-color: $color-3;
+
+  .footer-menu {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+
+    .text-foot {
+      font-family: $font-family-1;
+      text-transform: uppercase;
+      margin-right: 40px;
+    }
+  }
+
+  .rights {
+    display: flex;
+    align-items: center;
+
+    .text-foot {
+      font-family: $font-family-4;
+    }
+  }
+}

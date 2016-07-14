@@ -4,6 +4,8 @@
   background-color: $color-3;
 
   .wrap-full {
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     @media screen and (min-width: $screen-m) {
      padding-top: 80px;

@@ -1,0 +1,37 @@
+@import'../../../../settings/settings.scss';
+
+.campaign-intro {
+    background-color: #41563c;
+    height: 500px;
+
+    .wrap-full {
+      padding-top: 27px;
+      padding-bottom: 27px;
+    }
+
+    .text-module-subtitle {
+      margin-bottom: 12px;
+    }
+
+    .tags-list {
+      display: flex;
+      margin-bottom: 15px;
+
+      .tag {
+        background-color: $color-1;
+        padding: 2px 6px;
+        border-radius: 20px;
+        margin-right: 10px;
+
+        @media screen and (min-width: $screen-m) {
+          padding: 5px 15px;
+          border-radius: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .text-desc {
+      width: 41.6%;
+    }
+  }
