@@ -62,13 +62,13 @@ class Admin::EventRequestsController < AdminController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event_request
-      @event_request = EventRequest.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event_request
+    @event_request = EventRequest.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_request_params
-      params.require(:event_request).permit(:name, :description, :location, :potential_date, :experience_level, :email)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_request_params
+    params.require(:event_request).permit(:name, :description, :location, :potential_date, :experience_level, :email)
+  end
 end

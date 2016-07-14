@@ -49,8 +49,14 @@
     </fieldset>
 
     <fieldset class="form-group row">
-      <%= f.label :campaign_ids, class: 'col-sm-2 form-control-label' %>
+      <%= f.label :campaign, class: 'col-sm-2 form-control-label' %>
       <div class="col-sm-10"><%= f.collection_select :campaign_ids, Campaign.all, :id, :name, {}, {:multiple => true, :class => 'form-control'} %>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group row">
+      <%= f.label :events, class: 'col-sm-2 form-control-label' %>
+      <div class="col-sm-10"><%= f.collection_select :event_ids, Task.all, :id, :name, {}, {:multiple => true, :class => 'form-control'} %>
       </div>
     </fieldset>
 
