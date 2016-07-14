@@ -11,14 +11,10 @@
     </tr>
   </thead>
 
-  <tbody data-role="activerecord_sortable">
+  <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td>
-          <svg class="icon icon-Row-Dragger">
-            <use xlink:href="#icon-Row-Dragger"></use>
-          </svg>
-        </td>
+        <td></td>
         <td><%= user.name %></td>
         <td><%= user.osm_id %></td>
         <td><%= user.email %></td>

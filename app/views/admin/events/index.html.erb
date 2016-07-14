@@ -17,14 +17,10 @@
     </tr>
   </thead>
 
-  <tbody data-role="activerecord_sortable">
+  <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td>
-          <svg class="icon icon-Row-Dragger">
-            <use xlink:href="#icon-Row-Dragger"></use>
-          </svg>
-        </td>
+        <td></td>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= image_tag event.image.url(:thumb) %></td>

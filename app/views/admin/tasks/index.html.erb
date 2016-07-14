@@ -15,14 +15,10 @@
     </tr>
   </thead>
 
-  <tbody data-role="activerecord_sortable">
+  <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td>
-          <svg class="icon icon-Row-Dragger">
-            <use xlink:href="#icon-Row-Dragger"></use>
-          </svg>
-        </td>
+        <td></td>
         <td><%= task.name %></td>
         <td><%= task.task_manager_url %></td>
         <td><%= task.task_type_humanize %></td>
