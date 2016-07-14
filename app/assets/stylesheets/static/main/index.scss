@@ -1,0 +1,42 @@
+@import'../../settings/settings.scss';
+
+.container-fluid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 80vh;
+
+  @media screen and ($screen-m) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .text-module-subtitle {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  .navbar.bg-primary {
+    background-color: #151515 !important;
+
+    & a {
+      color: #fff !important;
+
+      &:hover {
+        color: #ff5d33 !important;
+      }
+    }
+  }
+
+  .bttn-primary {
+    padding: 15px 40px;
+    border: 1px solid #ff5d33;
+  }
+
+  .bttn-secondary {
+    padding: 15px 40px;
+    border: 1px solid $color-3;
+  }
+}
+
+

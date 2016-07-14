@@ -35,7 +35,7 @@
       </tr>
       </thead>
 
-      <tbody data-role="activerecord_sortable">
+      <tbody>
         <% if @campaigns %>
           <% @campaigns.each do |campaign| %>
             <tr class="wrap-full text text-desc -dark" data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
