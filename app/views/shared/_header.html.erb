@@ -9,6 +9,7 @@
     <div class="header-content">
       <a href="<%= root_url %>" class="h-logo"><img src="" class="logo"></a>
 
+      <!-- Provisional condition -->
       <% if request.path.include?('admin') %>
         <ul class="nav navbar-nav main-menu">
           <li class="nav-item"><%= link_to 'Campaigns', admin_campaigns_path, {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
@@ -18,13 +19,11 @@
           <li class="nav-item"><%= link_to 'Users', admin_users_path, {class: current_class('admin/users') + 'nav-link text text-menu -light'} %></li>
           <% if user_signed_in? %>
             <li class="nav-item"><%= link_to 'Log out', destroy_user_session_path, {class: 'nav-link text text-menu -light', :method => :delete} %></li>
-          <% else %>
-            <li class="nav-item"><%= link_to 'Log in', user_session_path, {class: 'nav-link text text-menu -light', :method => :create} %></li>
           <% end %>
         </ul>
       <% else %>
         <ul class="nav navbar-nav main-menu">
-          <li class="nav-item"><%= link_to 'Participate', admin_campaigns_path, {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Participate', '/', {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
           <li class="nav-item"><%= link_to 'Impact', "/", {class: current_class('admin/event_requests') + 'nav-link text text-menu -light'} %></li>
           <li class="nav-item"><%= link_to 'Data Download', "/", {class: current_class('admin/events') + 'nav-link text text-menu -light'} %></li>
           <li class="nav-item"><%= link_to 'About', "/",  {class: current_class('admin/tasks') + 'nav-link text text-menu -light'} %></li>
