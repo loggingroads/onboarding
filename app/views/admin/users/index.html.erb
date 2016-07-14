@@ -3,6 +3,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Osm</th>
       <th>Email</th>
@@ -10,9 +11,14 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody data-role="activerecord_sortable">
     <% @users.each do |user| %>
       <tr>
+        <td>
+          <svg class="icon icon-Row-Dragger">
+            <use xlink:href="#icon-Row-Dragger"></use>
+          </svg>
+        </td>
         <td><%= user.name %></td>
         <td><%= user.osm_id %></td>
         <td><%= user.email %></td>
@@ -26,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New User', new_admin_user_path, class: 'btn btn-primary' %>
+<%= link_to 'New User', new_admin_user_path, class: 'bttn bttn-primary' %>

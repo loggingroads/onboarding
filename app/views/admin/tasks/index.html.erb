@@ -3,6 +3,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Task manager url</th>
       <th>Task type</th>
@@ -14,9 +15,14 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody data-role="activerecord_sortable">
     <% @tasks.each do |task| %>
       <tr>
+        <td>
+          <svg class="icon icon-Row-Dragger">
+            <use xlink:href="#icon-Row-Dragger"></use>
+          </svg>
+        </td>
         <td><%= task.name %></td>
         <td><%= task.task_manager_url %></td>
         <td><%= task.task_type_humanize %></td>
@@ -34,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Task', new_admin_task_path, class: 'btn btn-primary' %>
+<%= link_to 'New Task', new_admin_task_path, class: 'bttn bttn-primary' %>

@@ -33,5 +33,27 @@
   <%= @campaign.start_date %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @campaign.user.email %>
+</p>
+
+<p>
+  <strong>Tasks:</strong>
+  <ul>
+  <% @campaign.tasks.each do |task| %>
+    <li><%= link_to task.name, [:admin, task] %></li>
+  <% end %>
+  </ul>
+</p>
+<p>
+  <strong>Events:</strong>
+  <ul>
+  <% @campaign.events.each do |event| %>
+    <li><%= link_to event.name, [:admin, event] %></li>
+  <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_admin_campaign_path(@campaign),  class: 'bttn bttn-primary' %>
 <%= link_to 'Back', admin_campaigns_path, class: 'bttn bttn-secondary' %>

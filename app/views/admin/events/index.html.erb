@@ -3,6 +3,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Description</th>
       <th>Image</th>
@@ -15,9 +16,14 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody data-role="activerecord_sortable">
     <% @events.each do |event| %>
       <tr>
+        <td>
+          <svg class="icon icon-Row-Dragger">
+            <use xlink:href="#icon-Row-Dragger"></use>
+          </svg>
+        </td>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= image_tag event.image.url(:thumb) %></td>
@@ -36,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_admin_event_path, class: 'btn btn-primary' %>
+<%= link_to 'New Event', new_admin_event_path, class: 'bttn bttn-primary' %>
