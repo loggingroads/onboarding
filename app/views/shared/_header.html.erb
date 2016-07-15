@@ -1,20 +1,35 @@
-<nav class="navbar navbar-dark bg-primary">
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+<nav class="menu-toggle wrap-full">
+  <a href="<%= root_url %>" class="h-logo"><img src="" class="logo"></a>
+  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
-  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-    <%= link_to Onboarding::Application.config.site_name, root_url, class: 'navbar-brand'%>
-    <% if user_signed_in? %>
-        <ul class="nav navbar-nav">
-          <li class="nav-item"><%= link_to 'Campaigns', admin_campaigns_path, {class: current_class('admin/campaigns') + 'nav-link'} %></li>
-          <li class="nav-item"><%= link_to 'Event requests', admin_event_requests_path, {class: current_class('admin/event_requests') + 'nav-link'} %></li>
-          <li class="nav-item"><%= link_to 'Events', admin_events_path, {class: current_class('admin/events') + 'nav-link'} %></li>
-          <li class="nav-item"><%= link_to 'Tasks', admin_tasks_path, {class: current_class('admin/tasks') + 'nav-link'} %></li>
-          <li class="nav-item"><%= link_to 'Users', admin_users_path, {class: current_class('admin/users') + 'nav-link'} %></li>
+</nav>
+<nav class="l-header wrap-full collapse" id="exCollapsingNavbar2">
+  <div class="header-container">
+    <div class="header-content">
+      <a href="<%= root_url %>" class="h-logo"><img src="" class="logo"></a>
+
+      <!-- Provisional condition -->
+      <% if request.path.include?('admin') %>
+        <ul class="nav navbar-nav main-menu">
+          <li class="nav-item"><%= link_to 'Campaigns', admin_campaigns_path, {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Event requests', admin_event_requests_path, {class: current_class('admin/event_requests') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Events', admin_events_path, {class: current_class('admin/events') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Tasks', admin_tasks_path, {class: current_class('admin/tasks') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Users', admin_users_path, {class: current_class('admin/users') + 'nav-link text text-menu -light'} %></li>
+          <% if user_signed_in? %>
+            <li class="nav-item"><%= link_to 'Log out', destroy_user_session_path, {class: 'nav-link text text-menu -light', :method => :delete} %></li>
+          <% end %>
         </ul>
-        <ul class="nav navbar-nav pull-xs-right">
-          <li class="nav-item"><%= link_to 'Logout', destroy_user_session_path, {class: 'nav-link', :method => :delete} %></li>
+      <% else %>
+        <ul class="nav navbar-nav main-menu">
+          <li class="nav-item"><%= link_to 'Participate', '/', {class: current_class('admin/campaigns') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Impact', "/", {class: current_class('admin/event_requests') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'Data Download', "/", {class: current_class('admin/events') + 'nav-link text text-menu -light'} %></li>
+          <li class="nav-item"><%= link_to 'About', "/",  {class: current_class('admin/tasks') + 'nav-link text text-menu -light'} %></li>
         </ul>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </nav>
+

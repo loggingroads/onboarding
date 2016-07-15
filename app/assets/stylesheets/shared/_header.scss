@@ -1,0 +1,170 @@
+@import'../settings/settings.scss';
+
+.menu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $color-3;
+  color: $color-2;
+
+  @media screen and (min-width: $screen-m) {
+    display: none;
+  }
+}
+
+.h-logo {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+
+  @media screen and (min-width: $screen-m) {
+    width: 95px;
+  }
+
+  @media screen and (min-width: $screen-l) {
+    width: 125px;
+  }
+
+  .logo {
+    width: 100%;
+    height: 30px;
+
+    @media screen and (min-width: $screen-m) {
+      height: 55px;
+    }
+
+    a {
+      font-size: 12px;
+      line-height: 12px;
+      color: $color-2;
+
+      @media screen and (min-width: $screen-m) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.l-header {
+  width: 100%;
+  align-items: center;
+  background-color: $color-3;
+
+  &#exCollapsingNavbar2 {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+
+    @media screen and (min-width: $screen-m) {
+      position: relative;
+      min-height: 80px;
+    }
+  }
+
+  .h-logo {
+    display: none;
+
+    @media screen and (min-width: $screen-m) {
+      display: inherit;
+    }
+  }
+
+  &.collapse {
+    @media screen and (min-width: $screen-m) {
+      display: flex !important; // Avoid library statement
+    }
+  }
+
+  .header-container {
+    width: 100%;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav .nav-item + .nav-item {
+      margin-left: 0;
+    }
+
+    .main-menu {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: right;
+
+      @media screen and (min-width: $screen-m) {
+        flex-flow: row;
+        justify-content: flex-end;
+        width: inherit;
+      }
+    }
+
+    .nav-item {
+      margin-bottom: 60px;
+
+      @media screen and (min-width: $screen-m) {
+        margin-right: 28px;
+        margin-bottom: 0;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        margin-right: 40px;
+      }
+
+      &.nav-item:last-child {
+        margin-right: 0;
+      }
+
+      .active {
+        &.text-menu {
+          border-top: 4px solid $color-3;
+          border-bottom: 4px solid $color-2;
+
+          @media screen and (min-width: $screen-m) {
+            border-top: 8px solid $color-3;
+            border-bottom: 8px solid $color-2;
+          }
+        }
+      }
+
+      & .text-menu {
+        font-size: 22px;
+        padding-bottom: 2px;
+
+        @media screen and (min-width: $screen-m) {
+          font-size: 18px;
+          padding-bottom: 18px;
+        }
+
+        @media screen and (min-width: $screen-l) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

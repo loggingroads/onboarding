@@ -1,0 +1,46 @@
+@import'../../settings/settings.scss';
+
+.table {
+  border: 0;
+
+  thead th {
+    border: 0 !important;
+  }
+
+  tbody tr {
+    border: 0;
+    vertical-align: middle;
+
+    &:nth-child(odd) {
+      background-color: #fbfbfb;
+    }
+  }
+
+  td {
+    border: 0 !important;
+    border-right: 1px solid lightgrey !important;
+    vertical-align: middle !important;
+
+    &:last-child, &:first-child {
+      border: 0 !important;
+    }
+
+    a {
+      color: $color-3;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  .icon-Row-Dragger {
+    width: 8px;
+    height: 10px;
+    cursor: pointer;
+  }
+}

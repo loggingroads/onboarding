@@ -1,7 +1,31 @@
-@import'../settings/settings.scss';
+@import'../../settings/settings.scss';
 
 .l-participate {
   background-color: $color-1;
+
+  .wrap-full {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @media screen and (min-width: $screen-m) {
+      padding-top: 110px;
+      padding-bottom: 110px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      padding-top: 180px;
+      padding-bottom: 180px;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+  }
 
   .text-module-title {
     margin-bottom: 30px;

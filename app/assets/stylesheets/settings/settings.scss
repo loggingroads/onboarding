@@ -28,27 +28,13 @@ $wrap-padding-desktop-xxl: rem(100);
 $content-width: 80%;
 $content-width-xl: 90%;
 
+
 // Skewed rectangles
 $skew-angle: 3deg;
-$skew-offset: calc(50vw * tan($skew-angle));
+$skew-offset: 50vw * tan($skew-angle);
+
 
 /* COLORS */
-/* $orange-pumpkin: #e77800;
-$orange-tangerine: #ff9d04;
-$orange-yellow: #ffb100;
-$orange-light-yellow: #fdc84e;
-$orange-pumpkin-light: #ff8b0e;
-$orange-bright-pumpkin: #ff8400;
-
-$magenta: #dc0073;
-$hot-pink: #ee007c;
-$deep-red: #b40404;
-
-$black: #37352f;
-$white: #fff;
-$white-bone: #f5efe5;
-$pale-white: #fbf9f5; */
-
 $carmine: #ff5349;
 $white: #fff;
 $black: #000;
@@ -56,7 +42,6 @@ $softer-black: #151515;
 
 
 /* THEME COLORS */
-
 $beige-1: #686354;
 $beige-2: #948f7e;
 $beige-3: #d9d1c4;
@@ -71,26 +56,9 @@ $color-3: $black;
 $color-4: $softer-black;
 $color-5: $beige-1;
 
-/*$color-6: $beige-3;
-$color-7: $beige-4;
-$color-8: $beige-2;
 
-$color-9: $orange-bright-pumpkin;
-$color-10: $beige-1;
-$color-11: $deep-red;
-$color-12: $hot-pink;
-$color-13: $white;
-$color-14: $pale-white;
-$color-15: $beige-6;
-$color-16: $beige-5;
-$color-17: $beige-7;
-$color-18: $white-bone;
-
- */
 /* FONT COLORS */
 $font-color-1: $carmine;
 $font-color-2: $white;
 $font-color-3: $black;
 $font-color-4: $softer-black;
-/*$font-color-5: $orange-pumpkin-light;
-$font-color-6: $deep-red; */

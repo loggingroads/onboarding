@@ -1,9 +1,11 @@
-@import'../settings/settings.scss';
+@import'../../settings/settings.scss';
 
 .l-activity {
   background-color: $color-3;
 
   .wrap-full {
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     @media screen and (min-width: $screen-m) {
      padding-top: 80px;

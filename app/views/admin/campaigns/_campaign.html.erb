@@ -1,4 +1,9 @@
 <tr data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
+  <td>
+    <svg class="icon icon-Row-Dragger">
+      <use xlink:href="#icon-Row-Dragger"></use>
+    </svg>
+  </td>
   <td><%= campaign.name %></td>
   <td><%= campaign.htag %></td>
   <td><%= campaign.description %></td>
