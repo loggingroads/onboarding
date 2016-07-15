@@ -21,7 +21,7 @@
     border-right: 1px solid lightgrey !important;
     vertical-align: middle !important;
 
-    &:last-child, &:first-child {
+    &:last-child {
       border: 0 !important;
     }
 
@@ -42,5 +42,11 @@
     width: 8px;
     height: 10px;
     cursor: pointer;
+  }
+
+  &.draggable {
+    td:first-child {
+      border: 0 !important;
+    }
   }
 }

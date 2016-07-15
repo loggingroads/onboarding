@@ -3,7 +3,6 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th></th>
       <th>Name</th>
       <th>Description</th>
       <th>Image</th>
@@ -20,7 +19,6 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td></td>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= image_tag event.image.url(:thumb) %></td>

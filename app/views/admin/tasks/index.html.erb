@@ -3,7 +3,6 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th></th>
       <th>Name</th>
       <th>Task manager url</th>
       <th>Task type</th>
@@ -18,7 +17,6 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td></td>
         <td><%= task.name %></td>
         <td><%= task.task_manager_url %></td>
         <td><%= task.task_type_humanize %></td>

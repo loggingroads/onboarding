@@ -23,14 +23,11 @@
       text-transform: capitalize;
     }
 
-    td:first-child {
+    td:first-child, th:first-child {
       padding-left: 35px;
-      padding-right: 0;
-      width: 10px;
 
       @media screen and (min-width: $screen-m) {
         padding-left: 110px;
-        padding-right: 12px;
       }
     }
 
@@ -44,6 +41,7 @@
 
     .campaign-name {
       font-family: $font-family-1;
+      font-weight: 700;
     }
   }
 }
