@@ -1,3 +1,4 @@
+@import'../settings/settings.scss';
 
 /**
  *  Template
@@ -5,8 +6,8 @@
  *  <table class="c-table table">
  *    <thead>
  *      <tr>
- *        <th class="text text-menu -dark">{ Title }</th>
- *        <th class="text text-menu -dark">{ Title }</th>
+ *        <th class="text text-menu -dark"><a href="{ path } class="sort">{ Title }</a></th>
+ *        <th class="text text-menu -dark"><a href="{ path } class="sort">{ Title }</a></th>
  *      </tr>
  *    </thead>
  *
@@ -29,6 +30,25 @@
 
   .text-menu {
     text-transform: capitalize;
+  }
+
+  thead th {
+    position: relative;
+    padding-right: 20px;
+
+    & .sort {
+      position: absolute;
+      right: 8px;
+    }
+
+    &:last-child .sort {
+      right: calc(8px + 20px);
+
+      @media screen and (min-width: $screen-m) {
+        right: calc(8px + 110px);
+      }
+
+    }
   }
 
   tbody tr:nth-child(odd) {
