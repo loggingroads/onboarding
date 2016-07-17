@@ -1,29 +1,60 @@
 @import'../../settings/settings.scss';
 
-.table {
-  border: 0;
+/**
+ *  Template
+ *
+ *  <table class="c-table table">
+ *    <thead>
+ *      <tr>
+ *        <th class="text text-menu -dark">{ Title }</th>
+ *        <th class="text text-menu -dark">{ Title }</th>
+ *      </tr>
+ *    </thead>
+ *
+ *    <tbody>
+ *      <tr class="wrap text text-desc -dark" data-role="campaign{ id }" data-move-url="{ Content }" data-position="{ Content }">
+ *        <td class="text text-desc -dark">{ Content }</td>
+ *        <td class="text text-desc -dark -bold">{ Content }</td>
+ *      </tr>
+ *    </tbody>
+ *  </table>
 
-  thead th {
-    border: 0 !important;
+ *  Modifier (td)
+ *    -bold
+ *
+ **/
+
+.c-table {
+  border: 0;
+  margin-bottom: 50px;
+
+  .text-menu {
+    text-transform: capitalize;
   }
 
-  tbody tr {
-    border: 0;
-    vertical-align: middle;
+  tbody tr:nth-child(odd) {
+    background-color: #fbfbfb;
+  }
 
-    &:nth-child(odd) {
-      background-color: #fbfbfb;
+  td:first-child, 
+  th:first-child {
+    padding-left: $wrap-padding-mobile;
+
+    @media screen and (min-width: $screen-m) {
+      padding-left: $wrap-padding-desktop;
+    }
+  }
+
+  td:last-child {
+    padding-right: $wrap-padding-mobile;
+
+    @media screen and (min-width: $screen-m) {
+      padding-right: $wrap-padding-desktop;
     }
   }
 
   td {
-    border: 0 !important;
-    border-right: 1px solid lightgrey !important;
-    vertical-align: middle !important;
-
-    &:last-child, &:first-child {
-      border: 0 !important;
-    }
+    border-right: 1px solid lightgrey;
 
     a {
       color: $color-3;
@@ -32,6 +63,11 @@
         opacity: .5;
       }
     }
+  }
+
+  .-bold {
+    font-family: $font-family-1;
+    font-weight: 700;
   }
 
   .actions {
