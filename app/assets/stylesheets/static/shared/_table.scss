@@ -45,7 +45,8 @@
     }
   }
 
-  td:last-child {
+  td:last-child,
+  th:last-child {
     padding-right: $wrap-padding-mobile;
 
     @media screen and (min-width: $screen-m) {

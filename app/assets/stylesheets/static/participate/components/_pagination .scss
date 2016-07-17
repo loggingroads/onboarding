@@ -1,0 +1,54 @@
+@import'../../../settings/settings.scss';
+
+/**
+ *  Template:
+ *
+ *    <div class="wrap row">
+ *      <ul class="c-pagination col-xs-12 col-sm-6 col-sm-offset-3">
+ *        <li class="text text-desc -dark left-arrow"><a href="{ path }"><</a></li>
+ *        <li class="text text-desc -dark page"><a href="{ path }">{ number }</a></li>
+ *        <li class="text text-desc -dark right-arrow"><a href="{ path }">></a></li>
+ *      </ul>
+ *    </div>
+ *
+ **/
+
+.c-pagination {
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    & a {
+        color: $color-3;
+    }
+  }
+
+  .page {
+    padding: 5px 5px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    color: $color-3;
+
+    &:hover {
+      background-color: $color-1;
+
+      & a {
+        color: $color-2;
+      }
+    }
+  }
+
+  .-active {
+    background-color: $color-1;
+
+    & a {
+      color: $color-2;
+    }
+  }
+}
