@@ -13,10 +13,7 @@
  *        </ul>
  *        <p class="text text-desc -light">{ Content }</p>
  *        <a href="/" class="bttn bttn-primary">{ content }</a>  // Optional
- *        <ul class="section-tabs wrap text text-desc -light">  // Optional
- *          <li class="tab">{ Tab name }</li>
- *          <div class="viel wrap"></div>
- *        </ul>
+ *        { tab-menu } // Optional
  *      </div>
  *    </aside>
  *  </article>
@@ -28,13 +25,10 @@
   position: relative;
   background-color: #41563c; // Provisional (Background image)
   height: 500px;
-
-  .wrap {
-    padding-top: 27px;
-    padding-bottom: 27px;
-  }
+  padding-bottom: 27px;
 
   .title {
+    margin-top: 27px;
     text-transform: capitalize;
     margin-bottom: 12px;
   }
@@ -65,50 +59,5 @@
     padding: 10px 25px;
     font-size: 14px;
     font-family: $font-family-2;
-  }
-
-  .viel {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $color-4;
-    opacity: .5;
-    z-index: 1;
-  }
-
-  .section-tabs {
-    padding-top: 0;
-    padding-bottom: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
-
-    .tab {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      flex-grow: 1;
-      text-align: center;
-      text-transform: uppercase;
-      z-index: 2;
-
-      &.-active {
-        background-color: $color-2;
-        color: $color-4;
-      }
-    }
-
-    .tab-link {
-      font-family: $font-family-2;
-      color: $color-3;
-
-      .-active & {
-        color: $color-4;
-      }
-    }
   }
 }
