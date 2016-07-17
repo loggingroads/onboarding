@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import'settings/settings.scss';
 
+.section {
+  .content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .dots-menu {
   display: none;
