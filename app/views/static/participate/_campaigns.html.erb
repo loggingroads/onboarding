@@ -1,61 +1,51 @@
-<section class="campaign-main section">
-  <article class="c-intro content-fluid">
-    <ul class="c-routes wrap text text-desc -light">
-      <!-- Paths to set -->
-      <li class="route"><%= link_to 'Participate', '/', { :class => current_class('/') + 'route-link'} %></li>
-      <li class="route"><%= link_to 'Campaign', '/', {:class => current_class('/') + 'route-link'} %></li>
-    </ul>
-    <aside class="wrap row">
-      <div class="col-sm-12 col-md-5">
-        <h1 class="title text text-module-subtitle -light">Campaigns</h1>
-        <ul class="tags-list text text-tag -light">
-          <li class="tag">Tag 1</li>
-          <li class="tag">Tag 2</li>
-          <li class="tag">Tag 3</li>
-        </ul>
-        <p class="text text-desc -light">Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do. </p>
-      </div>
-    </aside>
+<section class="campaign-main">
+  <article class="campaign-intro">
+    <nav class="routes wrap-full">
+      <ul class="text text-desc -light navigator">
+        <li class="route"><%= link_to 'Participate', 'admin/', { :class => current_class('admin/participate') + 'route-link'} %></li>
+        <li class="route"><%= link_to 'Campaign', 'admin/campaigns', {:class => current_class('admin/campaigns') + 'route-link'} %></li>
+      </ul>
+    </nav>
+    <article class="wrap-full">
+      <h1 class="text text-module-subtitle -light">Campaigns</h1>
+      <ul class="tags-list text text-tag -light">
+        <li class="tag">Tag 1</li>
+        <li class="tag">Tag 2</li>
+        <li class="tag">Tag 3</li>
+      </ul>
+      <p class="text text-desc -light">Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do. </p>
+    </article>
   </article>
-  <article class="content content-fluid">
-    <div class="input-group col-xs-12 wrap">
-      <input type="text" class="form-control search" placeholder="Search">
-      <span class="input-group-btn">
-        <img src="" class="search-icon" />
-      </span>
+  <article class="campaigns">
+    <div class="col-lg-12 wrap-full">
+      <div class="input-group">
+        <input type="text" class="form-control search" placeholder="Search">
+        <span class="input-group-btn">
+          <img src="" class="search-icon" />
+        </span>
+      </div>
     </div>
-    <table class="c-table table">
+    <table class="table">
       <thead>
       <tr>
-        <!-- Sort by icon to set -->
-        <th class="text text-menu -dark">Start date <%= link_to '>', url_for(:sort_by => 'start_date', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
-        <th class="text text-menu -dark">Campaign Name <%= link_to '>', url_for(:sort_by => 'name', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC' ), { :class => 'sort' } %></th>
-        <th class="text text-menu -dark">Tags <%= link_to '>', url_for(:sort_by => 'htag', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
+        <th class="text text-menu -dark">Start date</th>
+        <th class="text text-menu -dark">Campaign Name</th>
+        <th class="text text-menu -dark">Tags</th>
       </tr>
       </thead>
-      <!-- Paths to set -->
+
       <tbody>
       <% if @campaigns %>
           <% @campaigns.each do |campaign| %>
-              <tr class="wrap text text-desc -dark" data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
+              <tr class="wrap-full text text-desc -dark" data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
                 <td class="text text-desc -dark"><%= campaign.start_date %></td>
-                <td class="text text-desc -dark -bold"><%= link_to campaign.name, "/" %></td>
+                <td class="campaign-name text text-desc -dark"><%= link_to campaign.name, admin_campaign_path(campaign) %></td>
                 <td class="text text-desc -dark"><%= campaign.htag %></td>
               </tr>
           <% end %>
       <% end %>
       </tbody>
     </table>
-
-    <div class="wrap row">
-      <div class="c-pagination col-xs-12 col-sm-6 col-sm-offset-3">
-        <!-- Implements the paginations once we get the campaigns (@campagins) -->
-        <% if @campaigns %>
-            <% will_paginate @campaigns, :previous_label => '<', :next_label => '>' %>
-        <% end %>
-      </div>
-    </div>
-
+    <br>
   </article>
 </section>
-
