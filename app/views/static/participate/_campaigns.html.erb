@@ -32,33 +32,26 @@
         <th class="text text-menu -dark">Tags</th>
       </tr>
       </thead>
-
+      <!-- Paths to set -->
       <tbody>
         <% if @campaigns %>
           <% @campaigns.each do |campaign| %>
             <tr class="wrap text text-desc -dark" data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
               <td class="text text-desc -dark"><%= campaign.start_date %></td>
-              <td class="text text-desc -dark -bold"><%= link_to campaign.name, admin_campaign_path(campaign) %></td>
+              <td class="text text-desc -dark -bold"><%= link_to campaign.name, "/" %></td>
               <td class="text text-desc -dark"><%= campaign.htag %></td>
             </tr>
           <% end %>
         <% end %>
       </tbody>
     </table>
-    <!-- Provisional -->
+
     <div class="wrap row">
-      <ul class="c-pagination col-xs-12 col-sm-6 col-sm-offset-3">
-        <li class="text text-desc -dark left-arrow"><a href=""><</a></li>
-        <li class="text text-desc -dark page -active"><a href="">1</a></li>
-        <li class="text text-desc -dark page"><a href="">2</a></li>
-        <li class="text text-desc -dark page"><a href="">3</a></li>
-        <li class="text text-desc -dark page"><a href="">4</a></li>
-        <li class="text text-desc -dark page"><a href="">5</a></li>
-        <li class="text text-desc -dark right-arrow"><a href="">></a></li>
-      </ul>
+      <div class="c-pagination col-xs-12 col-sm-6 col-sm-offset-3">
+        <% # will_paginate @campaigns, :previous_label => '<', :next_label => '>' %>
+      </div>
     </div>
-    
-    
+
   </article>
 </section>
 
