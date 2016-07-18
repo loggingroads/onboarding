@@ -25,15 +25,6 @@
   }
 }
 
-.wrap {
-  display: flex;
-  padding: 35px 15px 30px;
-
-  @media screen and (min-width: $screen-m) {
-    padding: 95px 75px 90px 45px;
-  }
-}
-
 .wrap-full {
   //display: flex;
   // flex-flow: column;

@@ -1,0 +1,57 @@
+@import'../../../settings/settings.scss';
+
+/**
+ *  Template:
+ *
+ *    <ul class="c-tab-menu wrap text text-desc -light">
+ *      <li class="tab"><a href="" class="tab-link">{ Tab name }</a></li>
+ *      <div class="viel wrap"></div>
+ *    </ul>
+ *
+ **/
+
+.c-tab-menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .viel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-4;
+    opacity: .5;
+    z-index: 1;
+  }
+
+  .tab {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-grow: 1;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+
+    &.-active {
+      background-color: $color-2;
+      color: $color-4;
+
+      & .tab-link {
+        color: $color-4;
+      }
+    }
+  }
+
+  .tab-link {
+    font-family: $font-family-1;
+    color: $color-2;
+    cursor: pointer;
+  }
+}

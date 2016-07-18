@@ -19,17 +19,25 @@ $screen-xxl: 2000px;
 
 
 /* GRID  */
-$grid-max-width: rem(1400);
-$wrap-padding-mobile: rem(20);
-$wrap-padding-tablet: rem(30);
-$wrap-padding-desktop: rem(40);
-$wrap-padding-desktop-xl: rem(60);
-$wrap-padding-desktop-xxl: rem(100);
-$content-width: 80%;
-$content-width-xl: 90%;
+$grid-max-width: 1400px;
+$wrap-padding-mobile: 20px;
+$wrap-padding-tablet: 30px;
+$wrap-padding-desktop: 110px;
 
 
-// Skewed rectangles
+/* WRAPPER */
+.wrap {
+	padding-left: $wrap-padding-mobile;
+	padding-right: $wrap-padding-mobile;
+
+	@media screen and (min-width: $screen-m) {
+		padding-left: $wrap-padding-desktop;
+		padding-right: $wrap-padding-desktop;
+	}
+}
+
+
+/* SKEWED RECTANGLES */
 $skew-angle: 3deg;
 $skew-offset: 50vw * tan($skew-angle);
 

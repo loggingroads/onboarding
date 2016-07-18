@@ -1,0 +1,63 @@
+@import'../../../settings/settings.scss';
+
+/**
+ *  Template:
+ *
+ *  <article class="c-intro content-fluid">
+ *    { c-routes }
+ *    <aside class="wrap row">
+ *      <div class="col-sm-12 col-md-5">
+ *        <h1 class="title text text-module-subtitle -light">{ Title }</h1>
+ *        <ul class="tags-list text text-tag -light">
+ *          <li class="tag">{ Tag name }</li>
+ *        </ul>
+ *        <p class="text text-desc -light">{ Content }</p>
+ *        <a href="/" class="bttn bttn-primary">{ content }</a>  // Optional
+ *        { tab-menu } // Optional
+ *      </div>
+ *    </aside>
+ *  </article>
+ *
+ **/
+
+
+.c-intro {
+  position: relative;
+  background-color: #41563c; // Provisional (Background image)
+  height: 500px;
+  padding-bottom: 27px;
+
+  .title {
+    margin-top: 27px;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+  }
+
+  .tags-list {
+    display: flex;
+    margin-bottom: 15px;
+
+    .tag {
+      background-color: $color-1;
+      padding: 2px 6px;
+      border-radius: 20px;
+      margin-right: 10px;
+
+      @media screen and (min-width: $screen-m) {
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  p.text-desc {
+    margin-bottom: 15px;
+  }
+
+  .bttn-primary {
+    padding: 10px 25px;
+    font-size: 14px;
+    font-family: $font-family-2;
+  }
+}
