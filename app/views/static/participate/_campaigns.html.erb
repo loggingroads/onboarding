@@ -27,9 +27,10 @@
     <table class="c-table table">
       <thead>
       <tr>
-        <th class="text text-menu -dark">Start date</th>
-        <th class="text text-menu -dark">Campaign Name</th>
-        <th class="text text-menu -dark">Tags</th>
+      <!-- Sort by icon to set -->
+        <th class="text text-menu -dark">Start date <%= link_to '>', url_for(:sort_by => 'start_date', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
+        <th class="text text-menu -dark">Campaign Name <%= link_to '>', url_for(:sort_by => 'name', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC' ), { :class => 'sort' } %></th>
+        <th class="text text-menu -dark">Tags <%= link_to '>', url_for(:sort_by => 'htag', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
       </tr>
       </thead>
       <!-- Paths to set -->
@@ -48,7 +49,10 @@
 
     <div class="wrap row">
       <div class="c-pagination col-xs-12 col-sm-6 col-sm-offset-3">
-        <% # will_paginate @campaigns, :previous_label => '<', :next_label => '>' %>
+        <!-- Implements the paginations once we get the campaigns (@campagins) -->
+        <% if @campaigns %>
+          <% will_paginate @campaigns, :previous_label => '<', :next_label => '>' %>
+        <% end %>
       </div>
     </div>
 
