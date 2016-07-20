@@ -1,5 +1,5 @@
 
-<section class="campaign-main section">
+<section class="campaign-main section" id="campaign-main">
   <article class="c-intro content-fluid">
     <ul class="c-routes wrap text text-desc -light">
       <!-- Paths to set -->
@@ -20,8 +20,8 @@
     </aside>
   </article>
 
-  <article class="content content-fluid">
-    <div class="input-group col-xs-12 wrap">
+  <article class="content content-fluid" id="data-view">
+    <!-- <div class="input-group col-xs-12 wrap">
       <input type="text" class="form-control search" placeholder="Search">
       <span class="input-group-btn">
         <img src="" class="search-icon" />
@@ -29,15 +29,15 @@
     </div>
     <table class="c-table table">
       <thead>
-      <tr>
+      <tr> -->
       <!-- Sort by icon to set -->
-        <th class="text text-menu -dark">Start date <%= link_to '>', url_for(:sort_by => 'start_date', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
+        <!-- <th class="text text-menu -dark">Start date <%= link_to '>', url_for(:sort_by => 'start_date', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
         <th class="text text-menu -dark">Campaign Name <%= link_to '>', url_for(:sort_by => 'name', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC' ), { :class => 'sort' } %></th>
         <th class="text text-menu -dark">Tags <%= link_to '>', url_for(:sort_by => 'htag', :direction => params[:direction] == 'DESC' ? 'ASC' : 'DESC'), { :class => 'sort' } %></th>
       </tr>
-      </thead>
+      </thead> -->
       <!-- Paths to set -->
-      <tbody>
+      <!-- <tbody>
         <% if @campaigns %>
           <% @campaigns.each do |campaign| %>
             <tr class="wrap text text-desc -dark" data-role="campaign<%= campaign.id %>" data-move-url="<%= move_admin_campaign_url(campaign) %>" data-position="<%= campaign.position %>">
@@ -48,7 +48,7 @@
           <% end %>
         <% end %>
       </tbody>
-    </table>
+    </table> -->
 
     <div class="wrap row">
       <div class="c-pagination col-xs-12 col-sm-6 col-sm-offset-3">

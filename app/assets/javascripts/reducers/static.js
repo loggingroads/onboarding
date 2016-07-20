@@ -1,12 +1,17 @@
 import React from 'react';
 
 function setCommunityData(state, communityData) {
-  let newState = Object.assign({}, state, {communityData});
+  const newState = Object.assign({}, state, {communityData});
   return newState;
 }
 
 function setUsersActivityData(state, usersActivityData) {
-  let newState = Object.assign({}, state, {usersActivityData});
+  const newState = Object.assign({}, state, {usersActivityData});
+  return newState;
+}
+
+function setElementsList(state, elementsList) {
+  const newState = Object.assign({}, state, {elementsList});
   return newState;
 }
 
@@ -16,6 +21,8 @@ export default function staticReducer(state = {}, action) {
       return setCommunityData(state, action.communityData);
     case 'SET_USERS_ACTIVITY_DATA':
       return setUsersActivityData(state, action.usersActivityData);
+    case 'SET_ELEMENTS_LIST':
+      return setElementsList(state, action.elementsList);
     default:
       return state;
   }

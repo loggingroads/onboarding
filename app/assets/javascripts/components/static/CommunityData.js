@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-//window.CommunityData = React.createClass({
 class CommunityData extends React.Component {
 
   componentWillMount() {
