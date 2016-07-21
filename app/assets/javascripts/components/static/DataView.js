@@ -8,8 +8,12 @@ class DataView extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      list: []
+      list: [],
+      direction: 0,
+      keySorted: 'start_date'
     };
+
+    this.keySorted = 'start_date';
   }
 
   componentWillMount() {
@@ -45,6 +49,36 @@ class DataView extends React.Component {
     }
   }
 
+  sortIndex(a, b) {
+    const keySorted = this.keySorted;
+
+    if (a[keySorted] < b[keySorted])
+      return -1;
+    if (a[keySorted] > b[keySorted])
+      return 1;
+    return 0;
+  }
+
+  sortBy(keySorted) {
+    let sortList = this.props.elementsList;
+    this.keySorted = keySorted;
+    const direction = this.state.direction < 2 ? this.state.direction + 1 : 0;
+
+    if (direction !== 0) {
+      sortList = sortList.sort(this.sortIndex.bind(this));
+    } else {
+      this.keySorted = 'create_at';
+      sortList = sortList.sort(this.sortIndex.bind(this)).reverse();
+    }
+
+    if (direction === 2) {
+      sortList = sortList.reverse();
+    }
+
+    this.setState({ list: sortList, direction });
+  }
+
+
   render() {
     const list = this.state.list;
 
@@ -60,9 +94,36 @@ class DataView extends React.Component {
         <table className="c-table table">
           <thead>
             <tr>
-              <th className="text text-menu -dark">Start Date</th>
-              <th className="text text-menu -dark">Name</th>
-              <th className="text text-menu -dark">Htag</th>
+              <th className="text text-menu -dark">Start Date
+                <div className="sort" onClick={ () => this.sortBy('start_date') }>
+                  <svg className="icon icon-TriangleDown sort-arrow" >
+                    <use xlinkHref="#icon-TriangleDown"></use>
+                  </svg>
+                  <svg className="icon icon-TriangleDown sort-arrow" >
+                    <use xlinkHref="#icon-TriangleDown"></use>
+                  </svg>
+                </div>
+              </th>
+              <th className="text text-menu -dark">Name
+                <div className="sort" onClick={ () => this.sortBy('name') }>
+                  <svg className="icon icon-TriangleDown sort-arrow" >
+                    <use xlinkHref="#icon-TriangleDown"></use>
+                  </svg>
+                  <svg className="icon icon-TriangleDown sort-arrow" >
+                    <use xlinkHref="#icon-TriangleDown"></use>
+                  </svg>
+                </div>
+              </th>
+              <th className="text text-menu -dark">Htag
+                <div className="sort" onClick={ () => this.sortBy('htag') }>
+                  <svg className="icon icon-TriangleDown sort-arrow" >
+                    <use xlinkHref="#icon-TriangleDown"></use>
+                  </svg>
+                  <svg className="icon icon-TriangleDown sort-arrow" >
+                    <use xlinkHref="#icon-TriangleDown"></use>
+                  </svg>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -81,7 +142,7 @@ class DataView extends React.Component {
 }
 
 DataView.propTypes = {
-  data: React.PropTypes.string
+  data: React.PropTypes.object
 };
 
 export default DataView;

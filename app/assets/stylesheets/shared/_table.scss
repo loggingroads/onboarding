@@ -38,7 +38,20 @@
 
     & .sort {
       position: absolute;
-      right: 8px;
+      top: 22px;
+      right: 15px;
+      cursor: pointer;
+
+      & .sort-arrow {
+        display: flex;
+        flex-flow: column;
+        width: 8px;
+        height: 8px;
+
+        &:last-child {
+          transform: rotate(180deg);
+        }
+      }
     }
 
     &:last-child .sort {

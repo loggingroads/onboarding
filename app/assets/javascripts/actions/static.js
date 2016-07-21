@@ -52,10 +52,10 @@ export function setElementsList(data) {
   return {
     type: SET_ELEMENTS_LIST,
     elementsList: [
-      {name: 'First', start_date: '2016-11-11', htag: ['Tag 1', 'Tag 2']},
-      {name: 'Second', start_date: '2016-11-13', htag: ['Tag 1', 'Tag 3']},
-      {name: 'Third', start_date: '2016-11-14', htag: ['Tag 1']},
-      {name: 'Forth', start_date: '2016-11-19', htag: ['Tag 1', 'Tag 2']}
+      {name: 'First', start_date: '2016-11-11', htag: ['Tag 1', 'Tag 2'], create_at: '2015-02-04'},
+      {name: 'Second', start_date: '2016-11-13', htag: ['Tag 1', 'Tag 3'], create_at: '2015-08-04'},
+      {name: 'Third', start_date: '2016-11-14', htag: ['Tag 1'], create_at: '2015-12-12'},
+      {name: 'Forth', start_date: '2016-11-19', htag: ['Tag 1', 'Tag 2'], create_at: '2016-08-04'}
     ]
   };
 }

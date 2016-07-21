@@ -69,7 +69,7 @@ $('#parallax').ready( function() {
   $('#' + element).ready( function() {
     ReactDOM.render(
       <Provider store={store}>
-        <DataViewContainer data={ element } />
+        <DataViewContainer data={{}} />
       </Provider>,
       document.getElementById('data-view')
     );
