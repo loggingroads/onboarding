@@ -42,6 +42,16 @@
     </fieldset>
 
     <fieldset class="form-group row">
+      <%= f.label :lat, class: 'col-sm-2 form-control-label' %>
+      <div class="col-sm-10"><%= f.text_field :lat, class: 'form-control' %></div>
+    </fieldset>
+
+    <fieldset class="form-group row">
+      <%= f.label :long, class: 'col-sm-2 form-control-label' %>
+      <div class="col-sm-10"><%= f.text_field :long, class: 'form-control' %></div>
+    </fieldset>
+
+    <fieldset class="form-group row">
       <%= f.label :instructions, class: 'col-sm-2 form-control-label' %>
       <div class="col-sm-10"><%= f.text_area :instructions, class: 'form-control' %></div>
     </fieldset>
