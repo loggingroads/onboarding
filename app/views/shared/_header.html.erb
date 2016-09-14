@@ -12,18 +12,27 @@
       </button>
 
       <ul class="main-menu">
-        <li class="<%="is-current" if ["campaigns", "events", "tasks"].include?(controller_name) %> sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light">Participate</a>
+        <li class="<%="is-current" if ["campaigns", "events", "tasks"].include?(controller_name) %> sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light"><%= t('nav.participate') %></a>
 
           <ul class="sub-menu">
-            <li><%= link_to 'Campaigns', campaigns_path, { class: controller_name == 'campaigns' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
-            <li><%= link_to 'Mapathons', events_path, { class:  controller_name == 'events' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
-            <li><%= link_to 'Tasks', tasks_path, { class: controller_name == 'tasks' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
+            <li><%= link_to t('nav.campaigns'), campaigns_path, { class: controller_name == 'campaigns' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
+            <li><%= link_to t('nav.mapathons'), events_path, { class:  controller_name == 'events' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
+            <li><%= link_to t('nav.tasks'), tasks_path, { class: controller_name == 'tasks' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
           </ul>
         </li>
 
         <li class="<%="is-current" if ["impact"].include?(controller_name) %> menu-item"> <%= link_to 'Impact', "/", {class: 'nav-link text text-menu -light'} %></li>
         <li class="<%="is-current" if ["download"].include?(controller_name) %> menu-item"><%= link_to 'Data Download', "/", {class: 'nav-link text text-menu -light'} %></li>
         <li class="<%="is-current" if ["about"].include?(controller_name) %> menu-item"><%= link_to 'About', "/",  {class: 'nav-link text text-menu -light'} %></li>
+        <li class="menu-item">
+          <%= link_to "en", url_for(locale: "en"), class: "nav-link text text-menu -light" %>
+        </li>
+        <li class="menu-item">
+          <%= link_to "pt", url_for(locale: "pt"), class: "nav-link text text-menu -light" %>
+        </li>
+        <li class="menu-item">
+          <%= link_to "fr", url_for(locale: "fr"), class: "nav-link text text-menu -light" %>
+        </li>
       </ul>
     </nav>
 

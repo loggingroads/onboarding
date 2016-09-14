@@ -7,10 +7,8 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  private
-
-  def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+  def default_url_options
+    { locale: I18n.locale }
   end
 
   protected
@@ -24,6 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   def sort_column
     controller_name.classify.constantize.column_names.include?(params[:sort]) ? params[:sort] : "name"

@@ -25,15 +25,17 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :campaigns, only: [:show, :index] do
-    resources :events, only: [:index]
-    resources :tasks, only: [:index]
+  scope "(/:locale)", locale: /en|pt|fr/ do
+    resources :campaigns, only: [:show, :index] do
+      resources :events, only: [:index]
+      resources :tasks, only: [:index]
+    end
+    resources :events, only: [:show, :index] do
+      resources :tasks, only: [:index]
+    end
+    resources :tasks, only: [:show, :index]
   end
-  resources :events, only: [:show, :index] do
-    resources :tasks, only: [:index]
-  end
-  
-  resources :tasks, only: [:show, :index]
 
+  get "/:locale", to: "home#index", as: :locale_root
   root 'home#index'
 end
