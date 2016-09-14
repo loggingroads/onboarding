@@ -24,14 +24,18 @@
         <li class="<%="is-current" if ["impact"].include?(controller_name) %> menu-item"> <%= link_to 'Impact', "/", {class: 'nav-link text text-menu -light'} %></li>
         <li class="<%="is-current" if ["download"].include?(controller_name) %> menu-item"><%= link_to 'Data Download', "/", {class: 'nav-link text text-menu -light'} %></li>
         <li class="<%="is-current" if ["about"].include?(controller_name) %> menu-item"><%= link_to 'About', "/",  {class: 'nav-link text text-menu -light'} %></li>
-        <li class="menu-item">
-          <%= link_to "en", url_for(locale: "en"), class: "nav-link text text-menu -light" %>
-        </li>
-        <li class="menu-item">
-          <%= link_to "pt", url_for(locale: "pt"), class: "nav-link text text-menu -light" %>
-        </li>
-        <li class="menu-item">
-          <%= link_to "fr", url_for(locale: "fr"), class: "nav-link text text-menu -light" %>
+        <li class="sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light">Lang</a>
+          <ul class="sub-menu">
+            <li>
+              <%= link_to "en", url_for(locale: "en"), class: "#{"is-current" if I18n.locale == "en"} text text-menu -dark" %>
+            </li>
+            <li>
+              <%= link_to "fr", url_for(locale: "fr"), class: "#{"is-current" if I18n.locale == "fr"} text text-menu -dark" %>
+            </li>
+            <li>
+              <%= link_to "pt", url_for(locale: "pt"), class: "#{"is-current" if I18n.locale == "pt"} text text-menu -dark" %>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>
