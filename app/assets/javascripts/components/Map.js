@@ -47,6 +47,7 @@ class Map extends React.Component {
   _addLayers(layers) {
     layers.map( (layer) => {
       layer.geom.addTo(this.map);
+      layer.geom.bindPopup(this._popUpFor(layer));
       this.activeTiles.push(layer.geom);
     });
 
@@ -71,6 +72,10 @@ class Map extends React.Component {
   _fitBounds() {
     const group = new L.FeatureGroup(this.activeTiles);
     this.map.fitBounds(group.getBounds());
+  }
+
+  _popUpFor(layer) {
+    return '<h1>'+layer.name+'</h1> <p>'+layer.description+'</p>'+ '<a href="/tasks/'+layer.id+'">Learn more</a>'+ '<a href="'+layer.task_manager_url+'">Do the task</a>';
   }
 
   render() {
