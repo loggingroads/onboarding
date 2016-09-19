@@ -78,7 +78,7 @@ class Map extends React.Component {
     return `<h1>${layer.name}</h1>
             <p>${layer.description}</p>
             <div class="link-group">
-              <a href="/tasks/"${layer.id}>Learn more</a>
+              <a href="/tasks/${layer.id}">Learn more</a>
               <a href=${layer.task_manager_url}>Do the task</a>
             </div>`;
   }
