@@ -18,6 +18,8 @@ import CampaignsDetailPageContainer from './containers/CampaignsDetailPageContai
 //EVENTS
 import EventsPageContainer from './containers/EventsPageContainer';
 import EventsDetailPageContainer from './containers/EventsDetailPageContainer';
+//DOWNLOAD
+import DownloadMap from './containers/home/DownloadMapContainer';
 //TASK
 import TasksPageContainer from './containers/TasksPageContainer';
 import TasksPageDetailContainer from './containers/TasksPageDetailContainer';
@@ -59,6 +61,27 @@ $(document).ready(function () {
           ReactDOM.render(
             <Provider store={store}>
               <CommunityDataContainer data={element} />
+            </Provider>,
+            document.getElementById(element)
+          );
+        });
+      }
+    });
+  }
+});
+
+$(document).ready(function () {
+  if ( $('.home').length ) {
+    /* Home page */
+    $('#downloads').ready( function() {
+      /* It always runs this callback, that's why we need to establish
+      a condition to avoid issues */
+      if ($('#downloads')[0]) {
+        /* Community data */
+        ['downloads'].map(element => {
+          ReactDOM.render(
+            <Provider store={store}>
+              <DownloadMap data={element} />
             </Provider>,
             document.getElementById(element)
           );
