@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import GeoJsonMap from './../GeojsonMap';
+import GeoJsonMap from './../GeoJsonMap';
 import SearchBox from './../SearchBox';
 
 class DownloadMap extends React.Component {
