@@ -31,7 +31,7 @@ class DownloadMap extends React.Component {
           <SearchBox
             countries= {this.props.countries}
             selectedCountry= {this.props.selectedCountry}
-            setSelectedCountry= {this.props.setSelectedCountry||'Star typing'}
+            setSelectedCountry= {this.props.setSelectedCountry}
           />
           <a href={this.state.shape_url} className="bttn bttn-secondary">SHAPE_URL</a>
           <a href={this.state.geojson_url} className="bttn bttn-secondary">GEOJSON_URL</a>

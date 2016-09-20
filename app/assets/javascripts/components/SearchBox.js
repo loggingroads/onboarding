@@ -42,7 +42,7 @@ class SearchBox extends React.Component {
 
     return (
       <div>
-        <input type="text" className="download-input" value={this.props.selectedCountry && this.props.selectedCountry.name}
+        <input type="text" className="download-input" value={this.props.selectedCountry && this.props.selectedCountry.name ||'' }
           onChange={ (event) => this.search(event) }
         />
         <ul>

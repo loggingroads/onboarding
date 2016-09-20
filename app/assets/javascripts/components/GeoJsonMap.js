@@ -59,7 +59,9 @@ class GeoJsonMap extends React.Component {
   }
 
   getOpacity(d) {
-    return d.interactivity ? .5 : .2
+    return d.selected ? 1 :
+           d.interactivity ? .5 :
+           .2;
   }
 
   getColor(d) {
@@ -87,12 +89,26 @@ class GeoJsonMap extends React.Component {
   }
 
   unSelectPrevious() {
-    this.selectedLayer && (this.selectedLayer.feature.properties.selected = false);
-    this.selectedLayer && this.resetHighlight(this.selectedLayer);
+    const layers = this.map._layers;
+
+    Object.keys(layers).map((i) => {
+
+      const layer = layers[i];
+      if (layer.feature && layer.feature.properties.selected === true) {
+        layer.feature.properties.selected = false;
+
+        layer.setStyle({
+          fillColor: '#151515',
+          fillOpacity: .5
+        });
+      }
+    });
   }
 
   setSelectedCountry() {
+
     this.unSelectPrevious();
+
     const selectedCountryIso = this.props.selectedCountry.iso;
     const layers = this.map._layers;
 
@@ -106,10 +122,6 @@ class GeoJsonMap extends React.Component {
           fillColor: '#ffffff',
           fillOpacity: 1
         });
-
-        this.unSelectPrevious();
-
-        this.selectedLayer = layer;
       }
     })
   }
@@ -120,13 +132,8 @@ class GeoJsonMap extends React.Component {
 
      if (layer.feature.properties.interactivity) {
 
-      //Unselect previous layer
-      this.unSelectPrevious();
-
       layer.feature.properties.selected = true;
       var name = layer.feature.properties.admin
-
-      this.selectedLayer = layer;
 
       const country = {
         name: layer.feature.properties.admin,
@@ -144,7 +151,6 @@ class GeoJsonMap extends React.Component {
       click: this.selectCountry.bind(this)
     });
   }
-
 
   render() {
     return (
