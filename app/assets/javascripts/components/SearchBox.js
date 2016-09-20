@@ -12,6 +12,7 @@ class SearchBox extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    this.setState({ selectedCountry : newProps.selectedCountry && newProps.selectedCountry.name || '' });
 
     this.options = {
       caseSensitive: false,
@@ -30,6 +31,8 @@ class SearchBox extends React.Component {
   search(event) {
     const token = event.target.value;
 
+    this.setState({selectedCountry : token});
+
     if (token !== '') {
       const result = this.fuse.search(token);
       this.setState({ data: result });
@@ -38,16 +41,21 @@ class SearchBox extends React.Component {
     }
   }
 
+  setSelectedCountry(country) {
+    this.props.setSelectedCountry(country);
+    this.setState({data: null});
+  }
+
   render() {
 
     return (
       <div>
-        <input type="text" className="download-input" value={this.props.selectedCountry && this.props.selectedCountry.name ||'' }
-          onChange={ (event) => this.search(event) }
+        <input type="text" className="download-input" value={this.state.selectedCountry}
+          onChange={ (event) => {this.search(event)} }
         />
         <ul>
           {this.state.data && this.state.data.map((country, i) => {
-            return <li key={i} onClick={()=> {this.props.setSelectedCountry(country)}}>{country.name}</li>
+            return <li key={i} onClick={()=> this.setSelectedCountry(country)}>{country.name}</li>
           })}
         </ul>
       </div>
