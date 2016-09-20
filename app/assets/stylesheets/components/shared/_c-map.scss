@@ -75,9 +75,12 @@
   position: relative;
 }
 
+.leaflet-container {
+  background-color: transparent;
+}
+
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   border-radius: 0;
 }
-
 

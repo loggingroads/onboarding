@@ -55,6 +55,11 @@ en:
       title: Help us map roads<br />in forests
       subtitle: Participate
       read_more: More
+    download:
+      title: Download the data
+      input_text: Search a country and select a format for the data
+      button_1: shape_url
+      button_2: geojson_url
     collaborate:
       title: With us
       subtitle: Collaborate

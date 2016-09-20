@@ -32,28 +32,9 @@
 
  @import "layouts/layouts";
 
- @import "components/shared/c-footer";
- @import "components/shared/c-layers-switcher";
- @import "components/shared/c-map";
- @import "components/shared/c-navigation";
- @import "components/shared/c-pagination";
- @import "components/shared/c-routes";
- @import "components/shared/c-section-intro";
- @import "components/shared/c-search";
- @import "components/shared/c-switcher";
- @import "components/shared/c-table";
- @import "components/shared/c-tag";
- @import "components/shared/c-tabs";
- @import "components/shared/c-modal";
+ @import "components/shared/*";
 
- @import "components/home/about";
- @import "components/home/activity";
- @import "components/home/community";
- @import "components/home/events";
- @import "components/home/index";
- @import "components/home/home-intro";
- @import "components/home/participate";
- @import "components/home/slider";
+ @import "components/home/*";
 
  @import "admin/shared/search";
  @import "admin/shared/pagination";

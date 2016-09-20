@@ -20,6 +20,10 @@
     padding: 25px 40px;
     font-size: 15px;
   }
+
+  &.is-disabled {
+    opacity: .5;
+  }
 }
 
 /* The orange one */
@@ -29,7 +33,6 @@
 
   &:hover {
    background-color: lighten($color-1, 5);
-   // color: $color-3;
   }
 }
 
@@ -45,3 +48,5 @@
     background-color: #eee;
   }
 }
+
+

@@ -1,0 +1,35 @@
+.l-download {
+  padding: 40px 0;
+  text-align: center;
+  background-color: $color-1;
+
+  @media screen and (min-width: $screen-m) {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  .wrap {
+    position: relative;
+  }
+
+  .text-module-title {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bttn {
+    margin-top: 30px;
+  }
+
+  .c-home-map {
+    height: 500px;
+    width: 100%;
+    position: relative;
+    top: -50px;
+  }
+
+  .download-selectors {
+
+  }
+}
