@@ -29,12 +29,21 @@ class GeoJsonMap extends React.Component {
   }
 
   _drawLayer() {
+    this._setInteractivity();
     this.geoJson = L.geoJson(this.props.geoms, {
       style: this._getStyles.bind(this),
       onEachFeature: this._setEvents.bind(this)
     }).addTo(this.map);
+  }
 
-    console.log(this.map)
+  _setInteractivity() {
+    this.props.geoms.map( (g) => {
+      this.props.countries.map((c) => {
+        if (c.iso === g.properties.iso_a3) {
+          g.properties.interactivity = true;
+        }
+      });
+    });
   }
 
   _getStyles(feature) {
@@ -50,29 +59,25 @@ class GeoJsonMap extends React.Component {
   }
 
   getOpacity(d) {
-    let opacity;
-
-    this.props.countries.map(function(c) {
-      opacity = c.iso === d.iso_a3 ? .5 : .2;
-    });
-
-    return opacity;
+    return d.interactivity ? .5 : .2
   }
 
   getColor(d) {
-    return d.selected ? '#2a5a3a' : '#151515';
+    return d.selected ? '#ffffff' : '#151515';
   }
 
   highlightFeature(e) {
     var layer = e.target;
 
-    layer.setStyle({
-        fillColor: '#ffffff',
-        fillOpacity: 0.2
-    });
+    if (layer.feature.properties.interactivity) {
+      layer.setStyle({
+          fillColor: '#ffffff',
+          fillOpacity: 0.2
+      });
 
-    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-      layer.bringToFront();
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+      }
     }
   }
 
@@ -88,35 +93,48 @@ class GeoJsonMap extends React.Component {
 
   setSelectedCountry() {
     this.unSelectPrevious();
-    const selectedCountry = this.props.selectedCountry;
+    const selectedCountryIso = this.props.selectedCountry.iso;
     const layers = this.map._layers;
 
     Object.keys(layers).map((i) => {
 
-      const layer = layers[i].options
-      // console.log(layer)
+      const layer = layers[i];
+      if (layer.feature && layer.feature.properties.iso_a3 === selectedCountryIso) {
+        layer.feature.properties.selected = true;
+
+        layer.setStyle({
+          fillColor: '#ffffff',
+          fillOpacity: 1
+        });
+
+        this.unSelectPrevious();
+
+        this.selectedLayer = layer;
+      }
     })
   }
 
   selectCountry(e) {
-    //Unselect previous layer
-    this.unSelectPrevious();
-
     //Select new layer
     var layer = e.target;
-    console.log(layer)
-    layer.feature.properties.selected = true;
-    var name = layer.feature.properties.admin
 
-    this.selectedLayer = layer;
+     if (layer.feature.properties.interactivity) {
 
-    const country = {
-      name: layer.feature.properties.admin,
-      iso: layer.feature.properties.iso_a3
-    }
+      //Unselect previous layer
+      this.unSelectPrevious();
 
-    this.props.setSelectedCountry(country);
+      layer.feature.properties.selected = true;
+      var name = layer.feature.properties.admin
 
+      this.selectedLayer = layer;
+
+      const country = {
+        name: layer.feature.properties.admin,
+        iso: layer.feature.properties.iso_a3
+      }
+
+      this.props.setSelectedCountry(country);
+     }
   }
 
   _setEvents(feature, layer) {

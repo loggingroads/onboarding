@@ -38,10 +38,6 @@ class SearchBox extends React.Component {
     }
   }
 
-  selectEvent(country) {
-    this.props.setSelectedCountry(country);
-  }
-
   render() {
 
     return (
@@ -51,7 +47,7 @@ class SearchBox extends React.Component {
         />
         <ul>
           {this.state.data && this.state.data.map((country, i) => {
-            return <li key={i} onClick={()=> {this.selectEvent(country)}}>{country.name}</li>
+            return <li key={i} onClick={()=> {this.props.setSelectedCountry(country)}}>{country.name}</li>
           })}
         </ul>
       </div>
