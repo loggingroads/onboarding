@@ -63,9 +63,24 @@
       background-size: 20px;
     }
   }
+
+  .link-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.leaflet-popup-pane {
+  position: relative;
 }
 
 .leaflet-container {
   background-color: transparent;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  border-radius: 0;
 }
 
