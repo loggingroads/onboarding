@@ -41,6 +41,8 @@ class GeoJsonMap extends React.Component {
       this.props.countries.map((c) => {
         if (c.iso === g.properties.iso_a3) {
           g.properties.interactivity = true;
+          g.properties.shp_url = c.shp_url;
+          g.properties.geojson_url = c.geojson_url;
         }
       });
     });
@@ -137,7 +139,9 @@ class GeoJsonMap extends React.Component {
 
       const country = {
         name: layer.feature.properties.admin,
-        iso: layer.feature.properties.iso_a3
+        iso: layer.feature.properties.iso_a3,
+        shp_url: layer.feature.properties.shp_url,
+        geojson_url: layer.feature.properties.geojson_url
       }
 
       this.props.setSelectedCountry(country);

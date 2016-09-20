@@ -17,6 +17,10 @@ class DownloadMap extends React.Component {
     this.props.setCountriesList();
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log(newProps);
+  }
+
   render() {
     return (
       <div>
@@ -33,8 +37,8 @@ class DownloadMap extends React.Component {
             selectedCountry= {this.props.selectedCountry}
             setSelectedCountry= {this.props.setSelectedCountry}
           />
-          <a href={this.props.setSelectedCountry.shape_url} className="bttn bttn-secondary">SHAPE_URL</a>
-          <a href={this.props.setSelectedCountry.geojson_url} className="bttn bttn-secondary">GEOJSON_URL</a>
+          <a href={this.props.selectedCountry && this.props.selectedCountry.shp_url} className={ `${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>SHAPE_URL</a>
+          <a href={this.props.selectedCountry && this.props.selectedCountry.geojson_url} className={`${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>GEOJSON_URL</a>
         </div>
       </div>
     )
