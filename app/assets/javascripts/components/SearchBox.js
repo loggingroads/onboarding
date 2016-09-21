@@ -49,13 +49,13 @@ class SearchBox extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="c-search-box">
         <input type="text" className="download-input" value={this.state.selectedCountry}
           onChange={ (event) => {this.search(event)} }
         />
-        <ul>
+        <ul className="list">
           {this.state.data && this.state.data.map((country, i) => {
-            return <li key={i} onClick={()=> this.setSelectedCountry(country)}>{country.name}</li>
+            return <li className="item" key={i} onClick={()=> this.setSelectedCountry(country)}>{country.name}</li>
           })}
         </ul>
       </div>

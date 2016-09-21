@@ -1,0 +1,39 @@
+.c-search-box {
+  width: 100%;
+
+  > .download-input {
+    width: 100%;
+    height: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: solid 2px $color-2;
+    font-size: 15px;
+    letter-spacing: -0.1px;
+    color: $font-color-2;
+    padding: 15px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  > .list {
+    width: 100%;
+
+    > .item {
+      width: 100%;
+      height: 50px;
+      background: $color-1;
+      color: $font-color-2;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 15px;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-4;
+      }
+    }
+  }
+}
