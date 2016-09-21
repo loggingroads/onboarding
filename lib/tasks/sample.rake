@@ -29,7 +29,7 @@ def create_campaigns
     {
       user_id: @u.id,
       name: "Campaign 1",
-      htag: "#campaign-1",
+      htag_list: "#campaign-1",
       description: "My first campaign is the best campaign",
       url: "http://campaign1.url",
       start_date: 2.days.from_now,
@@ -38,7 +38,7 @@ def create_campaigns
     {
       user_id: @u.id,
       name: "Pokemon Go",
-      htag: "#pokemon",
+      htag_list: "#pokemon",
       description: "Gotta catch them all",
       url: "http://pokemongo.url",
       start_date: 3.days.from_now,
@@ -47,7 +47,7 @@ def create_campaigns
     {
       user_id: @u.id,
       name: "Domino",
-      htag: "#domino",
+      htag_list: "#domino",
       description: "Vangelis domino",
       url: "http://vangelis.url",
       start_date: 4.days.from_now,
@@ -67,7 +67,7 @@ def create_events
       description: "My first event is the best event",
       url: "http://campaign1.url",
       date: 2.days.from_now,
-      location: "Close by",
+      location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
       campaign_id: campaigns.first.id
@@ -78,7 +78,7 @@ def create_events
       description: "My second event is the best event",
       url: "http://campaign1.url",
       date: 3.days.from_now,
-      location: "Close by",
+      location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
       campaign_id: campaigns.first.id
@@ -89,7 +89,7 @@ def create_events
       description: "My third event is the best event",
       url: "http://campaign1.url",
       date: 4.days.from_now,
-      location: "Close by",
+      location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
       campaign_id: campaigns.first.id
@@ -100,7 +100,7 @@ def create_events
       description: "My mapathon event is the best event",
       url: "http://campaign1.url",
       date: 5.days.from_now,
-      location: "Close by",
+      location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
       campaign_id: campaigns.second.id
@@ -120,7 +120,7 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: "Close by",
+      location: {}
     },
     {
       name: "My second task",
@@ -128,7 +128,7 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: "Close by",
+      location: {}
     },
     {
       name: "My third task",
@@ -136,7 +136,7 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: "Close by",
+      location: {}
     },
     {
       name: "My fourth task",
@@ -144,7 +144,7 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: "Close by",
+      location: {}
     },
     {
       name: "My fifth task",
@@ -152,7 +152,7 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: "Close by",
+      location: {}
     }
   ]
 
