@@ -11,8 +11,21 @@ class GeoJsonMap extends React.Component {
   }
 
   componentDidUpdate(prev) {
-    this.props.countries && this.props.geoms !== prev.geoms && this._drawLayer()
-    this.props.selectedCountry && this.setSelectedCountry();
+    if (this.props.countries && this.props.geoms && !this.geoJson) {
+      this._drawLayer();
+      this.setSelectedCountry();
+    }
+
+    if (this.props.selectedCountry !== prev.selectedCountry) {
+      this.setSelectedCountry();
+    }
+  }
+
+  shouldComponentUpdate(props) {
+    const shouldUpdate = props.countries !== this.props.countries ||
+      props.geoms !== this.props.geoms ||
+      props.selectedCountry !== this.props.selectedCountry;
+    return shouldUpdate;
   }
 
   _initMap() {
@@ -91,11 +104,9 @@ class GeoJsonMap extends React.Component {
   }
 
   unSelectPrevious() {
-    const layers = this.map._layers;
+    const layers = this.geoJson;
 
-    Object.keys(layers).map((i) => {
-
-      const layer = layers[i];
+    layers.eachLayer((layer) => {
       if (layer.feature && layer.feature.properties.selected === true) {
         layer.feature.properties.selected = false;
 
@@ -108,15 +119,13 @@ class GeoJsonMap extends React.Component {
   }
 
   setSelectedCountry() {
-
     this.unSelectPrevious();
 
-    const selectedCountryIso = this.props.selectedCountry.iso;
-    const layers = this.map._layers;
+    const selectedCountryIso = this.props.selectedCountry &&
+      this.props.selectedCountry.iso ? this.props.selectedCountry.iso : '';
+    const layers = this.geoJson;
 
-    Object.keys(layers).map((i) => {
-
-      const layer = layers[i];
+    layers.eachLayer((layer) => {
       if (layer.feature && layer.feature.properties.iso_a3 === selectedCountryIso) {
         layer.feature.properties.selected = true;
 
@@ -125,15 +134,14 @@ class GeoJsonMap extends React.Component {
           fillOpacity: 1
         });
       }
-    })
+    });
   }
 
   selectCountry(e) {
     //Select new layer
     var layer = e.target;
 
-     if (layer.feature.properties.interactivity) {
-
+    if (layer.feature.properties.interactivity) {
       layer.feature.properties.selected = true;
       var name = layer.feature.properties.admin
 
@@ -145,7 +153,7 @@ class GeoJsonMap extends React.Component {
       }
 
       this.props.setSelectedCountry(country);
-     }
+    }
   }
 
   _setEvents(feature, layer) {

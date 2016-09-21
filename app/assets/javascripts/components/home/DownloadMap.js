@@ -18,7 +18,6 @@ class DownloadMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
   }
 
   render() {
