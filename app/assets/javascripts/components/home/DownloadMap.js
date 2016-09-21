@@ -30,14 +30,20 @@ class DownloadMap extends React.Component {
           setSelectedCountry= {this.props.setSelectedCountry}
         />
         <div className="download-selectors">
-          <label for="">Search a country and select a format for the data</label>
-          <SearchBox
-            countries= {this.props.countries}
-            selectedCountry= {this.props.selectedCountry}
-            setSelectedCountry= {this.props.setSelectedCountry}
-          />
-          <a href={this.props.selectedCountry && this.props.selectedCountry.shp_url} className={ `${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>SHAPE_URL</a>
-          <a href={this.props.selectedCountry && this.props.selectedCountry.geojson_url} className={`${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>GEOJSON_URL</a>
+          <label className="label" for="">Search a country and select a format for the data</label>
+          <div className="content">
+            <div className="selector">
+              <SearchBox
+                countries= {this.props.countries}
+                selectedCountry= {this.props.selectedCountry}
+                setSelectedCountry= {this.props.setSelectedCountry}
+              />
+            </div>
+            <div className="actions">
+              <a href={this.props.selectedCountry && this.props.selectedCountry.shp_url} className={ `${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>SHAPE_URL</a>
+              <a href={this.props.selectedCountry && this.props.selectedCountry.geojson_url} className={`${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>GEOJSON_URL</a>
+            </div>
+          </div>
         </div>
       </div>
     )
