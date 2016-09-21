@@ -18,6 +18,18 @@
     margin: 0 auto;
   }
 
+  &.-on-top {
+    position: relative;
+
+    .text-module-title {
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
   .bttn {
     margin-top: 30px;
   }
@@ -26,10 +38,53 @@
     height: 500px;
     width: 100%;
     position: relative;
-    top: -50px;
+    top: -30px;
   }
 
   .download-selectors {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    bottom: 15px;
 
+    > .label {
+      width: 100%;
+      font-size: 15px;
+      color: $font-color-2;
+      text-align: left;
+    }
+
+    > .content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      > .selector {
+        width: 100%;
+        max-width: 380px;
+        display: flex;
+      }
+
+      > .actions {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 2;
+        margin-left: 20px;
+
+        .bttn {
+          width: 180px;
+          height: 50px;
+          margin: 0;
+          padding: 15px;
+          font-size: 18px;
+          font-weight: 600;
+          color: $font-color-1;
+        }
+      }
+    }
   }
 }
