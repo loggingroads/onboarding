@@ -50,9 +50,16 @@ class SearchBox extends React.Component {
 
     return (
       <div className="c-search-box">
-        <input type="text" className="download-input" value={this.state.selectedCountry}
-          onChange={ (event) => {this.search(event)} }
-        />
+        <div className="box">
+          <input type="text" className="download-input" value={this.state.selectedCountry}
+            onChange={ (event) => {this.search(event)} }
+          />
+          <div className="icon">
+            <svg className="search" >
+              <use xlinkHref="#icon-search"></use>
+            </svg>
+          </div>
+        </div>
         <ul className="list">
           {this.state.data && this.state.data.map((country, i) => {
             return <li className="item" key={i} onClick={()=> this.setSelectedCountry(country)}>{country.name}</li>
