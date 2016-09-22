@@ -5,7 +5,7 @@
 
   @media screen and (min-width: $screen-m) {
     padding-top: 60px;
-    padding-bottom: 70px;
+    padding-bottom: 170px;
   }
 
   .wrap {
@@ -35,10 +35,10 @@
   }
 
   .c-home-map {
-    height: 500px;
+    height: 600px;
     width: 100%;
     position: relative;
-    top: -30px;
+    top: 20px;
   }
 
   .download-selectors {
@@ -48,14 +48,18 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative;
-    bottom: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -92px;
 
     > .label {
       width: 100%;
       font-size: 15px;
+      font-weight: 600;
       color: $font-color-2;
       text-align: left;
+      margin-bottom: 10px;
     }
 
     > .content {
