@@ -1,19 +1,38 @@
 .c-search-box {
   width: 100%;
 
-  > .download-input {
+  > .box {
     width: 100%;
-    height: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: solid 2px $color-2;
-    font-size: 15px;
-    letter-spacing: -0.1px;
-    color: $font-color-2;
-    padding: 15px;
+    position: relative;
 
-    &:focus {
-      outline: none;
+    > .download-input {
+      width: 100%;
+      height: 50px;
+      background-color: transparent;
+      border: solid 2px $color-2;
+      font-size: 15px;
+      letter-spacing: -0.1px;
+      color: $font-color-2;
+      padding: 15px 36px 15px 15px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    > .icon {
+      width: 45px;
+      height: 50px;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+
+      > .search {
+        width: 22px;
+        height: 50px;
+        fill: $color-2;
+      }
     }
   }
 

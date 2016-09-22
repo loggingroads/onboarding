@@ -92,6 +92,8 @@ class GeoJsonMap extends React.Component {
           fillOpacity: 0.2
       });
 
+      this.map.getContainer().style.cursor = 'pointer';
+
       if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
       }
@@ -101,6 +103,7 @@ class GeoJsonMap extends React.Component {
   resetHighlight(e) {
     var layer = e.target ? e.target : e;
     this.geoJson.resetStyle(layer);
+    this.map.getContainer().style.cursor = 'default';
   }
 
   unSelectPrevious() {
