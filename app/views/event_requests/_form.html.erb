@@ -1,5 +1,5 @@
 <div class="form-wrap">
-  <%= form_for([:admin, event_request]) do |f| %>
+  <%= form_for(event_request) do |f| %>
     <% if event_request.errors.any? %>
         <div id="error_explanation">
           <h3><%= pluralize(event_request.errors.count, "error") %> prohibited this event_request from being saved:</h3>
@@ -29,14 +29,6 @@
       <div class="col-sm-9"><%= f.text_field :location_name, class: 'form-control', class: 'form-control' %></div>
     </fieldset>
 
-    <fieldset class="form-group row">
-      <%= f.label :location, class: 'col-sm-3 form-control-label' %>
-      <div class="col-sm-9">
-        <div id="map"></div>
-        <%= f.text_area :location, value: f.object.location.try(:to_json), class: 'form-control hidden', id: 'location_map' %>
-      </div>
-    </fieldset>
-
     <fieldset class="form-group row required">
       <%= f.label :potential_date, class: 'col-sm-3 form-control-label' %>
       <div class="col-sm-9"><%= f.text_field :potential_date, {class: 'form-control datepicker'} %></div>
@@ -44,7 +36,7 @@
 
     <fieldset class="form-group row">
       <%= f.label :experience_level, class: 'col-sm-3 form-control-label' %>
-      <div class="col-sm-9"><%= f.text_field :experience_level, class: 'form-control' %></div>
+      <div class="col-sm-9"><%= f.select :experience_level, options_for_select(["Firs time organizing such an event", "Organized mapathons before", "Organized similar events"]), {}, class: 'form-control' %></div>
     </fieldset>
 
     <fieldset class="form-group row required">
@@ -53,8 +45,7 @@
     </fieldset>
 
     <div class="form-group row">
-      <div class="col-sm-offset-3 col-sm-9 form-control-btns">
-        <%= link_to 'Cancel', admin_event_requests_path, class: 'bttn bttn-secondary' %>
+      <div class="col-sm-offset-3 form-control-btns">
         <%= f.submit class: 'bttn bttn-primary' %>
       </div>
     </div>
