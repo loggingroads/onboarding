@@ -21,8 +21,12 @@
           </ul>
         </li>
 
-        <li class="<%="is-current" if ["impact"].include?(controller_name) %> menu-item"> <%= link_to 'Impact', "/", {class: 'nav-link text text-menu -light'} %></li>
-        <li class="<%="is-current" if ["download"].include?(controller_name) %> menu-item"><%= link_to 'Data Download', "/", {class: 'nav-link text text-menu -light'} %></li>
+        <li class="<%="is-current" if ["impact"].include?(controller_name) %> menu-item">
+          <%= link_to 'Impact', "#community", {class: 'nav-link text text-menu -light'} %>
+        </li>
+        <li class="<%="is-current" if ["download"].include?(controller_name) %> menu-item">
+          <%= link_to 'Data Download', "#download", {class: 'nav-link text text-menu -light'} %>
+        </li>
         <li class="<%="is-current" if ["about"].include?(controller_name) %> menu-item"><%= link_to 'About', "/",  {class: 'nav-link text text-menu -light'} %></li>
         <li class="sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light"><%= image_tag "language.svg", alt: "Language", title: "Language selector" %></a>
           <ul class="sub-menu">
