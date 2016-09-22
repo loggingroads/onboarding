@@ -33,6 +33,7 @@ form {
   }
 
   .form-control {
+    width: 100%;
 	  min-height: 40px;
 	  background-color: rgba(255, 255, 255, 0.5);
 	  border: solid 1px #b8b8b8;
@@ -40,6 +41,9 @@ form {
     color: #151515;
     font-family: $font-family-1;
     padding: 7px 20px;
+    float: left;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .form-control-label {
@@ -48,12 +52,33 @@ form {
     color: #151515;
     font-size: 18px;
     font-family: $font-family-1;
+    float: left;
+
+    &.-custom {
+      width: 19.66667%;
+      padding: 0.375rem 0.75rem;
+    }
+  }
+
+  .form-input {
+    &.-custom {
+      width: 79.33333%;
+      float: right;
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
   }
 
   .form-control-btns {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
 
     a {
       margin-right: 20px;
@@ -256,6 +281,13 @@ form {
       padding: 3px;
       margin-top: 5px;
     }
+  }
+
+  fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
   }
 }
 
