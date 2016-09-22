@@ -15,7 +15,7 @@
 #
 
 class EventRequest < ApplicationRecord
-  validates :name, :location, :potential_date, :email, presence: true
+  validates :name, :location_name, :potential_date, :email, presence: true
 
   def location= loc
     write_attribute(:location, loc.present? ? JSON.parse(loc) : nil) if loc

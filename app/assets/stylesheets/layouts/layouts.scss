@@ -26,6 +26,8 @@
 }
 
 .l-vert-wrap {
+  width: 100%;
+  display: inline-block;
   min-height: calc(100vh - 160px);
 }
 

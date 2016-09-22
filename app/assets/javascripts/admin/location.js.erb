@@ -4,7 +4,7 @@ $(document).ready(function () {
     const BASEMAP = 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
 
     // create a map in the "map" div, set the view to a given place and zoom
-    const map = L.map('map').setView([39.950490, -98.746077], 5);
+    const map = L.map('mapForm').setView([39.950490, -98.746077], 5);
 
     // add an OpenStreetMap tile layer
     L.tileLayer(BASEMAP, {
@@ -147,7 +147,7 @@ $(document).ready(function () {
         });
       }
       map.addControl(drawControlEditOnly);
-    } else if ($('#map').hasClass('tasks')) {
+    } else if ($('#mapForm').hasClass('tasks')) {
       map.addControl(drawControlTasks);
     } else {
       map.addControl(drawControlFull);
@@ -158,7 +158,7 @@ $(document).ready(function () {
     const type = e.layerType,
       layer = e.layer;
 
-      if ($('#map').hasClass('tasks')) {
+      if ($('#mapForm').hasClass('tasks')) {
         drawControlTasks.removeFrom(map);
       } else {
         drawControlFull.removeFrom(map);
@@ -211,7 +211,7 @@ $(document).ready(function () {
     map.on("draw:deleted", function (e) {
       if (drawnItems.getLayers().length === 0) {
         drawControlEditOnly.removeFrom(map);
-        if ($('#map').hasClass('tasks')) {
+        if ($('#mapForm').hasClass('tasks')) {
           drawControlTasks.addTo(map);
         } else {
           drawControlFull.addTo(map);
@@ -223,7 +223,7 @@ $(document).ready(function () {
     });
   };
 
-  if ($('#map').length) {
+  if ($('#mapForm').length) {
     loadMap();
   }
 

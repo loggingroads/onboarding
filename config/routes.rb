@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, path: 'admin'
   namespace :admin do
     resources :countries
-    resources :event_requests
+    resources :event_requests, only: [:index, :show, :destroy]
     resources :tasks
     resources :events
     resources :campaigns do
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :tasks, only: [:index]
     end
     resources :tasks, only: [:show, :index]
+    resources :event_requests, only: [:new, :create]
   end
 
   get "/:locale", to: "home#index", as: :locale_root
