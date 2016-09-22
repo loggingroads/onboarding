@@ -14,7 +14,8 @@
  *= require slick-theme
  */
 
- // @import "bootstrap";
+ @import 'bootstrap';
+ @import 'bootstrap-datepicker';
 
  @import "settings/settings";
  @import "settings/normalize";

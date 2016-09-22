@@ -17,6 +17,7 @@
 //= require react
 //= require react_ujs
 //= require jquery.slick
+//= require bootstrap-datepicker
 //= require_tree .
 //= require main
 
