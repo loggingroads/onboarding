@@ -1,5 +1,5 @@
 <div class="form-wrap">
-  <%= form_for([:admin, task]) do |f| %>
+  <%= form_for([:admin, task], html: { multipart: true }) do |f| %>
     <% if task.errors.any? %>
         <div id="error_explanation">
           <h3><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h3>
