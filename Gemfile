@@ -4,7 +4,10 @@ ruby '2.3.1'
 
 gem 'rails', '>= 5.0.0', '< 5.1'
 gem 'puma', '~> 3.0'
+
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+
 gem 'dotenv-rails'
 gem 'devise'
 gem 'eventbrite'
