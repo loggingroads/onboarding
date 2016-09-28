@@ -16,7 +16,7 @@
       padding-right: 12px;
       background-repeat: no-repeat;
       background-position: right center;
-      background-image: url('TriangleUp.svg'), url('TriangleDown.svg');
+      background-image: image-url('TriangleUp.svg'), image-url('TriangleDown.svg');
       background-position: right 35%, right 75%;
       display: inline-block;
       width: 100%;
@@ -32,11 +32,11 @@
       }
 
       &.asc {
-        background-image: url('TriangleUpDark.svg'), url('TriangleDown.svg');
+        background-image: image-url('TriangleUpDark.svg'), image-url('TriangleDown.svg');
       }
 
       &.desc {
-        background-image: url('TriangleUp.svg'), url('TriangleDownDark.svg');
+        background-image: image-url('TriangleUp.svg'), image-url('TriangleDownDark.svg');
       }
     }
   }
@@ -144,32 +144,32 @@
       opacity: 1;
 
       &.-show {
-        background-image: url('show.svg');
+        background-image: image-url('show.svg');
         width: 20px;
         height: 20px;
 
         &:hover {
-          background-image: url('showDark.svg');
+          background-image: image-url('showDark.svg');
         }
       }
 
       &.-edit {
-        background-image: url('edit.svg');
+        background-image: image-url('edit.svg');
         width: 20px;
         height: 20px;
 
         &:hover {
-          background-image: url('editDark.svg');
+          background-image: image-url('editDark.svg');
         }
       }
 
       &.-delete {
-        background-image: url('delete.svg');
+        background-image: image-url('delete.svg');
         width: 20px;
         height: 20px;
 
         &:hover {
-          background-image: url('deleteDark.svg');
+          background-image: image-url('deleteDark.svg');
         }
       }
     }
