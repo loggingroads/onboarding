@@ -18,7 +18,7 @@
         <td><%= event.date %></td>
         <td><%= event.contact %></td>
         <td class="actions">
-          <%= link_to '', event_path(event), class: "svg-bttn -show", target: "_blank" %>
+          <%= link_to '', event_path(:en, event), class: "svg-bttn -show", target: "_blank" %>
           <%= link_to '', edit_admin_event_path(event), class: "svg-bttn -edit" %>
           <%= link_to '', admin_event_path(event), method: :delete, data: {confirm: 'Are you sure?'}, class: "svg-bttn -delete"%>
         </td>
