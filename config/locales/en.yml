@@ -109,4 +109,7 @@ en:
         date: Date
         name: Name
         location_name: Location name
-
+      show:
+        tasks_title: Tasks
+        map_view: Map View
+        list_view: List View
