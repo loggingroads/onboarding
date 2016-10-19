@@ -6,8 +6,10 @@
           <div class="col-sm-12">
             <ul class="c-routes text text-desc -light">
               <li class="route"><%= t("views.application.pages.participate") %></li>
-              <li class="route"><%= link_to t("views.application.pages.campaigns"),
-                campaigns_path %></li>
+              <li class="route">
+                <%= link_to t("views.application.pages.campaigns"),
+                  campaigns_path, class: "route-link" %>
+              </li>
             </ul>
             <div id="open-modal" class="open-modal"></div>
           </div>

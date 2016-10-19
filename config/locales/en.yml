@@ -31,7 +31,7 @@ en:
         nav:
           participate: Participate
           campaigns: Campaigns
-          events: Mapathons
+          events: Events
           tasks: Tasks
           impact: Impact
           suggest_event: Suggest event
@@ -95,6 +95,14 @@ en:
         title: Campaigns
         description: Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do.
       _campaigns:
+        start_date: "Start date"
+        name: "Name"
+        htag: "Hash tag"
+    events:
+      index:
+        title: Events
+        description: Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do.
+      _events:
         start_date: "Start date"
         name: "Name"
         htag: "Hash tag"
