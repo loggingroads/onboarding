@@ -113,3 +113,12 @@ en:
         tasks_title: Tasks
         map_view: Map View
         list_view: List View
+    tasks:
+      index:
+        title: Tasks
+        map_view: Map View
+        list_view: List View
+      _tasks:
+        task_type: Task type
+        name: Name
+        location_name: Location name
