@@ -103,7 +103,7 @@ en:
         title: Events
         description: Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do.
       _events:
-        start_date: "Start date"
+        date: "Date"
         name: "Name"
-        htag: "Hash tag"
+        location_name: "Location name"
 
