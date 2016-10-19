@@ -121,4 +121,4 @@ en:
       _tasks:
         task_type: Task type
         name: Name
-        location_name: Location name
+        description: Description
