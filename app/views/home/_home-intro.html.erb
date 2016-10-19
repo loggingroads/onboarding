@@ -3,9 +3,15 @@
   <hr/>
   <p class="text text-claim -light"><%= t('views.home.index._home_intro.intro') %></p>
   <div class="partners">
-    <div class="partner moabi"></div>
-    <div class="partner eu-co"></div>
-    <div class="partner gfw"></div>
+    <%= link_to "http://www.moabi.org" do %>
+      <div class="partner moabi"></div>
+    <% end %>
+    <%= link_to "http://www.jrc.eu" do %>
+      <div class="partner eu-co"></div>
+    <% end %>
+    <%= link_to "http://www.globalforestwatch.org" do %>
+      <div class="partner gfw"></div>
+    <% end %>
   </div>
   <div class="find-more">
     <a href="#slider" class="text text-button -light"><%= t('views.home.index._home_intro.find_more') %>
