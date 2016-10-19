@@ -1,14 +1,13 @@
 <section class="l-campaigns l-vert-wrap" id="campaignsIndex">
-
   <article class="l-intro -campaigns">
     <div class="l-routes">
       <div class="wrap">
         <div class="row">
           <div class="col-sm-12">
             <ul class="c-routes text text-desc -light">
-              <!-- Paths to set -->
-              <li class="route">Participate</li>
-              <li class="route"><%= link_to "Campaigns", campaigns_path %></li>
+              <li class="route"><%= t("views.application.pages.participate") %></li>
+              <li class="route"><%= link_to t("views.application.pages.campaigns"),
+                campaigns_path %></li>
             </ul>
             <div id="open-modal" class="open-modal"></div>
           </div>
@@ -19,8 +18,8 @@
       <div class="row">
         <div class="col-sm-12 col-md-5">
           <div class="c-section-intro">
-            <h1 class="title text text-module-subtitle -light">Campaigns</h1>
-            <p class="text text-desc -light">Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do. </p>
+            <h1 class="title text text-module-subtitle -light"><%= t("views.campaigns.index.title") %></h1>
+            <p class="text text-desc -light"><%= t("views.campaigns.index.description") %></p>
           </div>
         </div>
       </div>
