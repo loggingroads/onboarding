@@ -75,7 +75,7 @@ class ShareModal extends Component {
             </svg>
           </button>
           <div className="title text text-module-subtitle -dark">
-            Share this Campaign
+            Share this Page
           </div>
           <div className="text text-desc -dark">
             Copy and paste the link in email or IM
