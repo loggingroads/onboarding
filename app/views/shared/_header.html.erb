@@ -12,13 +12,25 @@
       </button>
 
       <ul class="main-menu">
-        <li class="<%="is-current" if ["campaigns", "events", "tasks"].include?(controller_name) %> sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light"><%= t('nav.participate') %></a>
+        <li class="<%="is-current" if ["campaigns", "events", "tasks"].include?(controller_name) %> sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light"><%= t('views.application._header.nav.participate') %></a>
 
           <ul class="sub-menu">
-            <li><%= link_to t('nav.campaigns'), campaigns_path, { class: controller_name == 'campaigns' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
-            <li><%= link_to t('nav.mapathons'), events_path, { class:  controller_name == 'events' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
-            <li><%= link_to t('nav.tasks'), tasks_path, { class: controller_name == 'tasks' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
-            <li><%= link_to t('nav.suggest_event'), new_event_request_path, { class: controller_name == 'event_requests' ? 'text text-menu -dark is-current' : 'text text-menu -dark'} %></li>
+            <li>
+              <%= link_to t('views.application._header.nav.campaigns'),
+                campaigns_path, { class: "text text-menu -dark #{"is-current" if controller_name == 'campaigns'}" } %>
+            </li>
+            <li>
+              <%= link_to t('views.application._header.nav.events'),
+                events_path, { class: "text text-menu -dark #{"is-current" if controller_name == 'events'}" } %>
+            </li>
+            <li>
+              <%= link_to t('views.application._header.nav.tasks'),
+                tasks_path, { class: "text text-menu -dark #{"is-current" if controller_name == 'tasks'}" } %>
+            </li>
+            <li>
+              <%= link_to t('views.application._header.nav.suggest_event'),
+                new_event_request_path, { class: "text text-menu -dark #{"is-current" if controller_name == 'event_resquests'}" } %>
+            </li>
           </ul>
         </li>
 

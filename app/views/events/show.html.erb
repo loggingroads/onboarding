@@ -6,9 +6,11 @@
         <div class="row">
           <div class="col-sm-12">
             <ul class="c-routes text text-desc -light">
-              <!-- Paths to set -->
-              <li class="route">Participate</li>
-              <li class="route"><%= link_to 'Mapathons', tasks_path, {:class => 'route-link'} %></li>
+              <li class="route"><%= t("views.application.pages.participate") %></li>
+              <li class="route">
+                <%= link_to t("views.application.pages.events"), events_path,
+                  class: "route-link" %>
+              </li>
               <li class="route"><%= @event.name %></li>
             </ul>
             <div id="open-modal" class="open-modal"></div>
@@ -34,10 +36,14 @@
       <div class="c-switcher">
         <div class="switcher-header">
           <div class="wrap">
-            <h2>Tasks</h2>
+            <h2><%= t("views.events.show.tasks_title") %></h2>
             <ul class="tabs">
-              <li class="tab -is-active" data-tab="tab-1">Map View</li>
-              <li class="tab" data-tab="tab-2">List View</li>
+              <li class="tab -is-active" data-tab="tab-1">
+                <%= t("views.events.show.map_view") %>
+              </li>
+              <li class="tab" data-tab="tab-2">
+                <%= t("views.events.show.list_view") %>
+              </li>
             </ul>
           </div>
         </div>

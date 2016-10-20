@@ -6,9 +6,15 @@
       <% nested_path = controller_name == 'campaigns' ?
         params.merge({ controller: 'tasks', action: 'index', campaign_id: @campaign.id}) :
         nil %>
-      <th class="sortable"><%= sortable "task_type", nil, nested_path %></th>
-      <th class="sortable"><%= sortable "name", nil, nested_path %></th>
-      <th class="sortable"><%= sortable "description", nil, nested_path %></th>
+      <th class="sortable">
+        <%= sortable "task_type", t("views.tasks._tasks.task_type"), nested_path %>
+      </th>
+      <th class="sortable">
+        <%= sortable "name", t("views.tasks._tasks.name"), nested_path %>
+      </th>
+      <th class="sortable">
+        <%= sortable "description", t("views.tasks._tasks.description"), nested_path %>
+      </th>
     </tr>
   </thead>
   <tbody>

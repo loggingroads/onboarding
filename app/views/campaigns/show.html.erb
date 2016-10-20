@@ -7,8 +7,11 @@
           <div class="col-sm-12">
             <ul class="c-routes text text-desc -light">
               <!-- Paths to set -->
-              <li class="route">Participate</li>
-              <li class="route"><%= link_to 'Campaigns', campaigns_path, {:class => 'route-link'} %></li>
+              <li class="route"><%= t("views.application.pages.participate") %></li>
+              <li class="route">
+                <%= link_to t("views.application.pages.campaigns"), campaigns_path,
+                  class: "route-link" %>
+              </li>
               <li class="route"><%= @campaign.name %></li>
             </ul>
             <div id="open-modal" class="open-modal"></div>
@@ -28,7 +31,8 @@
             </ul>
             <p class="text text-desc -light"><%= @campaign.description %></p>
             <% if @campaign.url.present? %>
-              <a class="bttn bttn-primary" href="<%= @campaign.url %>" target="_blank">Participate</a>
+              <%= link_to t("views.application.pages.participate"), @campaign.url,
+              class: "bttn bttn-primary", target: "_blank" %>
             <% end %>
           </div>
         </div>
@@ -41,8 +45,12 @@
       <div class="c-tabs">
         <div class="wrap">
           <ul class="tabs">
-            <li class="tab -is-active" data-tab="tab-1">Mapathon</li>
-            <li class="tab" data-tab="tab-2">Task</li>
+            <li class="tab -is-active" data-tab="tab-1">
+              <%= t("views.campaigns.show.tab_events") %>
+            </li>
+            <li class="tab" data-tab="tab-2">
+              <%= t("views.campaigns.show.tab_tasks") %>
+            </li>
           </ul>
         </div>
         <div class="tabs-content">

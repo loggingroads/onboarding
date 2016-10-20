@@ -6,9 +6,11 @@
         <div class="row">
           <div class="col-sm-12">
             <ul class="c-routes text text-desc -light">
-              <!-- Paths to set -->
-              <li class="route">Participate</li>
-              <li class="route"><%= link_to 'Mapathons', events_path, {:class => 'route-link'} %></li>
+              <li class="route"><%= t("views.application.pages.participate") %></li>
+              <li class="route">
+                <%= link_to t("views.application.pages.events"), events_path,
+                  class: "route-link" %>
+              </li>
             </ul>
             <div id="open-modal" class="open-modal"></div>
           </div>
@@ -19,13 +21,12 @@
       <div class="row">
         <div class="col-sm-12 col-md-5">
           <div class="c-section-intro">
-            <h1 class="title text text-module-subtitle -light">Mapathons</h1>
-            <ul class="tags-list text text-tag -light">
-              <li class="c-tag -primary">Tag 1</li>
-              <li class="c-tag -primary">Tag 2</li>
-              <li class="c-tag -primary">Tag 3</li>
-            </ul>
-            <p class="text text-desc -light">Description vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do. </p>
+            <h1 class="title text text-module-subtitle -light">
+              <%= t("views.events.index.title") %>
+            </h1>
+            <p class="text text-desc -light">
+              <%= t("views.events.index.description") %>
+            </p>
           </div>
         </div>
       </div>

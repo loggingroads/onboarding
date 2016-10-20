@@ -7,9 +7,12 @@
           <div class="col-sm-12">
             <ul class="c-routes text text-desc -light">
               <!-- Paths to set -->
-              <li class="route">Participate</li>
-              <li class="route"><%= link_to 'Tasks', tasks_path, {:class => 'route-link'} %></li>
-              <li class="route">Task name</li>
+              <li class="route"><%= t("views.application.pages.participate") %></li>
+              <li class="route">
+                <%= link_to t("views.application.pages.tasks"), tasks_path,
+                  class: "route-link" %>
+              </li>
+              <li class="route"><%= @task.name %></li>
             </ul>
             <div id="open-modal" class="open-modal"></div>
           </div>
@@ -20,7 +23,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-5">
           <div class="c-section-intro">
-            <span class="date">10/03/2016 - 10/09/2016</span>
+            <!--span class="date">10/03/2016 - 10/09/2016</span-->
             <h1 class="title text text-module-subtitle -light"><%= @task.name %></h1>
             <p class="text text-desc -light"><%= @task.description %></p>
           </div>

@@ -3,9 +3,15 @@
 <table class="table">
   <thead>
     <tr>
-      <th class="sortable"><%= sortable "start_date" %></th>
-      <th class="sortable"><%= sortable "name" %></th>
-      <th class="sortable"><%= sortable "htag" %></th>
+      <th class="sortable">
+        <%= sortable "start_date", t("views.campaigns._campaigns.start_date") %>
+      </th>
+      <th class="sortable">
+        <%= sortable "name", t("views.campaigns._campaigns.name") %>
+      </th>
+      <th class="sortable">
+        <%= sortable "htag", t("views.campaigns._campaigns.htag") %>
+      </th>
     </tr>
   </thead>
   <tbody>
