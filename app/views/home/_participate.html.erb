@@ -7,13 +7,17 @@
         <img src="" class="image-item">
         <h3 class="text text-p-title -dark">Mapathon</h3>
         <p class="text text-p -darker">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur, sed do.</p>
-        <a href="" class="text text-p -light">[+] <%= t('views.home.index._participate.read_more') %></a>
+        <%= link_to events_path, class: "text text-p -light" do %>
+          [+] <%= t('views.home.index._participate.read_more') %>
+        <% end %>
       </div>
       <div class="participate-item">
         <img src="" class="image-item">
         <h3 class="text text-p-title -darker">Campaigns</h3>
         <p class="text text-p -dark">Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis.</p>
-        <a href="" class="text text-p -light">[+] <%= t('views.home.index._participate.read_more') %></a>
+        <%= link_to campaigns_path, class: "text text-p -light" do %>
+          [+] <%= t('views.home.index._participate.read_more') %>
+        <% end %>
       </div>
     </div>
   </div>
