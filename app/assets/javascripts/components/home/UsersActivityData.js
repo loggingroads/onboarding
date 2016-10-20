@@ -31,7 +31,7 @@ class UsersActivityData extends React.Component {
               <tr key={i}>
                 { title === "ranking" && <td className="rank text text-legend -light">{i+1}</td> }
                 <td className="user text text-legend -light">{user.name}</td>
-                <td className="road text text-legend -light">{user.total} roads</td>
+                <td className="road text text-legend -light">{user.total} kms of road</td>
               </tr>
             );
           })}

@@ -10,7 +10,7 @@ class CommunityData extends React.Component {
 
   render() {
 
-    const items = ['users', 'roads'];
+    const items = ['users', 'kms'];
     const cummunityItems = this.props.communityData && items.map(
       (key, i) => {
         const data = this.props.communityData;
