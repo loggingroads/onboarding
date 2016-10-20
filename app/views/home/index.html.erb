@@ -10,9 +10,11 @@
   <article class="l-participate" id="participate">
     <%= render 'participate' %>
   </article>
-  <article class="l-events" id="events">
-    <%= render 'events' %>
-  </article>
+  <% if @event %>
+    <article class="l-events" id="events">
+      <%= render 'events' %>
+    </article>
+  <% end %>
   <article class="l-community" id="community">
     <%= render 'community' %>
   </article>
