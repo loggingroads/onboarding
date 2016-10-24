@@ -34,10 +34,10 @@
     </fieldset>
 
     <fieldset class="form-group row">
-      <%= f.label :background_image, class: 'col-sm-3 form-control-label' %>
+      <%= f.label :image, class: 'col-sm-3 form-control-label' %>
       <div class="col-sm-9 img_upload">
-        <%= image_tag @campaign.background_image %>
-        <%= f.file_field :background_image, class: 'form-control upload' %>
+        <%= image_tag @campaign.image %>
+        <%= f.file_field :image, class: 'form-control upload' %>
       </div>
     </fieldset>
 

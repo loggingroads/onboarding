@@ -1,7 +1,7 @@
 module CampaignsHelper
   def article_with_background campaign, &block
-    bkg_image = if campaign.background_image
-                 "url('#{campaign.background_image(:original)}')"
+    bkg_image = if campaign.image
+                 "url('#{campaign.image(:original)}')"
                 else
                   nil
                 end
