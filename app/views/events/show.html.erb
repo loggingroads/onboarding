@@ -1,6 +1,6 @@
 <section class="l-events-section -detail" id="eventsDetail">
 
-  <article class="l-intro -campaigns-detail">
+  <%= article_with_background(@event) do %>
     <div class="l-routes">
       <div class="wrap">
         <div class="row">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-  </article>
+  <% end %>
 
   <article class="l-main-content">
     <div class="l-switcher">
