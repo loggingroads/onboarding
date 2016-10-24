@@ -12,14 +12,14 @@ module ApplicationHelper
   end
 
   def article_with_background record, &block
-    bkg_image = if record.image
+    bkg_image = if record.image.present?
                  "url('#{record.image(:original)}')"
                 else
                   nil
                 end
 
     content_tag(:article,
-                class: "l-intro #{"-campaigns-detail" unless bkg_image}",
+                class: "l-intro #{"-#{record.class.table_name}-detail" unless bkg_image}",
                 style: "#{"background-image: #{bkg_image}" if bkg_image}") do
       yield
     end
