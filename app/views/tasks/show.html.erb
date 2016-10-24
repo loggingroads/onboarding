@@ -25,6 +25,11 @@
           <div class="c-section-intro">
             <!--span class="date">10/03/2016 - 10/09/2016</span-->
             <h1 class="title text text-module-subtitle -light"><%= @task.name %></h1>
+            <ul class="tags-list text text-tag -light">
+              <% @task.htag_list.to_s.split(",").each do |tag| %>
+                <li class="c-tag -primary"><%= tag %></li>
+              <% end %>
+            </ul>
             <p class="text text-desc -light"><%= @task.description %></p>
           </div>
         </div>
