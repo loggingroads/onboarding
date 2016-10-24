@@ -17,6 +17,13 @@
       <div class="col-sm-9"><%= f.text_field :name, class: 'form-control' %></div>
     </fieldset>
 
+    <fieldset class="form-group row required">
+      <%= f.label :htag, class: 'col-sm-3 form-control-label' %>
+      <div class="col-sm-9">
+        <%= f.text_field :htag_list, value: f.object.htag_list.to_s, class: 'form-control tags' %>
+      </div>
+    </fieldset>
+
     <fieldset class="form-group row">
       <%= f.label :task_manager_url, class: 'col-sm-3 form-control-label' %>
       <div class="col-sm-9"><%= f.text_field :task_manager_url, class: 'form-control' %></div>

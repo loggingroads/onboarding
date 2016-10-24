@@ -15,6 +15,9 @@
       <th class="sortable">
         <%= sortable "description", t("views.tasks._tasks.description"), nested_path %>
       </th>
+      <th class="sortable">
+        <%= sortable "htag", t("views.campaigns._campaigns.htag") %>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +26,13 @@
         <td><%= task.task_type_humanize %></td>
         <td class="-bold"><%= link_to task.name, task_path(task) %></td>
         <td><%= task.description %></td>
+        <td>
+          <ul class="tags-list text text-tag -light">
+            <% task.htag_list.to_s.split(",").each do |tag| %>
+              <li class="c-tag"><%= tag %></li>
+            <% end %>
+          </ul>
+        </td>
       </tr>
     <% end %>
   </tbody>

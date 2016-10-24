@@ -5,6 +5,7 @@
     <tr>
       <th class="sortable"><%= sortable "name" %></th>
       <th>Description</th>
+      <th>Htag</th>
       <th class="sortable"><%= sortable "task_type" %></th>
       <th class="sortable"><%= sortable "status" %></th>
       <th>Actions</th>
@@ -15,6 +16,7 @@
       <tr>
         <td class="-bold"><%= task.name %></td>
         <td><%= task.description %></td>
+        <td class="htags"><%= task.htag_list %></td>
         <td><%= task.task_type_humanize %></td>
         <td><%= task.status_humanize %></td>
         <td class="actions">

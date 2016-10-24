@@ -73,6 +73,9 @@ class Admin::TasksController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
-    params.require(:task).permit(:name, :task_manager_url, :task_type, :description, :image, :status, :location, {campaign_ids: []}, {event_ids: []})
+    params.require(:task).permit(:name, :task_manager_url, :task_type,
+                                 :description, :image, :status, :location,
+                                 :htag_list,
+                                 {campaign_ids: []}, {event_ids: []})
   end
 end
