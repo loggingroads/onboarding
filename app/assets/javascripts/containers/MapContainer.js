@@ -7,7 +7,7 @@ const taskGroups = [
   {
     slug: 'type1',
     type: 1,
-    title: 'To fix',
+    title: 'Tasking Manager tasks',
     color: '#ff5d33',
     active: true,
     style: {
@@ -17,7 +17,7 @@ const taskGroups = [
   {
     slug: 'type2',
     type: 2,
-    title: 'Tasking Manager tasks',
+    title: 'To fix',
     color: '#ffffff',
     active: true,
     style: {
