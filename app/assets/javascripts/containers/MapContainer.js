@@ -91,6 +91,8 @@ class MapContainer extends React.Component {
           tiles={this.state.tilesList}
           layersGroups={this.state.layersGroups}
           tasksList={this.state.tasksList}
+          campaignId={this.props.campaignId}
+          eventId={this.props.eventId}
         />
         <LayerSwitcher
           taskGroups={this.state.taskGroups}
