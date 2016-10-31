@@ -3,6 +3,9 @@
   background-color: $color-1;
   transform: skewY(-3deg);
   background-image: image-url('landing-bg2.jpg');
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
 
   @media screen and (min-width: $screen-m) {
     padding-bottom: 150px;
@@ -21,6 +24,8 @@
     justify-content: center;
     transform: skewY(3deg);
     padding-bottom: 30px;
+    max-width: 800px;
+    padding: 0 35px 20px 35px;
 
     @media screen and (min-width: $screen-m) {
       padding-bottom: 60px;
@@ -59,8 +64,8 @@
   }
 
   .image-item {
-    width: 280px;
-    height: 140px;
+    width: 100%;
+    height: 230px;
     margin-bottom: 20px;
 
     @media screen and (min-width: $screen-l) {
