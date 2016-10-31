@@ -15,6 +15,7 @@ class LayerSwitcher extends React.Component {
       </div>)
 
     });
+    switchers.reverse();
     return (
       <div className="c-layers-switcher">
         {switchers}
