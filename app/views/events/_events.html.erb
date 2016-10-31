@@ -21,9 +21,9 @@
   <tbody>
     <% for event in events %>
       <tr>
-        <td><%= event.date %></td>
-        <td class="-bold"><%= link_to event.name, event_path(event) %></td>
-        <td><%= event.location_name %></td>
+        <td><span>Date</span><%= event.date %></td>
+        <td class="-bold -large"><%= link_to event.name, event_path(event) %></td>
+        <td><span>Location</span><%= event.location_name %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,8 +1,16 @@
 .c-map {
   width: 100%;
-  height: 800px;
+  height: 500px;
   background: #EFEFEF;
   overflow: hidden;
+
+  @media screen and (min-width: $screen-m) {
+    height: 650px;
+  }
+
+  @media screen and (min-width: $screen-l) {
+    height: 800px;
+  }
 
   path {
     stroke: transparent;
@@ -83,4 +91,3 @@
 .leaflet-popup-tip {
   border-radius: 0;
 }
-

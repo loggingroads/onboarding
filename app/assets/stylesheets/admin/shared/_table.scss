@@ -12,6 +12,10 @@
     border: 0 !important;
     padding: 15px 10px;
 
+    @media screen and (max-width: $screen-m) {
+      display: none;
+    }
+
     &.sortable a {
       padding-right: 12px;
       background-repeat: no-repeat;
@@ -45,16 +49,44 @@
     border: 0;
     vertical-align: middle;
 
+    @media screen and (max-width: $screen-m) {
+      display: flex;
+      flex-direction: column;
+      padding: 5px 0;
+    }
+
     &:nth-child(odd) {
       background-color: rgba(235, 235, 235, 0.5)
+    }
+
+    td:first-child {
+      order: 2;
+
+      @media screen and (min-width: $screen-m) {
+        order: inherit;
+      }
+    }
+
+    td:last-child {
+      order: 3;
     }
   }
 
   td {
     border: 0 !important;
-    border-right: 1px solid #d8d8d8 !important;
     vertical-align: middle !important;
-    padding: 20px 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+
+    @media screen and (min-width: $screen-m) {
+      border-right: 1px solid #d8d8d8 !important;
+      padding: 20px 10px;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      display: flex;
+    }
 
     &:last-child {
       border: 0 !important;
@@ -71,6 +103,23 @@
     &.-bold {
       font-weight: 600;
       color: #000;
+    }
+
+    &.-large {
+      font-size: 20px;
+
+      @media screen and (min-width: $screen-m) {
+        font-size: 14px;
+      }
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 16px;
+
+      @media screen and (min-width: $screen-m) {
+        display: none;
+      }
     }
   }
 
