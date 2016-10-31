@@ -75,10 +75,12 @@ class Map extends React.Component {
   }
 
   _popUpFor(layer) {
+    // debugger
     return `<h1>${layer.name}</h1>
             <p>${layer.description}</p>
             <div class="link-group">
-              <a href="/tasks/${layer.id}">Learn more</a>
+              <a href="/campaigns/${layer.events[0].campaign_id}">Campaign</a>
+              <a href="/events/${layer.events[0].id}">Event</a>
               <a href=${layer.task_manager_url}>Do the task</a>
             </div>`;
   }
