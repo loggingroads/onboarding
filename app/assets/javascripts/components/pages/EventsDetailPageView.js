@@ -27,6 +27,7 @@ class EventsDetailView extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     /*
     Slug must match with column name from API.
      */
@@ -46,7 +47,9 @@ class EventsDetailView extends React.Component {
 
     return (
       <div>
-        <Map tiles={this.props.tiles} />
+        <Map
+          tasksList={this.props.eventDetail && this.props.eventDetail.tasks}
+        />
       </div>
     );
   }
