@@ -52,7 +52,7 @@ class Map extends React.Component {
     });
 
     if (this.firstLayersRender) {
-      this._fitBounds();
+      // this._fitBounds();
       this.firstLayersRender = false;
     }
 
