@@ -16,6 +16,9 @@
         <%= sortable "location_name", t("views.events._events.location_name"),
           nested_path %>
       </th>
+      <th class="sortable">
+        <%= sortable "tasks", t("views.events._events.tasks") %>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +27,7 @@
         <td><span>Date</span><%= event.date %></td>
         <td class="-bold -large"><%= link_to event.name, event_path(event) %></td>
         <td><span>Location</span><%= event.location_name %></td>
+        <td><span>Tasks</span><%= event.tasks.count %></td>
       </tr>
     <% end %>
   </tbody>
