@@ -136,10 +136,15 @@
   .slick-next {
     position: absolute;
     z-index: 1;
-    top: 54%;
-    width: 400px;
+    top: 51%;
+    width: 388px;
     height: 400px;
     border-radius: 50%;
+
+    @media screen and (min-width: $screen-m) {
+      top: 54%;
+      width: 395px;
+    }
   }
 
   .slick-prev {

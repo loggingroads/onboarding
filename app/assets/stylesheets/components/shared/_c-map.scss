@@ -1,6 +1,6 @@
 .c-map {
   width: 100%;
-  height: 800px;
+  height: calc(100vh - 120px);
   background: #EFEFEF;
   overflow: hidden;
 
@@ -27,7 +27,11 @@
   }
 
   .leaflet-bottom {
-    bottom: 60px;
+    bottom: 105px;
+
+    @media screen and (min-width: $screen-m) {
+      bottom: 10px;
+    }
   }
 
   .leaflet-left .leaflet-control {
@@ -83,4 +87,3 @@
 .leaflet-popup-tip {
   border-radius: 0;
 }
-

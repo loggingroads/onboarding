@@ -58,9 +58,17 @@
 }
 
 .transparent-padding {
-  padding-top: 100px;
+  padding-top: 80px;
+
+  @media screen and (min-width: $screen-m) {
+    padding-top: 100px;
+  }
 
   .icon-search {
-    top: 75%;
+    top: 73%;
+
+    @media screen and (min-width: $screen-m) {
+      top: 75%;
+    }
   }
 }

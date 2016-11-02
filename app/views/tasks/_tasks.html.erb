@@ -23,10 +23,10 @@
   <tbody>
     <% for task in tasks %>
       <tr>
-        <td><%= task.task_type_humanize %></td>
-        <td class="-bold"><%= link_to task.name, task_path(task) %></td>
-        <td><%= task.description %></td>
-        <td>
+        <td><span>Type</span><%= task.task_type_humanize %></td>
+        <td class="-bold -large"><%= link_to task.name, task_path(task) %></td>
+        <td><span>Description</span><%= task.description %></td>
+        <td><span>Tags</span>
           <ul class="tags-list text text-tag -light">
             <% task.htag_list.to_s.split(",").each do |tag| %>
               <li class="c-tag"><%= tag %></li>

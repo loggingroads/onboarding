@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setEventDetail: (id) => dispatch(setEventDetail(id))
+    setEventDetail: (id) => dispatch(setEventDetail(id)),
   };
 }
 

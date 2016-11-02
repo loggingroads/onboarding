@@ -76,7 +76,6 @@ class DataTableView extends React.Component {
 
   render() {
     const data = this.state.data;
-    console.log(data)
     return (
       <div className="l-table">
         <div className="wrap">

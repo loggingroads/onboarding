@@ -5,6 +5,7 @@
   input {
     width: 100%;
     padding: 15px 15px;
+    margin: 15px 0 15px;
     border: 2px solid rgba($color-4, .3);
     color: rgba($color-4, .4);
     font-size: 20px;
@@ -23,11 +24,23 @@
   .icon-search {
     @extend %centery;
     position: absolute;
-    margin-right: $wrap-padding-desktop-xl;
+    margin-right: $wrap-padding-mobile;
     right: 25px;
     width: 25px;
     height: 25px;
     fill: #dedede;
+
+    @media screen and (min-width: $screen-s) {
+      margin-right: $wrap-padding-tablet;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      margin-right: $wrap-padding-desktop;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      margin-right: $wrap-padding-desktop-xl;
+    }
   }
 
   .hidden {

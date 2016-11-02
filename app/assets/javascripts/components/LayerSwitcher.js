@@ -7,9 +7,7 @@ class LayerSwitcher extends React.Component {
 
   render() {
     let switchers = [];
-
     this.props.taskGroups.map( (layer, i) => {
-
       switchers.push ( <div className={`switcher ${layer.slug}`} key={i}>
         <input type="checkbox" id={layer.slug} checked={ layer.active } onChange={ () => {this.props.toggleLayers( {type:layer.type, active: !layer.active} )} }/>
         <label htmlFor={layer.slug}></label>
@@ -17,6 +15,7 @@ class LayerSwitcher extends React.Component {
       </div>)
 
     });
+    switchers.reverse();
     return (
       <div className="c-layers-switcher">
         {switchers}
