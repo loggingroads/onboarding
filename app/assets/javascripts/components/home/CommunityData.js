@@ -5,16 +5,14 @@ import React from 'react';
 class CommunityData extends React.Component {
 
   componentWillMount() {
-    this.props.setCommunityData();
+    this.props.setCommunityData(this.props.communityData);
   }
 
   render() {
-
-    const items = ['users', 'kms'];
-    const cummunityItems = this.props.communityData && items.map(
+    const items = ['users', 'edits', 'roads'];
+    const communityItems = this.props.communityData && items.map(
       (key, i) => {
         const data = this.props.communityData;
-
         return(<div className="community-element" key={i}>
           <h3 className="text text-legend -primary">{key}</h3>
           <p className="text text-numeric-m -darker">{
@@ -26,7 +24,7 @@ class CommunityData extends React.Component {
 
     return (
       <div className="community-data">
-        {cummunityItems}
+        {communityItems}
       </div>
     );
   }

@@ -1,11 +1,15 @@
 .c-tag {
   padding: 2px 6px;
   border-radius: 20px;
-  margin-right: 10px;
+  margin-left: 10px;
   font-size: 12px;
   line-height: 20px;
   color: $black;
   background-color: #e4e3e3;
+
+  &:first-child {
+    margin-left: 0px;
+  }
 
   &.-primary {
     color: #fff;
@@ -15,6 +19,10 @@
   @media screen and (min-width: $screen-m) {
     padding: 0 15px;
     border-radius: 20px;
-    margin-right: 10px;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0px;
+    }
   }
 }

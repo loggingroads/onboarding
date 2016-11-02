@@ -46,7 +46,11 @@ class EventsDetailView extends React.Component {
 
     return (
       <div>
-        <Map tiles={this.props.tiles} />
+        <Map
+          tasksList={this.props.eventDetail && this.props.eventDetail.tasks}
+          campaignId={this.props.eventDetail && this.props.eventDetail.campaign_id}
+          eventId={this.props.eventDetail && this.props.eventDetail.id}
+        />
       </div>
     );
   }

@@ -58,7 +58,7 @@
   }
 
   &.-tasks {
-    height: 40px;
+    height: 38px;
     padding: 0;
     background-image: none;
   }
@@ -101,6 +101,7 @@
     float: right;
     height: 20px;
     width: 20px;
+    margin-top: -5px;
 
     .btn {
       padding: 0;
