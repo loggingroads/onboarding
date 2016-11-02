@@ -12,6 +12,9 @@
       <th class="sortable">
         <%= sortable "htag", t("views.campaigns._campaigns.htag") %>
       </th>
+      <th class="sortable">
+        <%= sortable "tasks", t("views.campaigns._campaigns.tasks") %>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +29,7 @@
             <% end %>
           </ul>
         </td>
+        <td><span>Tasks</span><%= campaign.tasks.count %></td>
       </tr>
     <% end %>
   </tbody>
