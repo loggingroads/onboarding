@@ -65,7 +65,7 @@ en:
         _participate:
           title: Help us map roads<br />in forests
           subtitle: Participate
-          read_more: More
+          read_more: more
         _download:
           title: Download the data
           input_text: Search a country and select a format for the data
@@ -98,6 +98,7 @@ en:
         start_date: Start date
         name: Name
         htag: Hash tag
+        tasks: Tasks
       show:
         tab_events: Events
         tab_tasks: Tasks
@@ -109,6 +110,7 @@ en:
         date: Date
         name: Name
         location_name: Location name
+        tasks: Tasks
       show:
         tasks_title: Tasks
         map_view: Map View
