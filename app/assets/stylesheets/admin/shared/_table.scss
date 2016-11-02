@@ -194,6 +194,16 @@
       margin-left: 5px;
       opacity: 1;
 
+      &.-approve {
+        background-image: image-url('approve.svg');
+        width: 20px;
+        height: 20px;
+
+        &:hover {
+          background-image: image-url('approveDark.svg');
+        }
+      }
+
       &.-show {
         background-image: image-url('show.svg');
         width: 20px;

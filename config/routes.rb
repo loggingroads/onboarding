@@ -10,7 +10,13 @@ Rails.application.routes.draw do
         post :move
       end
     end
-    resources :users
+    resources :users do
+      member do
+        get 'activate'
+        put 'activate'
+      end
+    end
+    put "users/:id/activate" => "users#activate"
   end
 
   resources :admin, only: [:index]
