@@ -52,7 +52,7 @@ class Map extends React.Component {
     });
 
     if (this.firstLayersRender) {
-      // this._fitBounds();
+      this._fitBounds();
       this.firstLayersRender = false;
     }
 
@@ -75,7 +75,6 @@ class Map extends React.Component {
   }
 
   _popUpFor(layer) {
-    // debugger
     return `<h1>${layer.name}</h1>
             <p>${layer.description}</p>
             <div class="link-group">

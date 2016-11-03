@@ -4,11 +4,7 @@ class Admin::UsersController < AdminController
   # GET /users
   # GET /users.json
   def index
-    if params[:approved] == "false"
-      @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 9).where(approved: false)
-    else
-      @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 9)
-    end
+    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 9)
     respond_to do |format|
       format.html
       format.js
@@ -38,6 +34,9 @@ class Admin::UsersController < AdminController
       if @user.save
         format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        # def send_admin_mail
+        #   AdminMailer.new_user_waiting_for_approval(self).deliver
+        # end
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -69,15 +68,6 @@ class Admin::UsersController < AdminController
     end
   end
 
-  def activate
-    @user = User.find(params[:id])
-    @user.update_attribute(:approved, true)
-    respond_to do |format|
-      format.html { redirect_to admin_users_url, notice: 'User was successfully activated.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
@@ -86,7 +76,9 @@ class Admin::UsersController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :osm_id, :email, :approved)
+    params.require(:user).permit(:name, :osm_id, :email) do
+      param[:role] if current_user.role.in?('admin')
+    end
   end
 
 end

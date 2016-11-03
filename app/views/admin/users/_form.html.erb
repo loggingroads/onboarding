@@ -28,8 +28,8 @@
     </fieldset>
 
     <fieldset class="form-group row required">
-      <%= f.label :approved, class: 'col-sm-2 form-control-label' %>
-      <div class="col-sm-10"><%= f.check_box :approved %></div>
+      <%= f.label :role, class: 'col-sm-2 form-control-label' %>
+      <div class="col-sm-10"><%= f.select :role, UserRole.to_a, {}, {:class => 'form-control chzn-select'} %></div>
     </fieldset>
 
     <div class="form-group row">
