@@ -16,4 +16,18 @@ class AdminController < ActionController::Base
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
+
+  def authorize_admin
+    if current_user.role == 3
+      redirect_to "/admin", alert: "Restricted access: please wait for an admin to approve your account"
+    end
+  end
+
+  def authorize_users
+    if current_user.role == 1 || current_user == @user
+    else
+      redirect_to "/admin", alert: "Access denied"
+    end
+  end
+
 end

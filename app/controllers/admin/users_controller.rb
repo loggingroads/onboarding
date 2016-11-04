@@ -1,7 +1,7 @@
 class Admin::UsersController < AdminController
-  load_and_authorize_resource
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
+  before_filter :authorize_users
   # GET /users
   # GET /users.json
   def index
@@ -50,8 +50,13 @@ class Admin::UsersController < AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        if current_user.role == 1
+          format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { redirect_to "/admin", notice: 'Profile was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        end
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -77,7 +82,11 @@ class Admin::UsersController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :osm_id, :email, :role)
+    if current_user.role == 1
+      params.require(:user).permit(:name, :osm_id, :email, :role)
+    else
+      params.require(:user).permit(:name, :osm_id, :email)
+    end
   end
 
 end
