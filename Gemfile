@@ -33,7 +33,7 @@ gem 'rails-assets-chosen', source: 'https://rails-assets.org'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'tagsinput-rails'
 gem 'jquery-turbolinks'
-gem "cancan"
+gem 'cancancan', '~> 1.10'
 
 gem 'activerecord-sortable'
 gem 'jquery-ui-rails'

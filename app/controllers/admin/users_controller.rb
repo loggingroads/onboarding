@@ -1,4 +1,5 @@
 class Admin::UsersController < AdminController
+  load_and_authorize_resource
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
   # GET /users
