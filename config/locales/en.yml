@@ -115,6 +115,7 @@ en:
         tasks_title: Tasks
         map_view: Map View
         list_view: List View
+        contact: Contact
     tasks:
       index:
         title: Tasks

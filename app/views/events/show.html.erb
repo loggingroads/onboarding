@@ -25,6 +25,11 @@
             <span class="date"><%= @event.date %></span>
             <h1 class="title text text-module-subtitle -light"><%= @event.name %></h1>
             <p class="text text-desc -light"><%= @event.description %></p>
+            <p class="text text-desc -light"><b>Instructions:</b> <%= @event.instructions %></p>
+            <% if @event.contact.present? %>
+              <%= mail_to @event.contact, t("views.events.show.contact"),
+              class: "bttn bttn-primary"%>
+            <% end %>
           </div>
         </div>
       </div>
