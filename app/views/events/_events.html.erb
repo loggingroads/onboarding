@@ -17,6 +17,9 @@
           nested_path %>
       </th>
       <th class="sortable">
+        <%= sortable "htag", t("views.campaigns._campaigns.htag") %>
+      </th>
+      <th class="sortable">
         <%= sortable "tasks", t("views.events._events.tasks") %>
       </th>
     </tr>
@@ -27,6 +30,13 @@
         <td><span>Date</span><%= event.date %></td>
         <td class="-bold -large"><%= link_to event.name, event_path(event) %></td>
         <td><span>Location</span><%= event.location_name %></td>
+        <td><span>Tags</span>
+          <ul class="tags-list text text-tag -light">
+            <% event.htag_list.to_s.split(",").each do |tag| %>
+              <li class="c-tag"><%= tag %></li>
+            <% end %>
+          </ul>
+        </td>
         <td><span>Tasks</span><%= event.tasks.count %></td>
       </tr>
     <% end %>

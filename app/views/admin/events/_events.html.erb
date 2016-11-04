@@ -5,6 +5,7 @@
     <tr>
       <th class="sortable"><%= sortable "name" %></th>
       <th>Description</th>
+      <th>Htag</th>
       <th class="sortable"><%= sortable "date" %></th>
       <th>Contact</th>
       <th>Actions</th>
@@ -15,6 +16,7 @@
       <tr>
         <td class="-bold"><%= event.name %></td>
         <td><%= event.description %></td>
+        <td class="htags"><%= event.htag_list %></td>
         <td><%= event.date %></td>
         <td><%= event.contact %></td>
         <td class="actions">
