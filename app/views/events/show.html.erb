@@ -24,6 +24,11 @@
           <div class="c-section-intro">
             <span class="date"><%= @event.date %></span>
             <h1 class="title text text-module-subtitle -light"><%= @event.name %></h1>
+            <ul class="tags-list text text-tag -light">
+              <% @event.htag_list.to_s.split(",").each do |tag| %>
+                <li class="c-tag -primary"><%= tag %></li>
+              <% end %>
+            </ul>
             <p class="text text-desc -light"><%= @event.description %></p>
             <p class="text text-desc -light"><b>Instructions:</b> <%= @event.instructions %></p>
             <% if @event.contact.present? %>
