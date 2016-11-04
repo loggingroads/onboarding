@@ -74,6 +74,7 @@ GEM
       sprockets (>= 3.5.2)
     builder (3.2.2)
     byebug (9.0.5)
+    cancan (1.6.10)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -262,6 +263,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   browserify-rails
   byebug
+  cancan
   devise
   dotenv-rails
   enumerate_it
@@ -295,4 +297,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.1
+   1.13.6

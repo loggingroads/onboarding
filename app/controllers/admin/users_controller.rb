@@ -76,9 +76,7 @@ class Admin::UsersController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :osm_id, :email) do
-      param[:role] if current_user.role.in?('admin')
-    end
+    params.require(:user).permit(:name, :osm_id, :email, :role)
   end
 
 end
