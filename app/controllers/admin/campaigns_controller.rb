@@ -1,7 +1,6 @@
 class Admin::CampaignsController < AdminController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
-  before_filter :authorize_admin
   # GET /campaigns
   # GET /campaigns.json
   def index

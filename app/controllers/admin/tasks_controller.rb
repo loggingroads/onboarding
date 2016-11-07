@@ -1,7 +1,6 @@
 class Admin::TasksController < AdminController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   helper_method :sort_column, :sort_direction
-  before_filter :authorize_admin
   # GET /tasks
   # GET /tasks.json
   def index

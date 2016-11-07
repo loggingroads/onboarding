@@ -1,7 +1,6 @@
 class Admin::EventRequestsController < AdminController
   before_action :set_event_request, only: [:show, :destroy]
   helper_method :sort_column, :sort_direction
-  before_filter :authorize_admin
   # GET /event_requests
   # GET /event_requests.json
   def index
