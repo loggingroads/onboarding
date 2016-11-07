@@ -1,8 +1,10 @@
 class AdminController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  # skip_before_action :authorize_admin, only: :index
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :authorize_admin, except: [:index]
 
   def index
   end
@@ -18,15 +20,14 @@ class AdminController < ActionController::Base
   end
 
   def authorize_admin
-    if current_user.role == 3
-      redirect_to "/admin", alert: "Restricted access: please wait for an admin to approve your account"
+    if current_user.role == UserRole::GUEST
+      redirect_to admin_index_url, alert: "Restricted access: please wait for an admin to approve your account"
     end
   end
 
   def authorize_users
-    if current_user.role == 1 || current_user == @user
-    else
-      redirect_to "/admin", alert: "Access denied"
+    if current_user.role != UserRole::ADMIN && current_user != @user
+      redirect_to admin_index_url, alert: "Access denied"
     end
   end
 

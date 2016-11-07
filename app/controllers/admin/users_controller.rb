@@ -1,7 +1,8 @@
 class Admin::UsersController < AdminController
+  skip_before_action :authorize_admin
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_users
   helper_method :sort_column, :sort_direction
-  before_filter :authorize_users
   # GET /users
   # GET /users.json
   def index
@@ -35,9 +36,7 @@ class Admin::UsersController < AdminController
       if @user.save
         format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
-        # def send_admin_mail
-        #   AdminMailer.new_user_waiting_for_approval(self).deliver
-        # end
+        after_create :send_admin_mail
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -50,7 +49,7 @@ class Admin::UsersController < AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        if current_user.role == 1
+        if current_user.role == UserRole::ADMIN
           format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
           format.json { render :show, status: :ok, location: @user }
         else
@@ -87,6 +86,10 @@ class Admin::UsersController < AdminController
     else
       params.require(:user).permit(:name, :osm_id, :email)
     end
+  end
+
+  def send_admin_mail
+    AdminMailer.new_user_waiting_for_approval(self).deliver
   end
 
 end

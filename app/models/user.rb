@@ -28,6 +28,4 @@ class User < ApplicationRecord
   has_many :campaigns
   has_enumeration_for :role, with: UserRole
 
-  after_create :send_admin_mail
-
 end
