@@ -36,7 +36,7 @@ class Admin::UsersController < AdminController
       if @user.save
         format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
-        after_create :send_admin_mail
+        :send_admin_mail
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -81,13 +81,14 @@ class Admin::UsersController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    if current_user.role == 1
+    if current_user.role == UserRole::ADMIN
       params.require(:user).permit(:name, :osm_id, :email, :role)
     else
       params.require(:user).permit(:name, :osm_id, :email)
     end
   end
 
+  private
   def send_admin_mail
     AdminMailer.new_user_waiting_for_approval(self).deliver
   end
