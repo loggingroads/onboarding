@@ -75,24 +75,30 @@ class Map extends React.Component {
   }
 
   _popUpFor(layer) {
+    console.log(this.props);
     let campaignsList = '';
     let eventsList = '';
-    layer.campaigns.forEach(campaign => {
-      campaignsList += '<span class="text text-legend">' + campaign.name + '<a href="/campaigns/' + campaign.id + '"><svg class="icon icon-share-circle"><use xlink:href="#icon-share-circle"></use></svg></a></span>';
-    });
-    layer.events.forEach(event => {
-      eventsList += '<span class="text text-legend">' + event.name + '<a href="/events/' + event.id + '"><svg class="icon icon-share-circle"><use xlink:href="#icon-share-circle"></use></svg></a></span>';
-    });
+    let linkGroup = '';
+    if (layer.campaigns) {
+      layer.campaigns.forEach(campaign => {
+        campaignsList += '<span class="text text-legend">' + campaign.name + '<a href="/campaigns/' + campaign.id + '"><svg class="icon icon-share-circle"><use xlink:href="#icon-share-circle"></use></svg></a></span>';
+      });
+    }
+    if (layer.events) {
+      layer.events.forEach(event => {
+        eventsList += '<span class="text text-legend">' + event.name + '<a href="/events/' + event.id + '"><svg class="icon icon-share-circle"><use xlink:href="#icon-share-circle"></use></svg></a></span>';
+      });
+    }
+
+    if (layer.events || layer.campaigns) {
+      linkGroup = '<div class="link-group"><span class="light">This task is a part of:</span>' + campaignsList + eventsList + '</div>';
+    }
 
     return `<div class="meta">
             <span class="text text-legend">${layer.name}<a href=${layer.task_manager_url}><svg class="icon icon-share-circle -orange"><use xlink:href="#icon-share-circle"></use></svg></a></span>
             <p>${layer.description}</p>
             </div>
-            <div class="link-group">
-              <span class="light">This task is a part of:</span>
-              ${campaignsList}
-              ${eventsList}
-            </div>`;
+            ${linkGroup}`;
   }
 
   render() {
