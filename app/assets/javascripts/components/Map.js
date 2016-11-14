@@ -75,12 +75,23 @@ class Map extends React.Component {
   }
 
   _popUpFor(layer) {
-    return `<h1>${layer.name}</h1>
+    let campaignsList = '';
+    let eventsList = '';
+    layer.campaigns.forEach(campaign => {
+      campaignsList += '<span class="text text-legend">' + campaign.name + '<a href="/campaigns/' + campaign.id + '"><svg class="icon icon-share-circle"><use xlink:href="#icon-share-circle"></use></svg></a></span>';
+    });
+    layer.events.forEach(event => {
+      eventsList += '<span class="text text-legend">' + event.name + '<a href="/events/' + event.id + '"><svg class="icon icon-share-circle"><use xlink:href="#icon-share-circle"></use></svg></a></span>';
+    });
+
+    return `<div class="meta">
+            <span class="text text-legend">${layer.name}<a href=${layer.task_manager_url}><svg class="icon icon-share-circle -orange"><use xlink:href="#icon-share-circle"></use></svg></a></span>
             <p>${layer.description}</p>
+            </div>
             <div class="link-group">
-              <a href="/campaigns/${layer.events ? layer.events[0].campaign_id : this.props.campaignId}">Campaign</a>
-              <a href="/events/${layer.events ? layer.events[0].id : this.props.eventId}">Event</a>
-              <a href=${layer.task_manager_url}>Do the task</a>
+              <span class="light">This task is a part of:</span>
+              ${campaignsList}
+              ${eventsList}
             </div>`;
   }
 
