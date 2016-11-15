@@ -30,8 +30,16 @@ class GeoJsonMap extends React.Component {
 
   _initMap() {
     const mapContainer = document.getElementById('mapDownload');
+    let geoZoom;
+    if (window.innerWidth < 768) {
+      geoZoom = 0;
+    } else if (window.innerWidth < 1024) {
+      geoZoom = 1;
+    } else {
+      geoZoom = 2;
+    }
     var mapOptions = {
-      zoom: 2,
+      zoom: geoZoom,
       center: [25, 0],
       scrollWheelZoom: false,
       dragging: false,
