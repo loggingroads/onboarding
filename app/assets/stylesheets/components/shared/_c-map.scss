@@ -87,3 +87,44 @@
 .leaflet-popup-tip {
   border-radius: 0;
 }
+
+.leaflet-popup-content {
+  margin: 0;
+
+  .meta {
+    padding: 15px 15px 0;
+  }
+
+  .link-group {
+    border-top: solid 1px #d8d8d8;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .light {
+      color: #151515;
+      opacity: 0.4;
+    }
+  }
+
+  span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .icon-share-circle {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    margin-top: 5px;
+    fill: #dfdfdf;
+
+    &.-orange {
+      fill: $color-1;
+    }
+  }
+}
