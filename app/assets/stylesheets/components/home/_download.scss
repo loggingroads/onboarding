@@ -5,7 +5,11 @@
 
   @media screen and (min-width: $screen-m) {
     padding-top: 60px;
-    padding-bottom: 170px;
+    // padding-bottom: 0px;
+  }
+
+  @media screen and (min-width: $screen-l) {
+    padding-bottom: 150px;
   }
 
   .wrap {
@@ -35,10 +39,19 @@
   }
 
   .c-home-map {
-    height: 600px;
+    height: 450px;
     width: 100%;
     position: relative;
-    top: 20px;
+    top: 0px;
+
+    @media screen and (min-width: $screen-m) {
+      height: 650px;
+      top: 20px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      height: 650px;
+    }
   }
 
   .download-selectors {
@@ -51,12 +64,23 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 40px;
+    bottom: 0;
+    background-color: $color-1;
+
+    @media screen and (min-width: $screen-xs) {
+      bottom: 5px;
+    }
 
     @media screen and (min-width: $screen-m) {
       align-items: flex-start;
-      bottom: -92px;
+      bottom: 10px;
       max-width: 780px;
+      padding: 25px 0;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      padding: 0;
+      bottom: -80px;
     }
 
     > .label {
@@ -81,10 +105,15 @@
       > .selector {
         width: 100%;
         display: flex;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
+
+        @media screen and (min-width: $screen-s) {
+          margin-bottom: 10px;
+        }
 
         @media screen and (min-width: $screen-m) {
           max-width: 380px;
+          margin-bottom: 20px;
         }
       }
 
