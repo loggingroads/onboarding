@@ -34,9 +34,9 @@ class Admin::UsersController < AdminController
 
     respond_to do |format|
       if @user.save
+        send_admin_mail
         format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
-        :send_admin_mail
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -90,7 +90,7 @@ class Admin::UsersController < AdminController
 
   private
   def send_admin_mail
-    AdminMailer.new_user_waiting_for_approval(self).deliver
+    AdminMailer.new_user_waiting_for_approval(@user).deliver
   end
 
 end
