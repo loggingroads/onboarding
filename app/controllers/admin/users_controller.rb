@@ -1,5 +1,7 @@
 class Admin::UsersController < AdminController
+  skip_before_action :authorize_admin
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_users
   helper_method :sort_column, :sort_direction
   # GET /users
   # GET /users.json
@@ -32,6 +34,7 @@ class Admin::UsersController < AdminController
 
     respond_to do |format|
       if @user.save
+        send_admin_mail
         format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -46,8 +49,13 @@ class Admin::UsersController < AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        if current_user.role == UserRole::ADMIN
+          format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { redirect_to "/admin", notice: 'Profile was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        end
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -73,6 +81,16 @@ class Admin::UsersController < AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :osm_id, :email)
+    if current_user.role == UserRole::ADMIN
+      params.require(:user).permit(:name, :osm_id, :email, :role)
+    else
+      params.require(:user).permit(:name, :osm_id, :email)
+    end
   end
+
+  private
+  def send_admin_mail
+    AdminMailer.new_user_waiting_for_approval(@user).deliver
+  end
+
 end

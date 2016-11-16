@@ -26,4 +26,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :events
   has_many :campaigns
+  has_enumeration_for :role, with: UserRole
+
 end

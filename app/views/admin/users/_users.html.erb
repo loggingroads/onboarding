@@ -6,6 +6,7 @@
       <th class="sortable"><%= sortable "name" %></th>
       <th>Osm</th>
       <th>Email</th>
+      <th class="sortable"><%= sortable "role" %></th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -15,10 +16,10 @@
         <td class="-bold"><%= user.name %></td>
         <td><%= user.osm_id %></td>
         <td><%= user.email %></td>
+        <td><%= user.role_humanize %></td>
         <td class="actions">
-          <%= link_to '', admin_user_path(user), class: "svg-bttn -show" %>
           <%= link_to '', edit_admin_user_path(user), class: "svg-bttn -edit" %>
-          <%= link_to '', admin_user_path(user), method: :delete, data: {confirm: 'Are you sure?'}, class: "svg-bttn -delete"%>
+          <%= link_to '', admin_user_path(user), method: :delete, data: {confirm: 'Are you sure?'}, class: "svg-bttn -delete" %>
         </td>
       </tr>
     <% end %>

@@ -18,7 +18,9 @@
   <tr>
     <td><%= link_to 'Countries', admin_countries_path %></td>
   </tr>
-  <tr>
-    <td><%= link_to 'Users', admin_users_path %></td>
-  </tr>
+  <% if current_user.role == UserRole::ADMIN %>
+    <tr>
+      <td><%= link_to 'Users', admin_users_path %></td>
+    </tr>
+  <% end %>
 </table>
