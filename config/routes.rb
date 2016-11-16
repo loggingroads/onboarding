@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'admin'
   namespace :admin do
+    root to: "home#index"
+    resources :home, only: [:index]
     resources :countries
     resources :event_requests, only: [:index, :show, :destroy]
     resources :tasks
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  resources :admin, only: [:index]
   resources :tags, only: [:index, :show]
 
   namespace :api do
