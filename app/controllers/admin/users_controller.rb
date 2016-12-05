@@ -6,7 +6,8 @@ class Admin::UsersController < AdminController
   # GET /users
   # GET /users.json
   def index
-    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(page: params[:page], per_page: 9)
+    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).
+      paginate(page: params[:page], per_page: 9)
     respond_to do |format|
       format.html
       format.js
@@ -34,7 +35,9 @@ class Admin::UsersController < AdminController
 
     respond_to do |format|
       if @user.save
-        send_admin_mail
+        if !current_user
+          send_admin_mail
+        end
         format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -82,7 +85,8 @@ class Admin::UsersController < AdminController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     if current_user.role == UserRole::ADMIN
-      params.require(:user).permit(:name, :osm_id, :email, :role)
+      params.require(:user).permit(:name, :osm_id, :email, :role, :password,
+                                  :password_confirmation)
     else
       params.require(:user).permit(:name, :osm_id, :email)
     end
