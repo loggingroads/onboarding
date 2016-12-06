@@ -56,7 +56,7 @@
     flex-flow: column;
 
     @media screen and (min-width: $screen-m) {
-      flex-flow: row;
+      flex-flow: row wrap;
     }
   }
 
@@ -66,7 +66,7 @@
     margin-bottom: 20px;
 
     @media screen and (min-width: $screen-l) {
-      width: 380px;
+      width: 360px;
       height: 210px;
       margin-bottom: 27px;
     }
@@ -78,10 +78,14 @@
     margin-bottom: 40px;
 
     @media screen and (min-width: $screen-m) {
-      margin-bottom: 0;
+      margin-bottom: 20px;
 
-      &:first-child {
-        margin-right: 40px;
+      &:nth-child(even) {
+        margin-left: 20px;
+      }
+
+      &:nth-child(odd) {
+        margin-right: 20px;
       }
     }
   }

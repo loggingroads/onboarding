@@ -8,7 +8,7 @@
     <div class="arrow-right"></div>
   </article>
   <article class="l-participate" id="participate">
-    <%= render 'participate' %>
+    <%= render 'participate', campaigns: @campaigns %>
   </article>
   <% if @event %>
     <article class="l-events" id="events">
