@@ -9,22 +9,25 @@ class CommunityData extends React.Component {
   }
 
   render() {
-    const items = ['users', 'edits', 'roads'];
-    const communityItems = this.props.communityData && items.map(
-      (key, i) => {
-        const data = this.props.communityData;
-        return(<div className="community-element" key={i}>
-          <h3 className="text text-legend -primary">{key}</h3>
-          <p className="text text-numeric-m -darker">{
-            data[key] % 1 !== 0 ? data[key].toFixed(2) : data[key]
-          }</p>
-        </div>)
-      }
-    )
+    const communityData = this.props.communityData;
+ 
+    console.log(communityData);
 
+    if (communityData && !Object.keys(communityData).length) return <div className="community-data" />;
     return (
       <div className="community-data">
-        {communityItems}
+        <div className="community-element" key="users">
+          <h3 className="text text-legend -primary">users</h3>
+          <p className="text text-numeric-m -darker">{communityData && communityData.users.length}</p>
+        </div>
+        <div className="community-element" key="edits">
+          <h3 className="text text-legend -primary">edits</h3>
+          <p className="text text-numeric-m -darker">{communityData && communityData.length}</p>
+        </div>
+        <div className="community-element" key="roads">
+          <h3 className="text text-legend -primary">roads</h3>
+          <p className="text text-numeric-m -darker">{communityData && communityData.times.roads}</p>
+        </div>
       </div>
     );
   }
