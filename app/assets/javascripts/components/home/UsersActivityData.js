@@ -5,7 +5,7 @@ import React from 'react';
 class UsersActivityData extends React.Component {
 
   componentWillMount() {
-    this.props.setUsersActivityData(this.props.data);
+    this.props.setUsersActivityData();
   }
 
   render() {
