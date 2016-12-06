@@ -61,6 +61,7 @@ en:
           title: Campaign
           subtitle: Events
           btn: Participate
+          no_events: No events scheduled for the moment.
           tell_us: Tell us your initiative
         _participate:
           title: Help us map roads<br />in forests
