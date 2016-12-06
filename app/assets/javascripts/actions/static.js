@@ -21,7 +21,7 @@ export function setCommunityData() {
 }
 
 export function setUsersActivityData(data) {
-  const url = 'http://stats.loggingroads.org/hashtags/logging-roads';
+  const url = 'http://osmstats.redcross.org/hashtags/logging-roads';
   return function(dispatch) {
     $.get(url).then(function(usersActivityData){
       dispatch({
