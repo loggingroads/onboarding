@@ -1,7 +1,6 @@
 .l-participate {
   padding: 60px 0;
   background-color: $color-1;
-  transform: skewY(-3deg);
   background-image: image-url('landing-bg2.jpg');
   background-repeat: none;
   background-position: center;
@@ -22,7 +21,6 @@
     flex-flow: column;
     align-items: flex-start;
     justify-content: center;
-    transform: skewY(3deg);
     padding-bottom: 30px;
     max-width: 980px;
 
@@ -49,7 +47,7 @@
 
     @media screen and (min-width: $screen-m) {
       font-size: 15px;
-	    line-height: 1.6;
+      line-height: 1.6;
     }
   }
 
@@ -91,6 +89,4 @@
   .text-button {
     text-transform: none;
   }
-
-
 }
