@@ -7,8 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setCommunityData: data => {
-    dispatch(setCommunityData(data));
+  setCommunityData: () => {
+    dispatch(setCommunityData());
   }
 });
 

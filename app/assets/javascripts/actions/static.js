@@ -8,7 +8,7 @@ export const SET_COUNTRIES_LIST = 'SET_COUNTRIES_LIST';
 export const SET_SELECTED_COUNTRY = 'SET_SELECTED_COUNTRY';
 
 export function setCommunityData() {
-  const url = 'http://stats.loggingroads.org/';
+  const url = 'http://osmstats.redcross.org/hashtags/logging-roads';
 
   return function(dispatch) {
     $.get(url).then(function(communityData){
