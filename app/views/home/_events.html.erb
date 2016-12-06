@@ -1,12 +1,26 @@
 <div class="wrap">
   <h2 class="text text-module-subtitle -primary"><%= t('views.home.index._events.subtitle') %></h2>
-  <h1 class="text text-module-title -light"><%= @event.name %></h1>
-  <div class="events-content">
-    <p class="text text-p -light"><%= @event.description %></p>
-    <p class="event-date text text-module-subtitle -light"><%= @event.date.strftime("%B the #{@event.date.day.ordinalize}") %>.</p>
+  <div class="slider-container">
+    <% events.each do |event| %>
+      <div class="slider-element">
+        <h1 class="text text-module-title -light"><%= event.name %></h1>
+        <div class="events-content">
+          <p class="text text-p -light"><%= event.description %></p>
+          <p class="event-date text text-module-subtitle -light"><%= event.date.strftime("%B the #{event.date.day.ordinalize}") %>.</p>
+        </div>
+        <div class="event-participate">
+          <button class="bttn bttn-secondary"><%= link_to t('views.home.index._events.btn'), event %></button>
+          <p class="text text-menu -light"><%= link_to t('views.home.index._events.tell_us'), new_event_request_path %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="event-participate">
-    <button class="bttn bttn-secondary"><%= link_to t('views.home.index._events.btn'), @event.url %></button>
-    <p class="text text-menu -light"><%= link_to t('views.home.index._events.tell_us'), new_event_request_path %></p>
-  </div>
+  <% unless events.any? %>
+    <div class="event-participate">
+      <p class="event-date text text-module-subtitle -light">
+      <%= t('views.home.index._events.no_events') %>
+      </p>
+      <p class="text text-menu -light"><%= link_to t('views.home.index._events.tell_us'), new_event_request_path %></p>
+    </div>
+  <% end %>
 </div>
