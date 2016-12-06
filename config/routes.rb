@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     end
     resources :tasks, only: [:show, :index]
     resources :event_requests, only: [:new, :create]
+    get :impact, to: "impact#index"
   end
 
   get "/:locale", to: "home#index", as: :locale_root

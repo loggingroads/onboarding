@@ -35,7 +35,7 @@
         </li>
 
         <li class="<%="is-current" if ["impact"].include?(controller_name) %> menu-item">
-          <%= link_to 'Impact', "/#activity", {class: 'nav-link text text-menu -light'} %>
+          <%= link_to 'Impact', impact_path, {class: 'nav-link text text-menu -light'} %>
         </li>
         <li class="<%="is-current" if ["download"].include?(controller_name) %> menu-item">
           <%= link_to 'Data Download', "/#download", {class: 'nav-link text text-menu -light'} %>
