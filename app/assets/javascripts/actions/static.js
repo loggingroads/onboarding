@@ -8,7 +8,8 @@ export const SET_COUNTRIES_LIST = 'SET_COUNTRIES_LIST';
 export const SET_SELECTED_COUNTRY = 'SET_SELECTED_COUNTRY';
 
 export function setCommunityData() {
-  const url = 'http://osmstats.redcross.org/hashtags/logging-roads';
+  const tag = $('#parallax').length > 0 && $('#parallax').data('hashtag') !== undefined ? $('#parallax').data('hashtag') : 'logging-roads';
+  const url = 'http://osmstats.redcross.org/hashtags/'+tag;
 
   return function(dispatch) {
     $.get(url).then(function(communityData){
@@ -21,7 +22,9 @@ export function setCommunityData() {
 }
 
 export function setUsersActivityData(data) {
-  const url = 'http://osmstats.redcross.org/hashtags/logging-roads';
+  const tag = $('#parallax').length > 0 && $('#parallax').data('hashtag') !== undefined ? $('#parallax').data('hashtag') : 'logging-roads';
+  const url = 'http://osmstats.redcross.org/hashtags/'+tag;
+
   return function(dispatch) {
     $.get(url).then(function(usersActivityData){
       dispatch({
