@@ -1,8 +1,38 @@
-<div id="parallax" class="home">
-  <article class="l-community" id="community">
-    <%= render 'home/community' %>
+<div id="parallax" class="home" data-hashtag="<%= params[:hashtag] %>">
+  <article class="l-community-impact">
+    <div class="wrap">
+      <h2 class="text text-module-subtitle -dark"><%= t('views.impact.index.statistics_for') %></h2>
+      <h1 class="text text-module-title -primary">#<%= params[:hashtag] %></h1>
+      <hr/>
+      <div id="communityData">
+      </div>
+    </div>
   </article>
+
   <article class="l-activity" id="activity">
-    <%= render 'home/activity' %>
+    <div class="wrap">
+      <h2 class="text text-module-subtitle -primary"><%= t('views.home.index._activity.subtitle') %></h2>
+      <h1 class="text text-module-title -light"><%= t('views.home.index._activity.title') %></h1>
+      <div class="activity-data">
+        <div class="ranking" id="ranking"></div>
+        <div class="latest-activity">
+          <div class="users-activity-element">
+            <h3 class="text text-p-title -light">Other tags</h3>
+            <table class="activity-table">
+              <tbody>
+                <tr>
+                  <td class="user text text-legend -light"><%= link_to "logging-roads", url_for(hashtag: "logging-roads") %></td>
+                </tr>
+                <% @tags.each do |tag| %>
+                  <tr>
+                    <td class="user text text-legend -light"><%= link_to tag.name, url_for(hashtag: tag.name) %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </article>
 </div>
