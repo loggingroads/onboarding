@@ -35,3 +35,27 @@ To set up the database, run:
 To run application:
 
     bundle exec rails server
+
+## Running with Docker
+
+Create the file `.env` in the root of the project with the following:
+    
+    DATABASE_USER=onboarding
+    DATABASE_PASSWORD=abc123
+    DATABASE_HOST=db
+    RAILS_ENV=development
+
+Create the database volume
+
+    docker volume create --name=loggingroads-onboarding-db-data
+
+Start the containers
+
+    docker-compose up -d
+
+Initialize the database
+
+    docker-compose run web rake db:create
+    docker-compose run web rake db:migrate
+    docker-compose run web rake db:seed
+    docker-compose run web rake db:sample
