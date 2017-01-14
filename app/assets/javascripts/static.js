@@ -15,12 +15,13 @@ function setSlider() {
 
 function getSectionsPositions() {
   const positions = {};
-  positions[$('#home-intro').offset().top] = 'intro';
+  positions[$('#home-intro').offset().top] = 'home-intro';
   positions[$('#slider').offset().top] = 'slider';
   positions[$('#participate').offset().top] = 'participate';
   positions[$('#events').offset().top] = 'events';
   positions[$('#community').offset().top] = 'community';
   positions[$('#activity').offset().top] = 'activity';
+  positions[$('#download').offset().top] = 'download';
   positions[$('#about').offset().top] = 'about';
   return positions;
 }
