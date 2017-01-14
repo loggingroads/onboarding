@@ -27,9 +27,9 @@
         <td class="-bold -large"><%= link_to task.name, task.task_manager_url, target: "blank" %></td>
         <td><span>Description</span><%= task.description %></td>
         <td><span>Tags</span>
-          <ul class="tags-list text text-tag -light">
+          <ul class="tags-list text text-tag">
             <% task.htag_list.to_s.split(",").each do |tag| %>
-              <li class="c-tag"><%= tag %></li>
+              <li class="c-tag"><a href="/impact?hashtag=<%= tag %>" ><%= tag %></a></li>
             <% end %>
           </ul>
         </td>

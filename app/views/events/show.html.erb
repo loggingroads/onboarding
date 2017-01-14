@@ -26,7 +26,7 @@
             <h1 class="title text text-module-subtitle -light"><%= @event.name %></h1>
             <ul class="tags-list text text-tag -light">
               <% @event.htag_list.to_s.split(",").each do |tag| %>
-                <li class="c-tag -primary"><%= tag %></li>
+                <li class="c-tag -primary"><a href="/impact?hashtag=<%= tag %>" ><%= tag %></a></li>
               <% end %>
             </ul>
             <p class="text text-desc -light"><%= @event.description %></p>

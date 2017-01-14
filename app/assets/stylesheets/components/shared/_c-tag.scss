@@ -16,6 +16,10 @@
     background-color: $color-1;
   }
 
+  &.-primary a{
+    color: #fff;
+  }
+
   @media screen and (min-width: $screen-m) {
     padding: 0 15px;
     border-radius: 20px;

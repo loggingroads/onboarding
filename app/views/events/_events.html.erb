@@ -31,9 +31,9 @@
         <td class="-bold -large"><%= link_to event.name, event_path(event) %></td>
         <td><span>Location</span><%= event.location_name %></td>
         <td><span>Tags</span>
-          <ul class="tags-list text text-tag -light">
+          <ul class="tags-list text text-tag">
             <% event.htag_list.to_s.split(",").each do |tag| %>
-              <li class="c-tag"><%= tag %></li>
+              <li class="c-tag"><a href="/impact?hashtag=<%= tag %>" ><%= tag %></a></li>
             <% end %>
           </ul>
         </td>

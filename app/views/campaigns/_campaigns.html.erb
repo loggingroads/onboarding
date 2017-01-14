@@ -23,9 +23,9 @@
         <td><span>Date</span><%= campaign.start_date %></td>
         <td class="-bold"><%= link_to campaign.name, campaign_path(campaign) %></td>
         <td><span>Tags</span>
-          <ul class="tags-list text text-tag -light">
+          <ul class="tags-list text text-tag">
             <% campaign.htag_list.to_s.split(",").each do |tag| %>
-              <li class="c-tag"><%= tag %></li>
+              <li class="c-tag"><a href="/impact?hashtag=<%= tag %>" ><%= tag %></a></li>
             <% end %>
           </ul>
         </td>
