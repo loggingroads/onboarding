@@ -5,7 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Onboarding</title>
+    <title>
+      <%= content_for?(:title) ? yield(:title) : t("site_name") %>
+    </title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
     <%= stylesheet_link_tag 'application', media: 'all' %>

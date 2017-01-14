@@ -3,6 +3,10 @@ module ApplicationHelper
     controller.include?(params[:controller]) ? 'active ': ''
   end
 
+  def title(*parts)
+    content_for(:title) { (parts << t(:site_name)).join(' - ') } unless parts.empty?
+  end
+
   def sortable(column, title = nil, custom_path = nil)
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
