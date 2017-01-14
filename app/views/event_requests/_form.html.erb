@@ -36,7 +36,12 @@
 
     <fieldset class="form-group row">
       <%= f.label :experience_level, class: 'col-sm-3 form-control-label' %>
-      <div class="col-sm-9"><%= f.select :experience_level, options_for_select(["Firs time organizing such an event", "Organized mapathons before", "Organized similar events"]), {}, class: 'form-control' %></div>
+      <div class="col-sm-9"><%= f.select :experience_level, 
+        options_for_select([t("views.event_requests._form.experience_level.first_time"), 
+        t("views.event_requests._form.experience_level.mapathons_before"), 
+        t("views.event_requests._form.experience_level.similar_events")
+        ]),
+         {}, class: 'form-control' %></div>
     </fieldset>
 
     <fieldset class="form-group row required">

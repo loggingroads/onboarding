@@ -117,6 +117,14 @@ en:
         map_view: Map View
         list_view: List View
         contact: Contact
+    event_requests:
+      new:
+        suggest_event: Suggest an event
+      _form:
+        experience_level:
+          first_time: First time organizing such an event
+          mapathons_before: Organized mapathons before
+          similar_events: Organized similar events
     tasks:
       index:
         title: Tasks
