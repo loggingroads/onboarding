@@ -34,9 +34,19 @@
           </ul>
         </li>
 
-        <li class="<%="is-current" if ["impact"].include?(controller_name) %> menu-item">
-          <%= link_to 'Impact', impact_path, {class: 'nav-link text text-menu -light'} %>
+        <li class="<%="is-current" if ["map", "leaderboards"].include?(controller_name) %> sub-menu-toggler menu-item"><a href="#" class="nav-link text text-menu -light"><%= t('views.application._header.nav.impact') %></a>
+          <ul class="sub-menu">
+            <li>
+              <%= link_to t('views.application._header.nav.map'),
+                map_path, { class: "text text-menu -dark #{"is-current" if controller_name == 'map'}" } %>
+            </li>
+            <li>
+              <%= link_to t('views.application._header.nav.leaderboards'),
+                leaderboards_path, { class: "text text-menu -dark #{"is-current" if controller_name == 'leaderboards'}" } %>
+            </li>          
+          </ul>
         </li>
+
         <li class="<%="is-current" if ["download"].include?(controller_name) %> menu-item">
           <%= link_to 'Data Download', "/#download", {class: 'nav-link text text-menu -light'} %>
         </li>

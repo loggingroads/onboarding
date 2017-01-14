@@ -1,4 +1,4 @@
-class ImpactController < ApplicationController
+class LeaderboardsController < ApplicationController
   def index
     params[:hashtag] ||= "logging-roads"
     @tags = Campaign.where(status: CampaignStatus::LIVE).map(&:tags)

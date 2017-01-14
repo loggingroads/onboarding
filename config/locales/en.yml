@@ -28,7 +28,8 @@ en:
         campaigns: Campaigns
         events: Events
         tasks: Tasks
-        impact: Impact
+        map: Map
+        leaderboards: Leaderboards
         event_request: Suggest an Event
       _header:
         nav:
@@ -37,6 +38,8 @@ en:
           events: Events
           tasks: Tasks
           impact: Impact
+          map: Map
+          leaderboards: Leaderboards
           suggest_event: Suggest event
           data_download: Data Download
           about: About

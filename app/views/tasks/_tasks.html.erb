@@ -29,7 +29,7 @@
         <td><span>Tags</span>
           <ul class="tags-list text text-tag">
             <% task.htag_list.to_s.split(",").each do |tag| %>
-              <li class="c-tag"><a href="/impact?hashtag=<%= tag %>" ><%= tag %></a></li>
+              <li class="c-tag"><a href="/leaderboards?hashtag=<%= tag.strip %>" ><%= tag %></a></li>
             <% end %>
           </ul>
         </td>
