@@ -16,10 +16,10 @@ RUN cd /app && bundle install
 COPY package.json /app/  
 RUN  cd /app && npm install
 
-ADD . /app  
-ADD config/database.yml.docker /app/config/database.yml
+ADD .babelrc /app/.babelrc
+ADD config.ru /app/config.ru
 
-WORKDIR /app 
+WORKDIR /app
 EXPOSE 3000
 ENTRYPOINT ["bundle", "exec"]
 CMD ["rails", "server"]
