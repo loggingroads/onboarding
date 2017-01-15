@@ -108,6 +108,8 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
+    i18n-js (3.0.0.rc15)
+      i18n (~> 0.6, >= 0.6.6)
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -266,6 +268,7 @@ DEPENDENCIES
   dotenv-rails
   enumerate_it
   eventbrite
+  i18n-js (>= 3.0.0.rc11)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-slick-rails (~> 1.5, >= 1.5.9.1)

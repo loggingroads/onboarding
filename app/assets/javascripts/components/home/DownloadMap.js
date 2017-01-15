@@ -21,6 +21,9 @@ class DownloadMap extends React.Component {
   }
 
   render() {
+    const labelTxt = I18n.t('views.home.index._download.input_text');
+    const shapeUrl = I18n.t('views.home.index._download.button_1');
+    const geoJsonUrl = I18n.t('views.home.index._download.button_2');
     return (
       <div>
         <GeoJsonMap
@@ -30,7 +33,7 @@ class DownloadMap extends React.Component {
           setSelectedCountry= {this.props.setSelectedCountry}
         />
         <div className="download-selectors">
-          <label className="label" for="">Search a country and select a format for the data</label>
+          <label className="label" for="">{labelTxt}</label>
           <div className="content">
             <div className="selector">
               <SearchBox
@@ -40,8 +43,8 @@ class DownloadMap extends React.Component {
               />
             </div>
             <div className="actions">
-              <a href={this.props.selectedCountry && this.props.selectedCountry.shp_url} className={ `${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>SHAPE_URL</a>
-              <a href={this.props.selectedCountry && this.props.selectedCountry.geojson_url} className={`${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>GEOJSON_URL</a>
+              <a href={this.props.selectedCountry && this.props.selectedCountry.shp_url} className={ `${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>{shapeUrl}</a>
+              <a href={this.props.selectedCountry && this.props.selectedCountry.geojson_url} className={`${!this.props.selectedCountry && 'is-disabled'} bttn bttn-secondary`}>{geoJsonUrl}</a>
             </div>
           </div>
         </div>

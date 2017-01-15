@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'rails', '>= 5.0.0', '< 5.1'
+
+gem "i18n-js", ">= 3.0.0.rc11"
+
 gem 'puma', '~> 3.0'
 
 gem 'paperclip'
