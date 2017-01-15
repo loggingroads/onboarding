@@ -7,7 +7,7 @@ const taskGroups = [
   {
     slug: 'type1',
     type: 1,
-    title: 'Tasking Manager tasks',
+    title: I18n.t('javascripts.containers.map_container.tasking_manager'),
     color: '#ffffff',
     active: true,
     style: {
@@ -17,7 +17,7 @@ const taskGroups = [
   {
     slug: 'type2',
     type: 2,
-    title: 'To fix',
+    title: I18n.t('javascripts.containers.map_container.to_fix'),
     color: '#ff5d33',
     active: true,
     style: {

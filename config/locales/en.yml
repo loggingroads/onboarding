@@ -140,3 +140,14 @@ en:
         task_type: Task type
         name: Name
         description: Description
+  javascripts:
+    containers:
+      map_container:
+        tasking_manager: Tasking Manager tasks
+        to_fix: To fix
+    components:
+      home:
+        community_data:
+          users: users
+          edits: edits
+          roads: roads
