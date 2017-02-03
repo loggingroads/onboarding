@@ -9,7 +9,6 @@ gem "i18n-js", ">= 3.0.0.rc11"
 gem 'puma', '~> 3.0'
 
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
 
 gem 'dotenv-rails'
 gem 'devise'
