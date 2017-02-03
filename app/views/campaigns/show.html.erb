@@ -31,7 +31,7 @@
             </ul>
             <p class="text text-desc -light"><%= @campaign.description %></p>
             <% if @campaign.url.present? %>
-              <%= link_to t("views.application.pages.participate"), @campaign.url,
+              <%= link_to t("views.campaigns.show.learn_more"), @campaign.url,
               class: "bttn bttn-primary", target: "_blank" %>
             <% end %>
           </div>

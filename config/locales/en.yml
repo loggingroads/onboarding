@@ -49,14 +49,14 @@ en:
     home:
       index:
         _home_intro:
-          intro: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+          intro: Help protect the world’s rainforests by mapping logging roads
           find_more: Find out more
         _about:
           title_primary: About
           title_secondary: The Project
-          claim_para_1: To achieve our ambitious goals we want to build a true global partnership to protect tropical forests. Your input – wherever you are – will support leading experts in ecology, mapmaking and information technology.
-          claim_para_2: Just take a look at who we’ve got joining us on the journey...
-          btn: Fint out more
+          claim_para_1: All your edits are added to OpenStreetMap. Scientists, forest monitors, and government agencies, will use your data to determine whether logging companies have broken laws, map the forest fragmentation, and design more effective forest protection strategies. 
+          claim_para_2: Logging Roads’ partners with world leading technologies and research institutions to scale our impact.
+          btn: Find out more
         _activity:
           title: Activity
           subtitle: Users
@@ -76,27 +76,28 @@ en:
         _download:
           title: Download the data
           input_text: Search a country and select a format for the data
-          button_1: Download Shapefile
-          button_2: Download GeoJSON
+          button_1: Shapefile
+          button_2: GeoJSON
         _slider:
-          title: With us
-          subtitle: Collaborate
-          description: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer pio posuere erat a ante venenatis dapi, ctetur adipisicing elit, sed do dionisio.
-          more: MORE
-          info: INFO
+          title: Tracing Roads
+          subtitle: How it works
+          description: Logging Roads combines OpenStreetMap and satellite imagery to map and data Logging Roads. 
+          more: How it works
+          info: Tagging Years
+          description2: Some text
           tasking_manager:
-            step_one_title: GO TO TASK
-            step_one_legend: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dolor sit amet, consectetur adipisicing elit.
-            step_two_title: SELECT A SQUARE TO WORK ON
-            step_two_legend: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dolor sit amet, consectetur adipisicing elit.
-            step_three_title: MAP THE ROADS
-            step_three_legend: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dolor sit amet, consectetur adipisicing elit.
-            step_four_title: GO TO A TASK
-            step_four_legend: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dolor sit amet, consectetur adipisicing elit.
-            step_five_title: LOOK AT A SET OF IMAGES
-            step_five_legend: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dolor sit amet, consectetur adipisicing elit.
-            step_six_title: PICK THE FIRST IMAGE WHERE YOU SEE THE ROAD
-            step_six_legend: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. dolor sit amet, consectetur adipisicing elit.
+            step_one_title: Choose a task
+            step_one_legend: Tasks are the geographic area outlined for mapping in OpenStreetMap. Select tasks from the many campaigns on offer.  
+            step_two_title: Select a square
+            step_two_legend: Each task area is divided into small squares. When you select a square, it is locked so other users can’t map until you complete it or unlock it. 
+            step_three_title: Start mapping roads
+            step_three_legend: Use yearly satellite images to see when logging roads appear, trace them on the map, and tag them with the year that they appeared
+            step_four_title: Look at images
+            step_four_legend: You will see a selection of images from different years. Your job is to select the image where the road first appears.
+            step_five_title: Select an image where you see roads
+            step_five_legend: Once you see an image with a road, select it and it will be saved to the database.
+            step_six_title: Keeping going!
+            step_six_legend: After you make your selection, a new set of images will appear. The more you select the higher your score!
     campaigns:
       index:
         title: Campaigns
@@ -104,9 +105,10 @@ en:
       _campaigns:
         start_date: Start date
         name: Name
-        htag: Hash tag
+        htag: Tags
         tasks: Tasks
       show:
+        learn_more: Learn More
         tab_events: Events
         tab_tasks: Tasks
     events:
@@ -143,8 +145,8 @@ en:
   javascripts:
     containers:
       map_container:
-        tasking_manager: Tasking Manager tasks
-        to_fix: To fix
+        tasking_manager: OSM tracing tasks
+        to_fix: start date tagging tasks
     components:
       home:
         community_data:
