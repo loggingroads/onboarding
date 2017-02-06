@@ -84,7 +84,7 @@ en:
           description: Logging Roads combines OpenStreetMap and satellite imagery to map and data Logging Roads. 
           more: How it works
           info: Tagging Years
-          description2: Some text
+          description2: Help us identify the year a road was cut
           tasking_manager:
             step_one_title: Choose a task
             step_one_legend: Tasks are the geographic area outlined for mapping in OpenStreetMap. Select tasks from the many campaigns on offer.  
