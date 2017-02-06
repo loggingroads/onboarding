@@ -1,5 +1,13 @@
 {
   "name": "onboarding",
+  "version": "2.0.0",
+  "scripts": {
+    "preversion": "",
+    "version": "",
+    "postversion": "git push && git push --tags",
+    "deploy-patch": "npm version patch --force -m \"version %s\"",
+    "deploy-minor": "npm version minor --force -m \"version %s\""
+  },
   "devDependencies": {
     "xo": "^0.16.0"
   },
