@@ -1,6 +1,8 @@
 FROM ruby:2.3.1  
 
-RUN apt-get update && \
+MAINTAINER Kris Carle <kris@loggingroads.org>
+
+RUN apt-get update && apt-get upgrade -y && \
   apt-get install -y curl libpq-dev && \
   curl -sL https://deb.nodesource.com/setup_6.x | bash && \
   apt-get install -y nodejs && \
