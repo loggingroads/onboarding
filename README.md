@@ -1,6 +1,7 @@
 # Logging Roads Onboarding website
 Helping people get involved in tagging roads.
 
+[![Docker Repository on Quay](https://quay.io/repository/loggingroads/website/status "Docker Repository on Quay")](https://quay.io/repository/loggingroads/website)
 
 ## Dependencies
 
@@ -59,3 +60,10 @@ Initialize the database
     docker-compose run web rake db:migrate
     docker-compose run web rake db:seed
     docker-compose run web rake db:sample
+
+
+# Deploying
+
+run `npm run deploy-patch`
+
+This will create a new tag in the Docker repo at: https://quay.io/repository/loggingroads/website
