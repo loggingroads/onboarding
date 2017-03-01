@@ -2,7 +2,13 @@ class Api::V1::EventsController < ApiController
   before_action :set_event, only: [:show]
 
   def index
-    render json: Event.all
+    events = if params[:htag]
+                  Event.tagged_with(params[:htag])
+                else
+                  Event.all
+                end
+    events = events.order(:name)
+    render json: events
   end
 
   def show
