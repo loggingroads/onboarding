@@ -4,4 +4,8 @@ class CampaignSerializer < ActiveModel::Serializer
 
   has_many :events
   has_many :tasks
+
+  def image
+    object.image.url
+  end
 end
