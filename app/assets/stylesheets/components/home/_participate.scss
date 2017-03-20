@@ -44,7 +44,7 @@
 
   .text-p {
     font-weight: 600;
-    word-break: break-all;
+    word-break: keep-all;
 
     @media screen and (min-width: $screen-m) {
       font-size: 15px;
