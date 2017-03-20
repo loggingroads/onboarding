@@ -8,4 +8,8 @@ class CampaignSerializer < ActiveModel::Serializer
   def image
     object.image.url
   end
+
+  def status
+    object.status_humanize
+  end
 end

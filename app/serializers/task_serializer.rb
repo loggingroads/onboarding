@@ -8,4 +8,8 @@ class TaskSerializer < ActiveModel::Serializer
   def image
     object.image.url
   end
+
+  def task_type
+    object.task_type_humanize
+  end
 end
