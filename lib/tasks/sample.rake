@@ -70,7 +70,8 @@ def create_events
       location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
-      campaign_id: campaigns.first.id
+      campaign_id: campaigns.first.id,
+      htag_list: "htag",
     },
     {
       user_id: @u.id,
@@ -81,7 +82,8 @@ def create_events
       location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
-      campaign_id: campaigns.first.id
+      campaign_id: campaigns.first.id,
+      htag_list: "htag",
     },
     {
       user_id: @u.id,
@@ -92,7 +94,8 @@ def create_events
       location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
-      campaign_id: campaigns.first.id
+      campaign_id: campaigns.first.id,
+      htag_list: "htag",
     },
     {
       user_id: @u.id,
@@ -103,7 +106,8 @@ def create_events
       location: {},
       contact: "Call me maybe",
       instructions: "Just follow the light",
-      campaign_id: campaigns.second.id
+      campaign_id: campaigns.second.id,
+      htag_list: "htag",
     }
   ]
 
@@ -120,7 +124,8 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: {}
+      location: {},
+      htag_list: "htag"
     },
     {
       name: "My second task",
@@ -128,7 +133,8 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: {}
+      location: {},
+      htag_list: "htag"
     },
     {
       name: "My third task",
@@ -136,7 +142,8 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: {}
+      location: {},
+      htag_list: "htag"
     },
     {
       name: "My fourth task",
@@ -144,7 +151,8 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: {}
+      location: {},
+      htag_list: "htag"
     },
     {
       name: "My fifth task",
@@ -152,7 +160,8 @@ def create_tasks
       task_manager_url: "http://campaign1.url",
       task_type: 1,
       status: 3,
-      location: {}
+      location: {},
+      htag_list: "htag"
     }
   ]
 
