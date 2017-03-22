@@ -129,7 +129,7 @@
   }
 
   .sub-menu {
-
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2);
     @media screen and (min-width: $screen-m) {
       display: none;
       position: absolute;
@@ -162,6 +162,7 @@
         padding-bottom: 5px;
         margin-bottom: 50px;
         color: #fff;
+        border-bottom: 1px solid #b8b8b8;
 
         @media screen and (min-width: $screen-m) {
           display: block;
