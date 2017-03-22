@@ -144,3 +144,7 @@
 .l-tasks-detail {
   position: relative;
 }
+
+.l-main-content{
+  min-height: calc(100vh - 500px);
+}
