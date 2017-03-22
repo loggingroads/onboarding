@@ -40,4 +40,8 @@ class Campaign < ApplicationRecord
   def name_with_status
     "#{name} (#{status_humanize})"
   end
+
+  def truncated_description
+    description.truncate(200, separator:".")
+  end
 end

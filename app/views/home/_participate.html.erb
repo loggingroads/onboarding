@@ -10,7 +10,7 @@
           <img src="" class="image-item">
         <% end %>
         <h3 class="text text-p-title -dark"><%= campaign.name %></h3>
-        <p class="text text-p -darker"><%= campaign.description %></p>
+        <p class="text text-p -darker"><%= campaign.truncated_description %></p>
         <%= link_to campaign, class: "text text-p -light" do %>
           [+] <%= t('views.home.index._participate.read_more') %>
         <% end %>

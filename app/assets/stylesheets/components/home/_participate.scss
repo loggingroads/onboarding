@@ -5,6 +5,7 @@
   background-repeat: none;
   background-position: center;
   background-size: cover;
+  justify-content: center;
 
   @media screen and (min-width: $screen-m) {
     padding-bottom: 150px;
@@ -22,15 +23,13 @@
     align-items: flex-start;
     justify-content: center;
     padding-bottom: 30px;
-    max-width: 980px;
-
-    @media screen and (min-width: $screen-m) {
-      padding-bottom: 60px;
+    padding-right: 30px;
+    @media screen and (max-width: $screen-m) {
+      width: 450px;
     }
 
     @media screen and (min-width: $screen-l) {
       padding-top: 40px;
-      padding-bottom: 90px;
     }
   }
 
@@ -56,6 +55,10 @@
     display: flex;
     flex-flow: column;
 
+    @media screen and (max-width: $screen-m) {
+      width: 66%;
+    }
+
     @media screen and (min-width: $screen-m) {
       flex-flow: row wrap;
     }
@@ -79,15 +82,9 @@
     margin-bottom: 40px;
 
     @media screen and (min-width: $screen-m) {
-      margin-bottom: 20px;
-
-      &:nth-child(even) {
-        margin-left: 20px;
-      }
-
-      &:nth-child(odd) {
-        margin-right: 20px;
-      }
+      margin-left: 10px;
+      margin-right: 10px;
+      flex: 0 0 30%;
     }
   }
 
