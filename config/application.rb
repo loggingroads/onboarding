@@ -21,5 +21,13 @@ module Onboarding
       g.assets false
       g.helper false
     end
+
+    # Configuring CORS
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end
