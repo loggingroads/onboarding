@@ -27,7 +27,7 @@ en:
         participate: Participate
         campaigns: Campaigns
         events: Events
-        tasks: Tasks
+        tasks: Activities
         map: Map
         leaderboards: Leaderboards
         event_request: Suggest an Event
@@ -36,7 +36,7 @@ en:
           participate: Participate
           campaigns: Campaigns
           events: Events
-          tasks: Tasks
+          tasks: Activities
           impact: Impact
           map: Map
           leaderboards: Leaderboards
@@ -87,7 +87,7 @@ en:
           description2: Help us identify the year a road was cut
           tasking_manager:
             step_one_title: Choose a task
-            step_one_legend: Tasks are the geographic area outlined for mapping in OpenStreetMap. Select tasks from the many campaigns on offer.  
+            step_one_legend: Activities are the geographic area outlined for mapping in OpenStreetMap. Select activities from the many campaigns on offer.  
             step_two_title: Select a square
             step_two_legend: Each task area is divided into small squares. When you select a square, it is locked so other users can’t map until you complete it or unlock it. 
             step_three_title: Start mapping roads
@@ -106,11 +106,11 @@ en:
         start_date: Start date
         name: Name
         htag: Tags
-        tasks: Tasks
+        tasks: Activities
       show:
         learn_more: Learn More
         tab_events: Events
-        tab_tasks: Tasks
+        tab_tasks: Activities
     events:
       index:
         title: Events
@@ -119,9 +119,9 @@ en:
         date: Date
         name: Name
         location_name: Location name
-        tasks: Tasks
+        tasks: Activities
       show:
-        tasks_title: Tasks
+        tasks_title: Activities
         map_view: Map View
         list_view: List View
         contact: Contact
@@ -135,18 +135,18 @@ en:
           similar_events: Organized similar events
     tasks:
       index:
-        title: Tasks
+        title: Activities
         map_view: Map View
         list_view: List View
       _tasks:
-        task_type: Task type
+        task_type: Type
         name: Name
         description: Description
   javascripts:
     containers:
       map_container:
-        tasking_manager: OSM tracing tasks
-        to_fix: start date tagging tasks
+        tasking_manager: OSM tracing activities
+        to_fix: start date tagging activities
     components:
       home:
         community_data:
