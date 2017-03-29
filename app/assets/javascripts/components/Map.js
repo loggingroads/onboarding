@@ -36,7 +36,7 @@ class Map extends React.Component {
   _drawPolygons() {
     //Create an object to manage the layers in/out the map
     this.props.layersGroups && this.props.layersGroups.map( (group) => {
-      if (group.active) {
+      if (group.active && group.layers && group.layers.length > 0) {
         this._addLayers(group.layers);
       } else {
         this._removeLayers(group.layers);

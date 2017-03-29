@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const taskGroups = [
   {
     slug: 'type1',
-    type: 1,
+    type: 'OSM Tasking Manager',
     title: I18n.t('javascripts.containers.map_container.tasking_manager'),
     color: '#ffffff',
     active: true,
@@ -16,7 +16,7 @@ const taskGroups = [
   },
   {
     slug: 'type2',
-    type: 2,
+    type: 'To Fix',
     title: I18n.t('javascripts.containers.map_container.to_fix'),
     color: '#ff5d33',
     active: true,
