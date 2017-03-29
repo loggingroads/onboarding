@@ -15,10 +15,13 @@ fr:
           campaigns: Campagnes
           events: Événements
           tasks: Activités
+          impact: Impact
           map: Carte
           suggest_event: Suggérer un événement
           data_download: Téléchargement de données
           about: À propos
+      _footer:
+        input_placeholder: Votre email
     home:
       index:
         _home_intro:
@@ -26,27 +29,48 @@ fr:
           find_more: en savoir plus
         _about:
           title_primary: À propos
+          title_secondary: du Projet
+          claim_para_1: Toutes vos modifications sont ajoutées à OpenStreetMap. Les scientifiques, les surveillants des forêts et les organismes gouvernementaux utiliseront vos données pour déterminer si les sociétés forestières ont enfreint les lois, cartographié la fragmentation des forêts et conçu des stratégies de protection des forêts plus efficaces.
           btn: en savoir plus
         _activity:
           title: Activité
           subtitle: Utilisateurs
         _community:
           title: Communauté
+          subtitle: Rejoindre la
         _events:
           title: Campagne
           subtitle: Événements
           btn: Apprendre encore plus
           no_events: Aucun événement prévu pour le moment.
+          tell_us: Dites-nous votre initiative
         _participate:
           subtitle: Participer
+          read_more: plus
         _download:
+          title: Télécharger les données
+          input_text: Rechercher un pays et sélectionner un format pour les données
           button_1: Shapefile
           button_2: GeoJSON
         _slider:
+          title: Traçage des routes
           subtitle: Comment ça marche
+          description: Logging Roads combine OpenStreetMap et les images satellite pour planifier et dater les routes forestières.
           more: Comment ça marche
+          description2: Aidez-nous à identifier l'année où une route a été faite
           tasking_manager:
             step_one_title: Choisissez une tâche
+            step_one_legend: Les activités sont la zone géographique définie pour la cartographie dans OpenStreetMap. Sélectionnez des activités parmi les nombreuses campagnes proposées.
+            step_two_title: Sélectionner un carré
+            step_two_legend: Chaque zone de tâche est divisée en petits carrés. Lorsque vous sélectionnez un carré, il est verrouillé de sorte que les autres utilisateurs ne peuvent pas mapper jusqu'à ce que vous le terminer ou le déverrouiller.
+            step_three_title: Commencer à tracer les routes
+            step_three_legend: Utilisez les images satellite chaque année pour voir quand les routes d'enregistrement apparaissent, tracez-les sur la carte, et les étiqueter avec l'année où ils sont apparus
+            step_four_title: Regardez les images
+            step_four_legend: Vous verrez une sélection d'images de différentes années. Votre travail consiste à sélectionner l'image où la route apparaît pour la première fois.
+            step_five_title: Sélectionnez une image où vous voyez des routes
+            step_five_legend: Une fois que vous voyez une image avec une route, sélectionnez-la et elle sera enregistrée dans les données.
+            step_six_title: Continuer!
+            step_six_legend: Après avoir effectué votre sélection, un nouvel ensemble d'images s'affiche. Plus vous sélectionnez le plus votre score!
     campaigns:
       index:
         title: Campagnes
@@ -64,21 +88,33 @@ fr:
       _events:
         date: Date
         name: Nom
+        location_name: nom de la localisation
         tasks: Activités
       show:
         tasks_title: Activités
+        map_view: Carte
+        list_view: Liste
         contact: Contact
     event_requests:
       new:
         suggest_event: Suggérer un événement
+      _form:
+        experience_level:
+          first_time: Première organisation d'un tel événement
+          mapathons_before: Événements organisés avant
     tasks:
       index:
         title: Activités
+        map_view: Carte
+        list_view: Liste
       _tasks:
         task_type: Type
         name: Nom
         description: Description
   javascripts:
+    containers:
+      map_container:
+        tasking_manager: Activités de cartographie OSM
     components:
       home:
         community_data:
