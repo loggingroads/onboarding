@@ -8,6 +8,12 @@ class UsersActivityData extends React.Component {
     this.props.setUsersActivityData();
   }
 
+  componentDidMount(){
+    setTimeout(function(){
+      window.location.reload(1);
+    }, 60000);
+  }
+
   render() {
     const title = this.props.data && this.props.data.split('-').join(' ');
     const users = this.props.usersActivityData ? this.props.usersActivityData.users : {};
