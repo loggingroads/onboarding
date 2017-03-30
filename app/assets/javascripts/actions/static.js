@@ -23,7 +23,7 @@ export function setCommunityData() {
 
 export function setUsersActivityData(data) {
   const tag = $('#parallax').length > 0 && $('#parallax').data('hashtag') !== undefined ? $('#parallax').data('hashtag') : 'logging-roads';
-  const url = 'https://loggingroads.org/hashtags/'+tag;
+  const url = 'https://loggingroads.org/hashtags/'+tag + '/users';
 
   return function(dispatch) {
     $.get(url).then(function(usersActivityData){
